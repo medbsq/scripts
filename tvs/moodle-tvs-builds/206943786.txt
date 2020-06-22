@@ -1,0 +1,319 @@
+travis_fold:start:worker_info[0K[33;1mWorker information[0m
+hostname: travis-worker-gce-org-prod5-9:de0d6bfa-6595-4816-9191-5b3f77df770d
+version: v2.6.1-2-g9fbf704 https://github.com/travis-ci/worker/tree/9fbf704a6a755301e6b86b28a87b3f0636e502a8
+instance: testing-gce-ad992981-d1b5-4a01-8a38-d7c8bf426773:travis-ci-ruby-precise-1480652642
+startup: 21.900781009s
+travis_fold:end:worker_info[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: ruby
+Build group: stable
+Build dist: precise
+Build id: 206943785
+Job id: 206943786
+travis-build version: c56b13141
+[34m[1mBuild image provisioning date and time[0m
+Fri Dec  2 04:37:59 UTC 2016
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-103-generic
+[34m[1mCookbooks Version[0m
+9c6cd11 https://github.com/travis-ci/travis-cookbooks/tree/9c6cd11
+[34m[1mGit version[0m
+git version 1.8.5.6
+[34m[1mbash version[0m
+GNU bash, version 4.2.25(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2011 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.2-p330
+ruby-1.9.3-p551
+ruby-2.0.0-p648-clang
+ruby-2.1.10
+ruby-2.2.5
+ruby-2.3.1
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.2
+[34m[1mmysql --version[0m
+mysql  Ver 14.14 Distrib 5.5.53, for debian-linux-gnu (x86_64) using readline 6.2
+[34m[1mPre-installed PostgreSQL versions[0m
+9.1.24
+9.2.19
+9.3.15
+9.4.10
+9.5.5
+[34m[1mRedis version[0m
+redis-server 3.0.6
+[34m[1mriak version[0m
+2.0.2
+[34m[1mmemcached version[0m
+1.4.13
+[34m[1mMongoDB version[0m
+MongoDB 2.4.14
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mCassandra version[0m
+2.0.9
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 38.4.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.8.0_111, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "3.13.0-103-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_fold:start:fix.CVE-2015-7547[0K$ export DEBIAN_FRONTEND=noninteractive
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libc6 is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 96 not upgraded.
+travis_fold:end:fix.CVE-2015-7547[0Ktravis_fold:start:git.checkout[0Ktravis_time:start:00857096[0K$ git clone --depth=50 --branch=upgrade-to-typhoeus https://github.com/deliveroo/routemaster-drain.git deliveroo/routemaster-drain
+Cloning into 'deliveroo/routemaster-drain'...
+remote: Counting objects: 974, done.[K
+remote: Compressing objects:   0% (1/361)   [Kremote: Compressing objects:   1% (4/361)   [Kremote: Compressing objects:   2% (8/361)   [Kremote: Compressing objects:   3% (11/361)   [Kremote: Compressing objects:   4% (15/361)   [Kremote: Compressing objects:   5% (19/361)   [Kremote: Compressing objects:   6% (22/361)   [Kremote: Compressing objects:   7% (26/361)   [Kremote: Compressing objects:   8% (29/361)   [Kremote: Compressing objects:   9% (33/361)   [Kremote: Compressing objects:  10% (37/361)   [Kremote: Compressing objects:  11% (40/361)   [Kremote: Compressing objects:  12% (44/361)   [Kremote: Compressing objects:  13% (47/361)   [Kremote: Compressing objects:  14% (51/361)   [Kremote: Compressing objects:  15% (55/361)   [Kremote: Compressing objects:  16% (58/361)   [Kremote: Compressing objects:  17% (62/361)   [Kremote: Compressing objects:  18% (65/361)   [Kremote: Compressing objects:  19% (69/361)   [Kremote: Compressing objects:  20% (73/361)   [Kremote: Compressing objects:  21% (76/361)   [Kremote: Compressing objects:  22% (80/361)   [Kremote: Compressing objects:  23% (84/361)   [Kremote: Compressing objects:  24% (87/361)   [Kremote: Compressing objects:  25% (91/361)   [Kremote: Compressing objects:  26% (94/361)   [Kremote: Compressing objects:  27% (98/361)   [Kremote: Compressing objects:  28% (102/361)   [Kremote: Compressing objects:  29% (105/361)   [Kremote: Compressing objects:  30% (109/361)   [Kremote: Compressing objects:  31% (112/361)   [Kremote: Compressing objects:  32% (116/361)   [Kremote: Compressing objects:  33% (120/361)   [Kremote: Compressing objects:  34% (123/361)   [Kremote: Compressing objects:  35% (127/361)   [Kremote: Compressing objects:  36% (130/361)   [Kremote: Compressing objects:  37% (134/361)   [Kremote: Compressing objects:  38% (138/361)   [Kremote: Compressing objects:  39% (141/361)   [Kremote: Compressing objects:  40% (145/361)   [Kremote: Compressing objects:  41% (149/361)   [Kremote: Compressing objects:  42% (152/361)   [Kremote: Compressing objects:  43% (156/361)   [Kremote: Compressing objects:  44% (159/361)   [Kremote: Compressing objects:  45% (163/361)   [Kremote: Compressing objects:  46% (167/361)   [Kremote: Compressing objects:  47% (170/361)   [Kremote: Compressing objects:  48% (174/361)   [Kremote: Compressing objects:  49% (177/361)   [Kremote: Compressing objects:  50% (181/361)   [Kremote: Compressing objects:  51% (185/361)   [Kremote: Compressing objects:  52% (188/361)   [Kremote: Compressing objects:  53% (192/361)   [Kremote: Compressing objects:  54% (195/361)   [Kremote: Compressing objects:  55% (199/361)   [Kremote: Compressing objects:  56% (203/361)   [Kremote: Compressing objects:  57% (206/361)   [Kremote: Compressing objects:  58% (210/361)   [Kremote: Compressing objects:  59% (213/361)   [Kremote: Compressing objects:  60% (217/361)   [Kremote: Compressing objects:  61% (221/361)   [Kremote: Compressing objects:  62% (224/361)   [Kremote: Compressing objects:  63% (228/361)   [Kremote: Compressing objects:  64% (232/361)   [Kremote: Compressing objects:  65% (235/361)   [Kremote: Compressing objects:  66% (239/361)   [Kremote: Compressing objects:  67% (242/361)   [Kremote: Compressing objects:  68% (246/361)   [Kremote: Compressing objects:  69% (250/361)   [Kremote: Compressing objects:  70% (253/361)   [Kremote: Compressing objects:  71% (257/361)   [Kremote: Compressing objects:  72% (260/361)   [Kremote: Compressing objects:  73% (264/361)   [Kremote: Compressing objects:  74% (268/361)   [Kremote: Compressing objects:  75% (271/361)   [Kremote: Compressing objects:  76% (275/361)   [Kremote: Compressing objects:  77% (278/361)   [Kremote: Compressing objects:  78% (282/361)   [Kremote: Compressing objects:  79% (286/361)   [Kremote: Compressing objects:  80% (289/361)   [Kremote: Compressing objects:  81% (293/361)   [Kremote: Compressing objects:  82% (297/361)   [Kremote: Compressing objects:  83% (300/361)   [Kremote: Compressing objects:  84% (304/361)   [Kremote: Compressing objects:  85% (307/361)   [Kremote: Compressing objects:  86% (311/361)   [Kremote: Compressing objects:  87% (315/361)   [Kremote: Compressing objects:  88% (318/361)   [Kremote: Compressing objects:  89% (322/361)   [Kremote: Compressing objects:  90% (325/361)   [Kremote: Compressing objects:  91% (329/361)   [Kremote: Compressing objects:  92% (333/361)   [Kremote: Compressing objects:  93% (336/361)   [Kremote: Compressing objects:  94% (340/361)   [Kremote: Compressing objects:  95% (343/361)   [Kremote: Compressing objects:  96% (347/361)   [Kremote: Compressing objects:  97% (351/361)   [Kremote: Compressing objects:  98% (354/361)   [Kremote: Compressing objects:  99% (358/361)   [Kremote: Compressing objects: 100% (361/361)   [Kremote: Compressing objects: 100% (361/361), done.[K
+Receiving objects:   0% (1/974)   Receiving objects:   1% (10/974)   Receiving objects:   2% (20/974)   Receiving objects:   3% (30/974)   Receiving objects:   4% (39/974)   Receiving objects:   5% (49/974)   Receiving objects:   6% (59/974)   Receiving objects:   7% (69/974)   Receiving objects:   8% (78/974)   Receiving objects:   9% (88/974)   Receiving objects:  10% (98/974)   Receiving objects:  11% (108/974)   Receiving objects:  12% (117/974)   Receiving objects:  13% (127/974)   Receiving objects:  14% (137/974)   Receiving objects:  15% (147/974)   Receiving objects:  16% (156/974)   Receiving objects:  17% (166/974)   Receiving objects:  18% (176/974)   Receiving objects:  19% (186/974)   Receiving objects:  20% (195/974)   Receiving objects:  21% (205/974)   Receiving objects:  22% (215/974)   Receiving objects:  23% (225/974)   Receiving objects:  24% (234/974)   Receiving objects:  25% (244/974)   Receiving objects:  26% (254/974)   Receiving objects:  27% (263/974)   Receiving objects:  28% (273/974)   Receiving objects:  29% (283/974)   Receiving objects:  30% (293/974)   Receiving objects:  31% (302/974)   Receiving objects:  32% (312/974)   Receiving objects:  33% (322/974)   Receiving objects:  34% (332/974)   Receiving objects:  35% (341/974)   Receiving objects:  36% (351/974)   Receiving objects:  37% (361/974)   Receiving objects:  38% (371/974)   Receiving objects:  39% (380/974)   Receiving objects:  40% (390/974)   Receiving objects:  41% (400/974)   Receiving objects:  42% (410/974)   Receiving objects:  43% (419/974)   Receiving objects:  44% (429/974)   Receiving objects:  45% (439/974)   Receiving objects:  46% (449/974)   Receiving objects:  47% (458/974)   Receiving objects:  48% (468/974)   Receiving objects:  49% (478/974)   Receiving objects:  50% (487/974)   Receiving objects:  51% (497/974)   Receiving objects:  52% (507/974)   Receiving objects:  53% (517/974)   Receiving objects:  54% (526/974)   Receiving objects:  55% (536/974)   Receiving objects:  56% (546/974)   Receiving objects:  57% (556/974)   Receiving objects:  58% (565/974)   Receiving objects:  59% (575/974)   Receiving objects:  60% (585/974)   Receiving objects:  61% (595/974)   Receiving objects:  62% (604/974)   Receiving objects:  63% (614/974)   Receiving objects:  64% (624/974)   Receiving objects:  65% (634/974)   Receiving objects:  66% (643/974)   Receiving objects:  67% (653/974)   Receiving objects:  68% (663/974)   Receiving objects:  69% (673/974)   Receiving objects:  70% (682/974)   Receiving objects:  71% (692/974)   Receiving objects:  72% (702/974)   Receiving objects:  73% (712/974)   Receiving objects:  74% (721/974)   Receiving objects:  75% (731/974)   Receiving objects:  76% (741/974)   Receiving objects:  77% (750/974)   Receiving objects:  78% (760/974)   Receiving objects:  79% (770/974)   Receiving objects:  80% (780/974)   remote: Total 974 (delta 544), reused 931 (delta 526), pack-reused 0[K
+Receiving objects:  81% (789/974)   Receiving objects:  82% (799/974)   Receiving objects:  83% (809/974)   Receiving objects:  84% (819/974)   Receiving objects:  85% (828/974)   Receiving objects:  86% (838/974)   Receiving objects:  87% (848/974)   Receiving objects:  88% (858/974)   Receiving objects:  89% (867/974)   Receiving objects:  90% (877/974)   Receiving objects:  91% (887/974)   Receiving objects:  92% (897/974)   Receiving objects:  93% (906/974)   Receiving objects:  94% (916/974)   Receiving objects:  95% (926/974)   Receiving objects:  96% (936/974)   Receiving objects:  97% (945/974)   Receiving objects:  98% (955/974)   Receiving objects:  99% (965/974)   Receiving objects: 100% (974/974)   Receiving objects: 100% (974/974), 158.42 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/544)   Resolving deltas:   1% (6/544)   Resolving deltas:   2% (11/544)   Resolving deltas:  16% (90/544)   Resolving deltas:  18% (103/544)   Resolving deltas:  19% (104/544)   Resolving deltas:  25% (136/544)   Resolving deltas:  27% (152/544)   Resolving deltas:  29% (159/544)   Resolving deltas:  34% (190/544)   Resolving deltas:  35% (192/544)   Resolving deltas:  36% (197/544)   Resolving deltas:  37% (206/544)   Resolving deltas:  38% (208/544)   Resolving deltas:  40% (220/544)   Resolving deltas:  42% (232/544)   Resolving deltas:  46% (252/544)   Resolving deltas:  48% (265/544)   Resolving deltas:  49% (267/544)   Resolving deltas:  50% (272/544)   Resolving deltas:  52% (284/544)   Resolving deltas:  53% (292/544)   Resolving deltas:  57% (315/544)   Resolving deltas:  58% (316/544)   Resolving deltas:  60% (329/544)   Resolving deltas:  63% (343/544)   Resolving deltas:  65% (354/544)   Resolving deltas:  66% (362/544)   Resolving deltas:  67% (366/544)   Resolving deltas:  68% (373/544)   Resolving deltas:  69% (379/544)   Resolving deltas:  70% (385/544)   Resolving deltas:  71% (388/544)   Resolving deltas:  72% (393/544)   Resolving deltas:  75% (409/544)   Resolving deltas:  76% (418/544)   Resolving deltas:  77% (421/544)   Resolving deltas:  78% (425/544)   Resolving deltas:  79% (432/544)   Resolving deltas:  80% (440/544)   Resolving deltas:  84% (461/544)   Resolving deltas:  90% (493/544)   Resolving deltas:  91% (496/544)   Resolving deltas:  92% (501/544)   Resolving deltas:  93% (507/544)   Resolving deltas:  94% (513/544)   Resolving deltas:  95% (518/544)   Resolving deltas:  98% (538/544)   Resolving deltas:  99% (540/544)   Resolving deltas: 100% (544/544)   Resolving deltas: 100% (544/544), done.
+Checking connectivity... done.
+
+travis_time:end:00857096:start=1488450513880267076,finish=1488450514734155102,duration=853888026[0K$ cd deliveroo/routemaster-drain
+$ git checkout -qf e372f798e0dfe3139aec5b99fb302aa2eb6e2b0d
+travis_fold:end:git.checkout[0Ktravis_fold:start:git.submodule[0Ktravis_time:start:176d575a[0K$ git submodule update --init --recursive
+
+travis_time:end:176d575a:start=1488450514746726781,finish=1488450514803421597,duration=56694816[0Ktravis_fold:end:git.submodule[0Ktravis_fold:start:services[0Ktravis_time:start:19ed9050[0K$ sudo service redis-server start
+redis-server start/running, process 2197
+
+travis_time:end:19ed9050:start=1488450514818076268,finish=1488450514868264280,duration=50188012[0Ktravis_fold:end:services[0Ktravis_fold:start:rvm[0Ktravis_time:start:13c53bc2[0K$ rvm use 2.2.5 --install --binary --fuzzy
+[32mUsing /home/travis/.rvm/gems/ruby-2.2.5[0m
+
+travis_time:end:13c53bc2:start=1488450517879787801,finish=1488450518433675975,duration=553888174[0Ktravis_fold:end:rvm[0K$ export BUNDLE_GEMFILE=$PWD/gemfiles/rails_3.gemfile
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:301110cc[0K$ Installing caching utilities
+
+travis_time:end:301110cc:start=1488450518625052159,finish=1488450518688578277,duration=63526118[0Ktravis_time:start:3c7f968f[0K
+travis_time:end:3c7f968f:start=1488450518694422932,finish=1488450518698334231,duration=3911299[0Ktravis_time:start:159f32f0[0K[32;1mattempting to download cache archive[0m
+[32;1mfetching upgrade-to-typhoeus/cache-linux-precise-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855--rvm-2.2.5--gemfile-gemfilesrails_3.gemfile.tgz[0m
+[32;1mfetching upgrade-to-typhoeus/cache--rvm-2.2.5--gemfile-gemfilesrails_3.gemfile.tgz[0m
+[32;1mfetching master/cache-linux-precise-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855--rvm-2.2.5--gemfile-gemfilesrails_3.gemfile.tgz[0m
+[32;1mfound cache[0m
+
+travis_time:end:159f32f0:start=1488450518702689144,finish=1488450520086511907,duration=1383822763[0Ktravis_fold:end:cache.1[0K
+travis_fold:start:cache.bundler[0Ktravis_time:start:114890d2[0K
+travis_time:end:114890d2:start=1488450520092054914,finish=1488450520095971071,duration=3916157[0Ktravis_time:start:1384b74c[0K[32;1madding /home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle to cache[0m
+[32;1mcreating directory /home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle[0m
+
+travis_time:end:1384b74c:start=1488450520100232835,finish=1488450521962016139,duration=1861783304[0Ktravis_fold:end:cache.bundler[0K$ ruby --version
+ruby 2.2.5p319 (2016-04-26 revision 54774) [x86_64-linux]
+$ rvm --version
+rvm 1.26.10 (1.26.10) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+$ bundle --version
+Bundler version 1.13.6
+$ gem --version
+2.6.8
+travis_fold:start:install.bundler[0Ktravis_time:start:1bc42324[0K$ bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH:-vendor/bundle}
+Warning: the running version of Bundler (1.13.6) is older than the version that created the lockfile (1.14.5). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+Fetching gem metadata from https://rubygems.org/.........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Using rake 12.0.0
+Using multi_json 1.12.1
+Using builder 3.0.4
+Using erubis 2.7.0
+Using journey 1.0.4
+Using rack 1.4.7
+Using hike 1.2.3
+Using tilt 1.4.1
+Using mime-types 1.25.1
+Using polyglot 0.3.5
+Using arel 3.0.3
+Using tzinfo 0.3.52
+Installing i18n 0.8.1
+Installing public_suffix 2.0.5
+Using bundler 1.13.6
+Using thor 0.19.4
+Using docile 1.1.5
+Using simplecov-html 0.10.0
+Using coderay 1.1.1
+Installing json 1.8.6 with native extensions
+Installing concurrent-ruby 1.0.5
+Using connection_pool 2.2.1
+Using safe_yaml 1.0.4
+Installing diff-lcs 1.3
+Installing dogstatsd 2.0.0
+Installing dotenv 2.2.0
+Installing ffi 1.9.17 with native extensions
+Using multipart-post 2.0.0
+Using formatador 0.2.5
+Using rb-fsevent 0.9.8
+Using ruby_dep 1.5.0
+Installing fork 1.0.1
+Using nenv 0.3.0
+Using shellany 0.0.1
+Using method_source 0.8.2
+Using slop 3.6.0
+Using guard-compat 1.2.1
+Using rspec-support 3.5.0
+Installing lumberjack 1.0.11
+Using hashie 3.4.6
+Using mono_logger 1.1.0
+Installing hashdiff 0.3.2
+Installing psych 2.2.4 with native extensions
+Installing redis 3.3.3
+Using thread 0.2.2
+Using wisper 1.6.1
+Installing rack-cache 1.7.0
+Using rack-test 0.6.3
+Using rack-protection 1.5.3
+Using rack-ssl 1.3.4
+Using vegas 0.1.11
+Using sprockets 2.2.3
+Using treetop 1.4.15
+Using addressable 2.5.0
+Using appraisal 2.1.0
+Installing activesupport 3.2.22.5
+Using crack 0.4.3
+Installing ethon 0.10.1
+Installing rb-inotify 0.9.8
+Installing faraday 0.11.0
+Installing simplecov 0.13.0
+Using rdoc 3.12.2
+Installing fork_break 0.1.4
+Using notiffany 0.1.1
+Using pry 0.10.4
+Using rspec-core 3.5.4
+Using rspec-expectations 3.5.0
+Using rspec-mocks 3.5.0
+Installing redis-namespace 1.5.3
+Using sinatra 1.4.6
+Using mail 2.5.4
+Installing activemodel 3.2.22.5
+Installing sidekiq 4.2.9
+Installing webmock 2.3.2
+Installing typhoeus 1.1.2
+Using listen 3.1.5
+Installing faraday_middleware 0.11.0.1
+Using rspec 3.5.0
+Installing codeclimate-test-reporter 1.0.6
+Installing resque 1.27.2
+Installing actionpack 3.2.22.5
+Installing activerecord 3.2.22.5
+Installing activeresource 3.2.22.5
+Using routemaster-drain 2.3.0 from source at `..`
+Installing guard 2.14.1
+Installing actionmailer 3.2.22.5
+Using guard-rspec 4.7.3
+Installing railties 3.2.22.5
+Installing rails 3.2.22.5
+Bundle complete! 18 Gemfile dependencies, 89 gems now installed.
+Bundled gems are installed into ./vendor/bundle.
+
+travis_time:end:1bc42324:start=1488450522584458641,finish=1488450536877615874,duration=14293157233[0Ktravis_fold:end:install.bundler[0Ktravis_time:start:25a8c1bc[0K$ bundle exec rspec
+
+Randomized with seed 35089
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Finished in 2.06 seconds (files took 0.92491 seconds to load)
+[32m142 examples, 0 failures[0m
+
+Randomized with seed 35089
+
+Coverage report generated for RSpec to /home/travis/build/deliveroo/routemaster-drain/coverage. 1632 / 1685 LOC (96.85%) covered.
+
+travis_time:end:25a8c1bc:start=1488450536882660921,finish=1488450540567164283,duration=3684503362[0K
+[32;1mThe command "bundle exec rspec" exited with 0.[0m
+travis_time:start:10287559[0K$ bundle exec codeclimate-test-reporter
+Cannot post results: environment variable CODECLIMATE_REPO_TOKEN must be set.
+
+travis_time:end:10287559:start=1488450540572124657,finish=1488450540948088527,duration=375963870[0K
+[32;1mThe command "bundle exec codeclimate-test-reporter" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+$ bundle clean
+[33mWarning: the running version of Bundler (1.13.6) is older than the version that created the lockfile (1.14.5). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+[0mRemoving i18n (0.7.0)
+Removing psych (2.2.2)
+Removing rb-inotify (0.9.7)
+Removing rails (3.2.14)
+Removing webmock (2.3.1)
+Removing net-http-persistent (2.9.4)
+Removing rack-cache (1.6.1)
+Removing actionmailer (3.2.14)
+Removing byebug (9.0.6)
+Removing lumberjack (1.0.10)
+Removing diff-lcs (1.2.5)
+Removing activerecord (3.2.14)
+Removing activesupport (3.2.14)
+Removing public_suffix (2.0.4)
+Removing guard (2.14.0)
+Removing sidekiq (4.2.7)
+Removing activemodel (3.2.14)
+Removing dotenv (2.1.1)
+Removing actionpack (3.2.14)
+Removing ffi (1.9.14)
+Removing pry-byebug (3.4.2)
+Removing simplecov (0.12.0)
+Removing resque (1.26.0)
+Removing faraday_middleware (0.10.1)
+Removing activeresource (3.2.14)
+Removing railties (3.2.14)
+Removing faraday (0.10.1)
+Removing hashdiff (0.3.1)
+Removing concurrent-ruby (1.0.2)
+Removing codeclimate-test-reporter (1.0.3)
+Removing redis (3.3.2)
+Removing redis-namespace (1.5.2)
+Removing json (1.8.3)
+travis_time:start:092980a2[0K
+travis_time:end:092980a2:start=1488450541410008061,finish=1488450541414283445,duration=4275384[0Ktravis_time:start:0b926750[0K[32;1mchange detected (content changed, file is created, or file is deleted):
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/bin/byebug
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/actionmailer-3.2.14.gem
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/actionmailer-3.2.22.5.gem
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/actionpack-3.2.14.gem
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/actionpack-3.2.22.5.gem
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/activemodel-3.2.14.gem
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/activemodel-3.2.22.5.gem
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/activerecord-3.2.14.gem
+/home/travis/build/deliveroo/routemaster-drain/gemfiles/vendor/bundle/ruby/2.2.0/cache/activerecord-3.2.22.5.gem
+/home/travis/build/
+[0m
+[32;1m...
+[0m
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading archive[0m
+
+travis_time:end:0b926750:start=1488450541419207208,finish=1488450546126697050,duration=4707489842[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 0.
