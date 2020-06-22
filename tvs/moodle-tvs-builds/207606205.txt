@@ -1,1178 +1,0 @@
-travis_fold:start:worker_info[0K[33;1mWorker information[0m
-hostname: i-09b0250-precise-production-2-worker-org-docker.travisci.net:4f7a658a-438e-45fc-8795-72e5e43ebdfc
-version: v2.5.0 https://github.com/travis-ci/worker/tree/da3a43228dffc0fcca5a46569ca786b22991979f
-instance: 954294a:travis:android
-startup: 490.549402ms
-travis_fold:end:worker_info[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
-Build language: android
-Build group: stable
-Build dist: precise
-Build id: 207606201
-Job id: 207606205
-travis-build version: c56b13141
-[34m[1mBuild image provisioning date and time[0m
-Thu Feb  5 15:09:33 UTC 2015
-[34m[1mOperating System Details[0m
-Distributor ID:	Ubuntu
-Description:	Ubuntu 12.04.5 LTS
-Release:	12.04
-Codename:	precise
-[34m[1mLinux Version[0m
-3.13.0-29-generic
-[34m[1mCookbooks Version[0m
-a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
-[34m[1mGCC version[0m
-gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
-Copyright (C) 2011 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-[34m[1mLLVM version[0m
-clang version 3.4 (tags/RELEASE_34/final)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-[34m[1mPre-installed Ruby versions[0m
-ruby-1.9.3-p551
-[34m[1mPre-installed Node.js versions[0m
-v0.10.36
-[34m[1mPre-installed Go versions[0m
-1.4.1
-[34m[1mRedis version[0m
-redis-server 2.8.19
-[34m[1mriak version[0m
-2.0.2
-[34m[1mMongoDB version[0m
-MongoDB 2.4.12
-[34m[1mCouchDB version[0m
-couchdb 1.6.1
-[34m[1mNeo4j version[0m
-1.9.4
-[34m[1mRabbitMQ Version[0m
-3.4.3
-[34m[1mElasticSearch version[0m
-1.4.0
-[34m[1mInstalled Sphinx versions[0m
-2.0.10
-2.1.9
-2.2.6
-[34m[1mDefault Sphinx version[0m
-2.2.6
-[34m[1mInstalled Firefox version[0m
-firefox 31.0esr
-[34m[1mPhantomJS version[0m
-1.9.8
-[34m[1mant -version[0m
-Apache Ant(TM) version 1.8.2 compiled on December 3 2011
-[34m[1mmvn -version[0m
-Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
-Maven home: /usr/local/maven
-Java version: 1.7.0_76, vendor: Oracle Corporation
-Java home: /usr/lib/jvm/java-7-oracle/jre
-Default locale: en_US, platform encoding: ANSI_X3.4-1968
-OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
-travis_fold:end:system_info[0K
-travis_fold:start:fix.CVE-2015-7547[0K$ export DEBIAN_FRONTEND=noninteractive
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  libc-bin libc-dev-bin libc6:i386 libc6-dev libc6-i386
-Suggested packages:
-  glibc-doc glibc-doc:i386 locales:i386
-The following packages will be upgraded:
-  libc-bin libc-dev-bin libc6 libc6:i386 libc6-dev libc6-i386
-6 upgraded, 0 newly installed, 0 to remove and 271 not upgraded.
-Need to get 16.7 MB of archives.
-After this operation, 27.6 kB disk space will be freed.
-Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-bin amd64 2.15-0ubuntu10.15 [1,177 kB]
-Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6-i386 amd64 2.15-0ubuntu10.15 [3,975 kB]
-Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-dev-bin amd64 2.15-0ubuntu10.15 [84.7 kB]
-Get:4 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6-dev amd64 2.15-0ubuntu10.15 [2,943 kB]
-Get:5 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6 i386 2.15-0ubuntu10.15 [3,923 kB]
-Get:6 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6 amd64 2.15-0ubuntu10.15 [4,636 kB]
-Fetched 16.7 MB in 0s (41.8 MB/s)
-Preconfiguring packages ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 72899 files and directories currently installed.)
-Preparing to replace libc-bin 2.15-0ubuntu10.10 (using .../libc-bin_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc-bin ...
-Processing triggers for man-db ...
-Setting up libc-bin (2.15-0ubuntu10.15) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 72898 files and directories currently installed.)
-Preparing to replace libc6-i386 2.15-0ubuntu10.10 (using .../libc6-i386_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc6-i386 ...
-Replaced by files in installed package libc6:i386 ...
-Preparing to replace libc-dev-bin 2.15-0ubuntu10.10 (using .../libc-dev-bin_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc-dev-bin ...
-Preparing to replace libc6-dev 2.15-0ubuntu10.10 (using .../libc6-dev_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc6-dev ...
-Preparing to replace libc6 2.15-0ubuntu10.10 (using .../libc6_2.15-0ubuntu10.15_amd64.deb) ...
-De-configuring libc6:i386 ...
-Unpacking replacement libc6 ...
-Preparing to replace libc6:i386 2.15-0ubuntu10.10 (using .../libc6_2.15-0ubuntu10.15_i386.deb) ...
-Unpacking replacement libc6:i386 ...
-Processing triggers for man-db ...
-Setting up libc6 (2.15-0ubuntu10.15) ...
-Setting up libc6:i386 (2.15-0ubuntu10.15) ...
-Setting up libc6-i386 (2.15-0ubuntu10.15) ...
-Setting up libc-dev-bin (2.15-0ubuntu10.15) ...
-Setting up libc6-dev (2.15-0ubuntu10.15) ...
-Processing triggers for libc-bin ...
-ldconfig deferred processing now taking place
-travis_fold:end:fix.CVE-2015-7547[0K$ jdk_switcher use oraclejdk7
-Switching to Oracle JDK7 (java-7-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-7-oracle
-travis_fold:start:git.checkout[0Ktravis_time:start:0e1c8bdd[0K$ git clone --depth=50 --branch=master https://github.com/macacajs/macaca-android.git macacajs/macaca-android
-Cloning into 'macacajs/macaca-android'...
-remote: Counting objects: 298, done.[K
-remote: Compressing objects:   0% (1/139)   [Kremote: Compressing objects:   1% (2/139)   [Kremote: Compressing objects:   2% (3/139)   [Kremote: Compressing objects:   3% (5/139)   [Kremote: Compressing objects:   4% (6/139)   [Kremote: Compressing objects:   5% (7/139)   [Kremote: Compressing objects:   6% (9/139)   [Kremote: Compressing objects:   7% (10/139)   [Kremote: Compressing objects:   8% (12/139)   [Kremote: Compressing objects:   9% (13/139)   [Kremote: Compressing objects:  10% (14/139)   [Kremote: Compressing objects:  11% (16/139)   [Kremote: Compressing objects:  12% (17/139)   [Kremote: Compressing objects:  13% (19/139)   [Kremote: Compressing objects:  14% (20/139)   [Kremote: Compressing objects:  15% (21/139)   [Kremote: Compressing objects:  16% (23/139)   [Kremote: Compressing objects:  17% (24/139)   [Kremote: Compressing objects:  18% (26/139)   [Kremote: Compressing objects:  19% (27/139)   [Kremote: Compressing objects:  20% (28/139)   [Kremote: Compressing objects:  21% (30/139)   [Kremote: Compressing objects:  22% (31/139)   [Kremote: Compressing objects:  23% (32/139)   [Kremote: Compressing objects:  24% (34/139)   [Kremote: Compressing objects:  25% (35/139)   [Kremote: Compressing objects:  26% (37/139)   [Kremote: Compressing objects:  27% (38/139)   [Kremote: Compressing objects:  28% (39/139)   [Kremote: Compressing objects:  29% (41/139)   [Kremote: Compressing objects:  30% (42/139)   [Kremote: Compressing objects:  31% (44/139)   [Kremote: Compressing objects:  32% (45/139)   [Kremote: Compressing objects:  33% (46/139)   [Kremote: Compressing objects:  34% (48/139)   [Kremote: Compressing objects:  35% (49/139)   [Kremote: Compressing objects:  36% (51/139)   [Kremote: Compressing objects:  37% (52/139)   [Kremote: Compressing objects:  38% (53/139)   [Kremote: Compressing objects:  39% (55/139)   [Kremote: Compressing objects:  40% (56/139)   [Kremote: Compressing objects:  41% (57/139)   [Kremote: Compressing objects:  42% (59/139)   [Kremote: Compressing objects:  43% (60/139)   [Kremote: Compressing objects:  44% (62/139)   [Kremote: Compressing objects:  45% (63/139)   [Kremote: Compressing objects:  46% (64/139)   [Kremote: Compressing objects:  47% (66/139)   [Kremote: Compressing objects:  48% (67/139)   [Kremote: Compressing objects:  49% (69/139)   [Kremote: Compressing objects:  50% (70/139)   [Kremote: Compressing objects:  51% (71/139)   [Kremote: Compressing objects:  52% (73/139)   [Kremote: Compressing objects:  53% (74/139)   [Kremote: Compressing objects:  54% (76/139)   [Kremote: Compressing objects:  55% (77/139)   [Kremote: Compressing objects:  56% (78/139)   [Kremote: Compressing objects:  57% (80/139)   [Kremote: Compressing objects:  58% (81/139)   [Kremote: Compressing objects:  59% (83/139)   [Kremote: Compressing objects:  60% (84/139)   [Kremote: Compressing objects:  61% (85/139)   [Kremote: Compressing objects:  62% (87/139)   [Kremote: Compressing objects:  63% (88/139)   [Kremote: Compressing objects:  64% (89/139)   [Kremote: Compressing objects:  65% (91/139)   [Kremote: Compressing objects:  66% (92/139)   [Kremote: Compressing objects:  67% (94/139)   [Kremote: Compressing objects:  68% (95/139)   [Kremote: Compressing objects:  69% (96/139)   [Kremote: Compressing objects:  70% (98/139)   [Kremote: Compressing objects:  71% (99/139)   [Kremote: Compressing objects:  72% (101/139)   [Kremote: Compressing objects:  73% (102/139)   [Kremote: Compressing objects:  74% (103/139)   [Kremote: Compressing objects:  75% (105/139)   [Kremote: Compressing objects:  76% (106/139)   [Kremote: Compressing objects:  77% (108/139)   [Kremote: Compressing objects:  78% (109/139)   [Kremote: Compressing objects:  79% (110/139)   [Kremote: Compressing objects:  80% (112/139)   [Kremote: Compressing objects:  81% (113/139)   [Kremote: Compressing objects:  82% (114/139)   [Kremote: Compressing objects:  83% (116/139)   [Kremote: Compressing objects:  84% (117/139)   [Kremote: Compressing objects:  85% (119/139)   [Kremote: Compressing objects:  86% (120/139)   [Kremote: Compressing objects:  87% (121/139)   [Kremote: Compressing objects:  88% (123/139)   [Kremote: Compressing objects:  89% (124/139)   [Kremote: Compressing objects:  90% (126/139)   [Kremote: Compressing objects:  91% (127/139)   [Kremote: Compressing objects:  92% (128/139)   [Kremote: Compressing objects:  93% (130/139)   [Kremote: Compressing objects:  94% (131/139)   [Kremote: Compressing objects:  95% (133/139)   [Kremote: Compressing objects:  96% (134/139)   [Kremote: Compressing objects:  97% (135/139)   [Kremote: Compressing objects:  98% (137/139)   [Kremote: Compressing objects:  99% (138/139)   [Kremote: Compressing objects: 100% (139/139)   [Kremote: Compressing objects: 100% (139/139), done.[K
-Receiving objects:   0% (1/298)   Receiving objects:   1% (3/298)   Receiving objects:   2% (6/298)   Receiving objects:   3% (9/298)   Receiving objects:   4% (12/298)   Receiving objects:   5% (15/298)   Receiving objects:   6% (18/298)   Receiving objects:   7% (21/298)   Receiving objects:   8% (24/298)   Receiving objects:   9% (27/298)   Receiving objects:  10% (30/298)   Receiving objects:  11% (33/298)   Receiving objects:  12% (36/298)   Receiving objects:  13% (39/298)   Receiving objects:  14% (42/298)   Receiving objects:  15% (45/298)   Receiving objects:  16% (48/298)   Receiving objects:  17% (51/298)   Receiving objects:  18% (54/298)   Receiving objects:  19% (57/298)   Receiving objects:  20% (60/298)   Receiving objects:  21% (63/298)   Receiving objects:  22% (66/298)   Receiving objects:  23% (69/298)   Receiving objects:  24% (72/298)   Receiving objects:  25% (75/298)   Receiving objects:  26% (78/298)   Receiving objects:  27% (81/298)   Receiving objects:  28% (84/298)   Receiving objects:  29% (87/298)   Receiving objects:  30% (90/298)   Receiving objects:  31% (93/298)   Receiving objects:  32% (96/298)   Receiving objects:  33% (99/298)   remote: Total 298 (delta 201), reused 245 (delta 157), pack-reused 0[K
-Receiving objects:  34% (102/298)   Receiving objects:  35% (105/298)   Receiving objects:  36% (108/298)   Receiving objects:  37% (111/298)   Receiving objects:  38% (114/298)   Receiving objects:  39% (117/298)   Receiving objects:  40% (120/298)   Receiving objects:  41% (123/298)   Receiving objects:  42% (126/298)   Receiving objects:  43% (129/298)   Receiving objects:  44% (132/298)   Receiving objects:  45% (135/298)   Receiving objects:  46% (138/298)   Receiving objects:  47% (141/298)   Receiving objects:  48% (144/298)   Receiving objects:  49% (147/298)   Receiving objects:  50% (149/298)   Receiving objects:  51% (152/298)   Receiving objects:  52% (155/298)   Receiving objects:  53% (158/298)   Receiving objects:  54% (161/298)   Receiving objects:  55% (164/298)   Receiving objects:  56% (167/298)   Receiving objects:  57% (170/298)   Receiving objects:  58% (173/298)   Receiving objects:  59% (176/298)   Receiving objects:  60% (179/298)   Receiving objects:  61% (182/298)   Receiving objects:  62% (185/298)   Receiving objects:  63% (188/298)   Receiving objects:  64% (191/298)   Receiving objects:  65% (194/298)   Receiving objects:  66% (197/298)   Receiving objects:  67% (200/298)   Receiving objects:  68% (203/298)   Receiving objects:  69% (206/298)   Receiving objects:  70% (209/298)   Receiving objects:  71% (212/298)   Receiving objects:  72% (215/298)   Receiving objects:  73% (218/298)   Receiving objects:  74% (221/298)   Receiving objects:  75% (224/298)   Receiving objects:  76% (227/298)   Receiving objects:  77% (230/298)   Receiving objects:  78% (233/298)   Receiving objects:  79% (236/298)   Receiving objects:  80% (239/298)   Receiving objects:  81% (242/298)   Receiving objects:  82% (245/298)   Receiving objects:  83% (248/298)   Receiving objects:  84% (251/298)   Receiving objects:  85% (254/298)   Receiving objects:  86% (257/298)   Receiving objects:  87% (260/298)   Receiving objects:  88% (263/298)   Receiving objects:  89% (266/298)   Receiving objects:  90% (269/298)   Receiving objects:  91% (272/298)   Receiving objects:  92% (275/298)   Receiving objects:  93% (278/298)   Receiving objects:  94% (281/298)   Receiving objects:  95% (284/298)   Receiving objects:  96% (287/298)   Receiving objects:  97% (290/298)   Receiving objects:  98% (293/298)   Receiving objects:  99% (296/298)   Receiving objects: 100% (298/298)   Receiving objects: 100% (298/298), 39.27 KiB | 0 bytes/s, done.
-Resolving deltas:   0% (0/201)   Resolving deltas:   1% (3/201)   Resolving deltas:   2% (5/201)   Resolving deltas:   3% (7/201)   Resolving deltas:   4% (9/201)   Resolving deltas:  10% (22/201)   Resolving deltas:  15% (31/201)   Resolving deltas:  41% (83/201)   Resolving deltas:  43% (87/201)   Resolving deltas:  45% (92/201)   Resolving deltas:  56% (113/201)   Resolving deltas:  62% (126/201)   Resolving deltas:  95% (192/201)   Resolving deltas: 100% (201/201)   Resolving deltas: 100% (201/201), done.
-Checking connectivity... done.
-
-travis_time:end:0e1c8bdd:start=1488604681228867781,finish=1488604681875571165,duration=646703384[0K$ cd macacajs/macaca-android
-$ git checkout -qf 2a29cfbda91a3ee207c24b7e55ae32e3ead727ec
-travis_fold:end:git.checkout[0K
-[33;1mThis job is running on container-based infrastructure, which does not allow use of 'sudo', setuid and setguid executables.[0m
-[33;1mIf you require sudo, add 'sudo: required' to your .travis.yml[0m
-[33;1mSee https://docs.travis-ci.com/user/workers/container-based-infrastructure/ for details.[0m
-
-[33;1mSetting environment variables from repository settings[0m
-$ export rouzhu=[secure]
-
-[33;1mSetting environment variables from .travis.yml[0m
-$ export ANDROID_HOME=/usr/local/android-sdk
-
-travis_fold:start:android.install[0KInstalling Android dependencies
-travis_time:start:0d2a9d94[0K$ android-update-sdk --components=build-tools-22.0.1
-Installing build-tools-22.0.1
-spawn android update sdk --no-ui --all --filter build-tools-22.0.1
-Refresh Sources:
-  Fetching https://dl-ssl.google.com/android/repository/addons_list-2.xml
-  Validate XML
-  Parse XML
-  Fetched Add-ons List successfully
-  Refresh Sources
-  Fetching URL: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/repository-10.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
--------------------------------
-License id: android-sdk-license-5be876d5
-Used by: 
- - Android SDK Build-tools, revision 22.0.1
--------------------------------
-
-To get started with the Android SDK, you must agree to the following terms and conditions.
-
-This is the Android SDK License Agreement (the "License Agreement").
-
-1. Introduction
-
-1.1 The Android SDK (referred to in the License Agreement as the "SDK" and specifically including the Android system files, packaged APIs, and SDK library files and tools , if and when they are made available) is licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of the SDK.
-
-1.2 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: http://source.android.com/, as updated from time to time.
-
-1.3 "Google" means Google Inc., a Delaware corporation with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
-
-2. Accepting the License Agreement
-
-2.1 In order to use the SDK, you must first agree to the License Agreement. You may not use the SDK if you do not accept the License Agreement.
-
-2.2 By clicking to accept and/or using the SDK, you hereby agree to the terms of the License Agreement.
-
-2.3 You may not use the SDK and may not accept the License Agreement if you are a person barred from receiving the SDK under the laws of the United States or other countries including the country in which you are resident or from which you use the SDK.
-
-2.4 If you will use the SDK internally within your company or organization you agree to be bound by the License Agreement on behalf of your employer or other entity, and you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use the SDK on behalf of your employer or other entity.
-
-3. SDK License from Google
-
-3.1 Subject to the terms of the License Agreement, Google grants you a royalty-free, non-assignable, non-exclusive, non-sublicensable, limited, revocable license to use the SDK, personally or internally within your company or organization, solely to develop and distribute applications to run on the Android platform.
-
-3.2 You agree that Google or third parties own all legal right, title and interest in and to the SDK, including any Intellectual Property Rights that subsist in the SDK. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
-
-3.3 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the SDK or any part of the SDK; or (b) load any part of the SDK onto a mobile handset or any other hardware device except a personal computer, combine any part of the SDK with other software, or distribute any software or device incorporating a part of the SDK.
-
-3.4 You agree that you will not take any actions that may cause or result in the fragmentation of Android, including but not limited to distributing, participating in the creation of, or promoting in any way a software development kit derived from the SDK.
-
-3.5 Use, reproduction and distribution of components of the SDK licensed under an open source software license are governed solely by the terms of that open source software license and not the License Agreement. You agree to remain a licensee in good standing in regard to such open source software licenses under all the rights granted and to refrain from any actions that may terminate, suspend, or breach such rights.
-
-3.6 You agree that the form and nature of the SDK that Google provides may change without prior notice to you and that future versions of the SDK may be incompatible with applications developed on previous versions of the SDK. You agree that Google may stop (permanently or temporarily) providing the SDK (or any features within the SDK) to you or to users generally at Google's sole discretion, without prior notice to you.
-
-3.7 Nothing in the License Agreement gives you a right to use any of Google's trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
-
-3.8 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the SDK.
-
-4. Use of the SDK by You
-
-4.1 Google agrees that nothing in the License Agreement gives Google any right, title or interest from you (or your licensors) under the License Agreement in or to any software applications that you develop using the SDK, including any intellectual property rights that subsist in those applications.
-
-4.2 You agree to use the SDK and write applications only for purposes that are permitted by (a) the License Agreement, and (b) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
-
-4.3 You agree that if you use the SDK to develop applications, you will protect the privacy and legal rights of users. If users provide you with user names, passwords, or other login information or personal information, you must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If users provide you with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, each user has given you permission to do so.
-
-4.4 You agree that you will not engage in any activity with the SDK, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of Google or any third party.
-
-4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through Android and/or applications for Android, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
-
-4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under the License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
-
-5. Your Developer Credentials
-
-5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
-
-6. Privacy and Information
-
-6.1 In order to continually innovate and improve the SDK, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the SDK are being used and how they are being used. Before any of this information is collected, the SDK will notify you and seek your consent. If you withhold consent, the information will not be collected.
-
-6.2 The data collected is examined in the aggregate to improve the SDK and is maintained in accordance with Google's Privacy Policy located at http://www.google.com/policies/privacy/.
-
-7. Third Party Applications
-
-7.1 If you use the SDK to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
-
-7.2 You should be aware the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
-
-7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party.
-
-8. Using Google APIs
-
-8.1 Google APIs
-
-8.1.1 If you use any API to retrieve data from Google, you acknowledge that the data may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service.
-
-8.1.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so.
-
-9. Terminating the License Agreement
-
-9.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.
-
-9.2 If you want to terminate the License Agreement, you may do so by ceasing your use of the SDK and any relevant developer credentials.
-
-9.3 Google may at any time, terminate the License Agreement, with or without cause, upon notice to you.
-
-9.4 The License Agreement will automatically terminate without notice or other action when Google ceases to provide the SDK or certain parts of the SDK to users in the country in which you are resident or from which you use the service.
-
-9.5 When the License Agreement is terminated, the license granted to you in the License Agreement will terminate, you will immediately cease all use of the SDK, and the provisions of paragraphs 10, 11, 12 and 14 shall survive indefinitely.
-
-10. DISCLAIMERS
-
-10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SDK IS AT YOUR SOLE RISK AND THAT THE SDK IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
-
-10.2 YOUR USE OF THE SDK AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SDK IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE. WITHOUT LIMITING THE FOREGOING, YOU UNDERSTAND THAT THE SDK MAY CONTAIN ERRORS, DEFECTS AND SECURITY VULNERABILITIES THAT CAN RESULT IN SIGNIFICANT DAMAGE, INCLUDING THE COMPLETE, IRRECOVERABLE LOSS OF USE OF YOUR COMPUTER SYSTEM OR OTHER DEVICE.
-
-10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
-
-11. LIMITATION OF LIABILITY
-
-11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
-
-12. Indemnification
-
-12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys’ fees) arising out of or accruing from (a) your use of the SDK, (b) any application you develop on the SDK that infringes any Intellectual Property Rights of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you of the License Agreement.
-
-13. Changes to the License Agreement
-
-13.1 Google may make changes to the License Agreement as it distributes new versions of the SDK. When these changes are made, Google will make a new version of the License Agreement available on the website where the SDK is made available.
-
-14. General Legal Terms
-
-14.1 The License Agreement constitutes the whole legal agreement between you and Google and governs your use of the SDK (excluding any services which Google may provide to you under a separate written agreement), and completely replaces any prior agreements between you and Google in relation to the SDK.
-
-14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in the License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
-
-14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of the License Agreement is invalid, then that provision will be removed from the License Agreement without affecting the rest of the License Agreement. The remaining provisions of the License Agreement will continue to be valid and enforceable.
-
-14.4 You acknowledge and agree that each member of the group of companies of which Google is the parent shall be third party beneficiaries to the License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of the License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to the License Agreement.
-
-14.5 EXPORT RESTRICTIONS. THE SDK IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE SDK. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
-
-14.6 The License Agreement may not be assigned or transferred by you without the prior written approval of Google, and any attempted assignment without such approval will be void. You shall not delegate your responsibilities or obligations under the License Agreement without the prior written approval of Google.
-
-14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
-
-June 2014.
-    
-Do you accept the license 'android-sdk-license-5be876d5' [y/n]: y
-
-Installing Archives:
-  Preparing to install archives
-  Downloading Android SDK Build-tools, revision 22.0.1
-  Installing Android SDK Build-tools, revision 22.0.1
-  Unzipping Android SDK Build-tools, revision 22.0.1 (7%)  Unzipping Android SDK Build-tools, revision 22.0.1 (9%)  Unzipping Android SDK Build-tools, revision 22.0.1 (32%)  Unzipping Android SDK Build-tools, revision 22.0.1 (33%)  Unzipping Android SDK Build-tools, revision 22.0.1 (36%)  Unzipping Android SDK Build-tools, revision 22.0.1 (54%)  Unzipping Android SDK Build-tools, revision 22.0.1 (55%)  Unzipping Android SDK Build-tools, revision 22.0.1 (57%)  Unzipping Android SDK Build-tools, revision 22.0.1 (58%)  Unzipping Android SDK Build-tools, revision 22.0.1 (61%)  Unzipping Android SDK Build-tools, revision 22.0.1 (63%)  Unzipping Android SDK Build-tools, revision 22.0.1 (86%)  Unzipping Android SDK Build-tools, revision 22.0.1 (90%)  Unzipping Android SDK Build-tools, revision 22.0.1 (91%)  Unzipping Android SDK Build-tools, revision 22.0.1 (92%)  Unzipping Android SDK Build-tools, revision 22.0.1 (93%)  Unzipping Android SDK Build-tools, revision 22.0.1 (94%)  Unzipping Android SDK Build-tools, revision 22.0.1 (95%)  Unzipping Android SDK Build-tools, revision 22.0.1 (96%)  Unzipping Android SDK Build-tools, revision 22.0.1 (97%)  Unzipping Android SDK Build-tools, revision 22.0.1 (98%)  Unzipping Android SDK Build-tools, revision 22.0.1 (99%)    Installed Android SDK Build-tools, revision 22.0.1
-  Done. 1 package installed.
-
-travis_time:end:0d2a9d94:start=1488604685493094534,finish=1488604691295023461,duration=5801928927[0Ktravis_time:start:0766a652[0K$ android-update-sdk --components=android-23
-Installing android-23
-spawn android update sdk --no-ui --all --filter android-23
-Refresh Sources:
-  Fetching https://dl-ssl.google.com/android/repository/addons_list-2.xml
-  Validate XML
-  Parse XML
-  Fetched Add-ons List successfully
-  Refresh Sources
-  Fetching URL: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/repository-10.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
--------------------------------
-License id: android-sdk-license-5be876d5
-Used by: 
- - SDK Platform Android 6.0, API 23, revision 1
--------------------------------
-
-To get started with the Android SDK, you must agree to the following terms and conditions.
-
-This is the Android SDK License Agreement (the "License Agreement").
-
-1. Introduction
-
-1.1 The Android SDK (referred to in the License Agreement as the "SDK" and specifically including the Android system files, packaged APIs, and SDK library files and tools , if and when they are made available) is licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of the SDK.
-
-1.2 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: http://source.android.com/, as updated from time to time.
-
-1.3 "Google" means Google Inc., a Delaware corporation with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
-
-2. Accepting the License Agreement
-
-2.1 In order to use the SDK, you must first agree to the License Agreement. You may not use the SDK if you do not accept the License Agreement.
-
-2.2 By clicking to accept and/or using the SDK, you hereby agree to the terms of the License Agreement.
-
-2.3 You may not use the SDK and may not accept the License Agreement if you are a person barred from receiving the SDK under the laws of the United States or other countries including the country in which you are resident or from which you use the SDK.
-
-2.4 If you will use the SDK internally within your company or organization you agree to be bound by the License Agreement on behalf of your employer or other entity, and you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use the SDK on behalf of your employer or other entity.
-
-3. SDK License from Google
-
-3.1 Subject to the terms of the License Agreement, Google grants you a royalty-free, non-assignable, non-exclusive, non-sublicensable, limited, revocable license to use the SDK, personally or internally within your company or organization, solely to develop and distribute applications to run on the Android platform.
-
-3.2 You agree that Google or third parties own all legal right, title and interest in and to the SDK, including any Intellectual Property Rights that subsist in the SDK. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
-
-3.3 You may not use the SDK for any purpose not expressly permitted by the License Agreement. Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the SDK or any part of the SDK; or (b) load any part of the SDK onto a mobile handset or any other hardware device except a personal computer, combine any part of the SDK with other software, or distribute any software or device incorporating a part of the SDK.
-
-3.4 You agree that you will not take any actions that may cause or result in the fragmentation of Android, including but not limited to distributing, participating in the creation of, or promoting in any way a software development kit derived from the SDK.
-
-3.5 Use, reproduction and distribution of components of the SDK licensed under an open source software license are governed solely by the terms of that open source software license and not the License Agreement. You agree to remain a licensee in good standing in regard to such open source software licenses under all the rights granted and to refrain from any actions that may terminate, suspend, or breach such rights.
-
-3.6 You agree that the form and nature of the SDK that Google provides may change without prior notice to you and that future versions of the SDK may be incompatible with applications developed on previous versions of the SDK. You agree that Google may stop (permanently or temporarily) providing the SDK (or any features within the SDK) to you or to users generally at Google's sole discretion, without prior notice to you.
-
-3.7 Nothing in the License Agreement gives you a right to use any of Google's trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
-
-3.8 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the SDK.
-
-4. Use of the SDK by You
-
-4.1 Google agrees that nothing in the License Agreement gives Google any right, title or interest from you (or your licensors) under the License Agreement in or to any software applications that you develop using the SDK, including any intellectual property rights that subsist in those applications.
-
-4.2 You agree to use the SDK and write applications only for purposes that are permitted by (a) the License Agreement, and (b) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
-
-4.3 You agree that if you use the SDK to develop applications, you will protect the privacy and legal rights of users. If users provide you with user names, passwords, or other login information or personal information, you must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If users provide you with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, each user has given you permission to do so.
-
-4.4 You agree that you will not engage in any activity with the SDK, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of Google or any third party.
-
-4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through Android and/or applications for Android, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
-
-4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under the License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
-
-5. Your Developer Credentials
-
-5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
-
-6. Privacy and Information
-
-6.1 In order to continually innovate and improve the SDK, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the SDK are being used and how they are being used. Before any of this information is collected, the SDK will notify you and seek your consent. If you withhold consent, the information will not be collected.
-
-6.2 The data collected is examined in the aggregate to improve the SDK and is maintained in accordance with Google's Privacy Policy located at http://www.google.com/policies/privacy/.
-
-7. Third Party Applications
-
-7.1 If you use the SDK to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
-
-7.2 You should be aware the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
-
-7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party.
-
-8. Using Google APIs
-
-8.1 Google APIs
-
-8.1.1 If you use any API to retrieve data from Google, you acknowledge that the data may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service.
-
-8.1.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so.
-
-9. Terminating the License Agreement
-
-9.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.
-
-9.2 If you want to terminate the License Agreement, you may do so by ceasing your use of the SDK and any relevant developer credentials.
-
-9.3 Google may at any time, terminate the License Agreement, with or without cause, upon notice to you.
-
-9.4 The License Agreement will automatically terminate without notice or other action when Google ceases to provide the SDK or certain parts of the SDK to users in the country in which you are resident or from which you use the service.
-
-9.5 When the License Agreement is terminated, the license granted to you in the License Agreement will terminate, you will immediately cease all use of the SDK, and the provisions of paragraphs 10, 11, 12 and 14 shall survive indefinitely.
-
-10. DISCLAIMERS
-
-10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SDK IS AT YOUR SOLE RISK AND THAT THE SDK IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
-
-10.2 YOUR USE OF THE SDK AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SDK IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE. WITHOUT LIMITING THE FOREGOING, YOU UNDERSTAND THAT THE SDK MAY CONTAIN ERRORS, DEFECTS AND SECURITY VULNERABILITIES THAT CAN RESULT IN SIGNIFICANT DAMAGE, INCLUDING THE COMPLETE, IRRECOVERABLE LOSS OF USE OF YOUR COMPUTER SYSTEM OR OTHER DEVICE.
-
-10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
-
-11. LIMITATION OF LIABILITY
-
-11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
-
-12. Indemnification
-
-12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys’ fees) arising out of or accruing from (a) your use of the SDK, (b) any application you develop on the SDK that infringes any Intellectual Property Rights of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you of the License Agreement.
-
-13. Changes to the License Agreement
-
-13.1 Google may make changes to the License Agreement as it distributes new versions of the SDK. When these changes are made, Google will make a new version of the License Agreement available on the website where the SDK is made available.
-
-14. General Legal Terms
-
-14.1 The License Agreement constitutes the whole legal agreement between you and Google and governs your use of the SDK (excluding any services which Google may provide to you under a separate written agreement), and completely replaces any prior agreements between you and Google in relation to the SDK.
-
-14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in the License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
-
-14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of the License Agreement is invalid, then that provision will be removed from the License Agreement without affecting the rest of the License Agreement. The remaining provisions of the License Agreement will continue to be valid and enforceable.
-
-14.4 You acknowledge and agree that each member of the group of companies of which Google is the parent shall be third party beneficiaries to the License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of the License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to the License Agreement.
-
-14.5 EXPORT RESTRICTIONS. THE SDK IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE SDK. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
-
-14.6 The License Agreement may not be assigned or transferred by you without the prior written approval of Google, and any attempted assignment without such approval will be void. You shall not delegate your responsibilities or obligations under the License Agreement without the prior written approval of Google.
-
-14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
-
-June 2014.
-    
-Do you accept the license 'android-sdk-license-5be876d5' [y/n]: y
-
-Installing Archives:
-  Preparing to install archives
-  Downloading SDK Platform Android 6.0, API 23, revision 1
-  Installing SDK Platform Android 6.0, API 23, revision 1
-  Unzipping SDK Platform Android 6.0, API 23, revision 1 (20%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (21%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (22%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (23%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (24%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (25%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (27%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (28%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (29%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (30%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (31%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (32%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (33%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (34%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (35%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (36%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (37%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (38%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (39%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (40%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (41%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (42%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (43%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (44%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (77%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (78%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (79%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (82%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (83%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (84%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (85%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (86%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (87%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (88%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (89%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (90%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (93%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (94%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (95%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (96%)  Unzipping SDK Platform Android 6.0, API 23, revision 1 (97%)    Installed SDK Platform Android 6.0, API 23, revision 1
-  Done. 1 package installed.
-
-travis_time:end:0766a652:start=1488604691300224444,finish=1488604697603047349,duration=6302822905[0Ktravis_time:start:05432b66[0K$ android-update-sdk --components=extra-android-m2repository
-Installing extra-android-m2repository
-spawn android update sdk --no-ui --all --filter extra-android-m2repository
-Refresh Sources:
-  Fetching https://dl-ssl.google.com/android/repository/addons_list-2.xml
-  Validate XML
-  Parse XML
-  Fetched Add-ons List successfully
-  Refresh Sources
-  Fetching URL: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/repository-10.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
--------------------------------
-License id: android-sdk-license-c81a61d9
-Used by: 
- - Android Support Repository, revision 44
--------------------------------
-
-Terms and Conditions
-
-This is the Android Software Development Kit License Agreement
-
-1. Introduction
-
-1.1 The Android Software Development Kit (referred to in the License Agreement as the "SDK" and specifically including the Android system files, packaged APIs, and Google APIs add-ons) is licensed to you subject to the terms of the License Agreement. The License Agreement forms a legally binding contract between you and Google in relation to your use of the SDK.
-
-1.2 "Android" means the Android software stack for devices, as made available under the Android Open Source Project, which is located at the following URL: http://source.android.com/, as updated from time to time.
-
-1.3 A "compatible implementation" means any Android device that (i) complies with the Android Compatibility Definition document, which can be found at the Android compatibility website (http://source.android.com/compatibility) and which may be updated from time to time; and (ii) successfully passes the Android Compatibility Test Suite (CTS).
-
-1.4 "Google" means Google Inc., a Delaware corporation with principal place of business at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
-
-
-2. Accepting the License Agreement
-
-2.1 In order to use the SDK, you must first agree to the License Agreement. You may not use the SDK if you do not accept the License Agreement.
-
-2.2 By clicking to accept, you hereby agree to the terms of the License Agreement.
-
-2.3 You may not use the SDK and may not accept the License Agreement if you are a person barred from receiving the SDK under the laws of the United States or other countries, including the country in which you are resident or from which you use the SDK.
-
-2.4 If you are agreeing to be bound by the License Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to the License Agreement. If you do not have the requisite authority, you may not accept the License Agreement or use the SDK on behalf of your employer or other entity.
-
-
-3. SDK License from Google
-
-3.1 Subject to the terms of the License Agreement, Google grants you a limited, worldwide, royalty-free, non-assignable, non-exclusive, and non-sublicensable license to use the SDK solely to develop applications for compatible implementations of Android.
-
-3.2 You may not use this SDK to develop applications for other platforms (including non-compatible implementations of Android) or to develop another SDK. You are of course free to develop applications for other platforms, including non-compatible implementations of Android, provided that this SDK is not used for that purpose.
-
-3.3 You agree that Google or third parties own all legal right, title and interest in and to the SDK, including any Intellectual Property Rights that subsist in the SDK. "Intellectual Property Rights" means any and all rights under patent law, copyright law, trade secret law, trademark law, and any and all other proprietary rights. Google reserves all rights not expressly granted to you.
-
-3.4 You may not use the SDK for any purpose not expressly permitted by the License Agreement.  Except to the extent required by applicable third party licenses, you may not: (a) copy (except for backup purposes), modify, adapt, redistribute, decompile, reverse engineer, disassemble, or create derivative works of the SDK or any part of the SDK; or (b) load any part of the SDK onto a mobile handset or any other hardware device except a personal computer, combine any part of the SDK with other software, or distribute any software or device incorporating a part of the SDK.
-
-3.5 Use, reproduction and distribution of components of the SDK licensed under an open source software license are governed solely by the terms of that open source software license and not the License Agreement.
-
-3.6 You agree that the form and nature of the SDK that Google provides may change without prior notice to you and that future versions of the SDK may be incompatible with applications developed on previous versions of the SDK. You agree that Google may stop (permanently or temporarily) providing the SDK (or any features within the SDK) to you or to users generally at Google's sole discretion, without prior notice to you.
-
-3.7 Nothing in the License Agreement gives you a right to use any of Google's trade names, trademarks, service marks, logos, domain names, or other distinctive brand features.
-
-3.8 You agree that you will not remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) that may be affixed to or contained within the SDK.
-
-
-4. Use of the SDK by You
-
-4.1 Google agrees that it obtains no right, title or interest from you (or your licensors) under the License Agreement in or to any software applications that you develop using the SDK, including any intellectual property rights that subsist in those applications.
-
-4.2 You agree to use the SDK and write applications only for purposes that are permitted by (a) the License Agreement and (b) any applicable law, regulation or generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of data or software to and from the United States or other relevant countries).
-
-4.3 You agree that if you use the SDK to develop applications for general public users, you will protect the privacy and legal rights of those users. If the users provide you with user names, passwords, or other login information or personal information, you must make the users aware that the information will be available to your application, and you must provide legally adequate privacy notice and protection for those users. If your application stores personal or sensitive information provided by users, it must do so securely. If the user provides your application with Google Account information, your application may only use that information to access the user's Google Account when, and for the limited purposes for which, the user has given you permission to do so.
-
-4.4 You agree that you will not engage in any activity with the SDK, including the development or distribution of an application, that interferes with, disrupts, damages, or accesses in an unauthorized manner the servers, networks, or other properties or services of any third party including, but not limited to, Google or any mobile communications carrier.
-
-4.5 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any data, content, or resources that you create, transmit or display through Android and/or applications for Android, and for the consequences of your actions (including any loss or damage which Google may suffer) by doing so.
-
-4.6 You agree that you are solely responsible for (and that Google has no responsibility to you or to any third party for) any breach of your obligations under the License Agreement, any applicable third party contract or Terms of Service, or any applicable law or regulation, and for the consequences (including any loss or damage which Google or any third party may suffer) of any such breach.
-
-5. Your Developer Credentials
-
-5.1 You agree that you are responsible for maintaining the confidentiality of any developer credentials that may be issued to you by Google or which you may choose yourself and that you will be solely responsible for all applications that are developed under your developer credentials.
-
-6. Privacy and Information
-
-6.1 In order to continually innovate and improve the SDK, Google may collect certain usage statistics from the software including but not limited to a unique identifier, associated IP address, version number of the software, and information on which tools and/or services in the SDK are being used and how they are being used. Before any of this information is collected, the SDK will notify you and seek your consent. If you withhold consent, the information will not be collected.
-
-6.2 The data collected is examined in the aggregate to improve the SDK and is maintained in accordance with Google's Privacy Policy.
-
-
-7. Third Party Applications
-
-7.1 If you use the SDK to run applications developed by a third party or that access data, content or resources provided by a third party, you agree that Google is not responsible for those applications, data, content, or resources. You understand that all data, content or resources which you may access through such third party applications are the sole responsibility of the person from which they originated and that Google is not liable for any loss or damage that you may experience as a result of the use or access of any of those third party applications, data, content, or resources.
-
-7.2 You should be aware the data, content, and resources presented to you through such a third party application may be protected by intellectual property rights which are owned by the providers (or by other persons or companies on their behalf). You may not modify, rent, lease, loan, sell, distribute or create derivative works based on these data, content, or resources (either in whole or in part) unless you have been specifically given permission to do so by the relevant owners.
-
-7.3 You acknowledge that your use of such third party applications, data, content, or resources may be subject to separate terms between you and the relevant third party. In that case, the License Agreement does not affect your legal relationship with these third parties.
-
-
-8. Using Android APIs
-
-8.1 Google Data APIs
-
-8.1.1 If you use any API to retrieve data from Google, you acknowledge that the data may be protected by intellectual property rights which are owned by Google or those parties that provide the data (or by other persons or companies on their behalf). Your use of any such API may be subject to additional Terms of Service. You may not modify, rent, lease, loan, sell, distribute or create derivative works based on this data (either in whole or in part) unless allowed by the relevant Terms of Service.
-
-8.1.2 If you use any API to retrieve a user's data from Google, you acknowledge and agree that you shall retrieve data only with the user's explicit consent and only when, and for the limited purposes for which, the user has given you permission to do so.
-
-
-9. Terminating the License Agreement
-
-9.1 The License Agreement will continue to apply until terminated by either you or Google as set out below.
-
-9.2 If you want to terminate the License Agreement, you may do so by ceasing your use of the SDK and any relevant developer credentials.
-
-9.3 Google may at any time, terminate the License Agreement with you if:
-(A) you have breached any provision of the License Agreement; or
-(B) Google is required to do so by law; or
-(C) the partner with whom Google offered certain parts of SDK (such as APIs) to you has terminated its relationship with Google or ceased to offer certain parts of the SDK to you; or
-(D) Google decides to no longer provide the SDK or certain parts of the SDK to users in the country in which you are resident or from which you use the service, or the provision of the SDK or certain SDK services to you by Google is, in Google's sole discretion, no longer commercially viable.
-
-9.4 When the License Agreement comes to an end, all of the legal rights, obligations and liabilities that you and Google have benefited from, been subject to (or which have accrued over time whilst the License Agreement has been in force) or which are expressed to continue indefinitely, shall be unaffected by this cessation, and the provisions of paragraph 14.7 shall continue to apply to such rights, obligations and liabilities indefinitely.
-
-
-10. DISCLAIMER OF WARRANTIES
-
-10.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SDK IS AT YOUR SOLE RISK AND THAT THE SDK IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND FROM GOOGLE.
-
-10.2 YOUR USE OF THE SDK AND ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SDK IS AT YOUR OWN DISCRETION AND RISK AND YOU ARE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM SUCH USE.
-
-10.3 GOOGLE FURTHER EXPRESSLY DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
-
-
-11. LIMITATION OF LIABILITY
-
-11.1 YOU EXPRESSLY UNDERSTAND AND AGREE THAT GOOGLE, ITS SUBSIDIARIES AND AFFILIATES, AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES THAT MAY BE INCURRED BY YOU, INCLUDING ANY LOSS OF DATA, WHETHER OR NOT GOOGLE OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES ARISING.
-
-
-12. Indemnification
-
-12.1 To the maximum extent permitted by law, you agree to defend, indemnify and hold harmless Google, its affiliates and their respective directors, officers, employees and agents from and against any and all claims, actions, suits or proceedings, as well as any and all losses, liabilities, damages, costs and expenses (including reasonable attorneys fees) arising out of or accruing from (a) your use of the SDK, (b) any application you develop on the SDK that infringes any copyright, trademark, trade secret, trade dress, patent or other intellectual property right of any person or defames any person or violates their rights of publicity or privacy, and (c) any non-compliance by you with the License Agreement.
-
-
-13. Changes to the License Agreement
-
-13.1 Google may make changes to the License Agreement as it distributes new versions of the SDK. When these changes are made, Google will make a new version of the License Agreement available on the website where the SDK is made available.
-
-
-14. General Legal Terms
-
-14.1 The License Agreement constitutes the whole legal agreement between you and Google and governs your use of the SDK (excluding any services which Google may provide to you under a separate written agreement), and completely replaces any prior agreements between you and Google in relation to the SDK.
-
-14.2 You agree that if Google does not exercise or enforce any legal right or remedy which is contained in the License Agreement (or which Google has the benefit of under any applicable law), this will not be taken to be a formal waiver of Google's rights and that those rights or remedies will still be available to Google.
-
-14.3 If any court of law, having the jurisdiction to decide on this matter, rules that any provision of the License Agreement is invalid, then that provision will be removed from the License Agreement without affecting the rest of the License Agreement. The remaining provisions of the License Agreement will continue to be valid and enforceable.
-
-14.4 You acknowledge and agree that each member of the group of companies of which Google is the parent shall be third party beneficiaries to the License Agreement and that such other companies shall be entitled to directly enforce, and rely upon, any provision of the License Agreement that confers a benefit on (or rights in favor of) them. Other than this, no other person or company shall be third party beneficiaries to the License Agreement.
-
-14.5 EXPORT RESTRICTIONS. THE SDK IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL DOMESTIC AND INTERNATIONAL EXPORT LAWS AND REGULATIONS THAT APPLY TO THE SDK. THESE LAWS INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE.
-
-14.6 The rights granted in the License Agreement may not be assigned or transferred by either you or Google without the prior written approval of the other party. Neither you nor Google shall be permitted to delegate their responsibilities or obligations under the License Agreement without the prior written approval of the other party.
-
-14.7 The License Agreement, and your relationship with Google under the License Agreement, shall be governed by the laws of the State of California without regard to its conflict of laws provisions. You and Google agree to submit to the exclusive jurisdiction of the courts located within the county of Santa Clara, California to resolve any legal matter arising from the License Agreement. Notwithstanding this, you agree that Google shall still be allowed to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
-
-
-November 20, 2015
-Do you accept the license 'android-sdk-license-c81a61d9' [y/n]: y
-
-Installing Archives:
-  Preparing to install archives
-  Downloading Android Support Repository, revision 44
-     (33%, 53741 KiB/s, 3 seconds left)     (47%, 50809 KiB/s, 3 seconds left)     (55%, 44263 KiB/s, 3 seconds left)     (75%, 48745 KiB/s, 1 seconds left)  Installing Android Support Repository, revision 44
-  Unzipping Android Support Repository, revision 44 (1%)  Unzipping Android Support Repository, revision 44 (2%)  Unzipping Android Support Repository, revision 44 (3%)  Unzipping Android Support Repository, revision 44 (4%)  Unzipping Android Support Repository, revision 44 (5%)  Unzipping Android Support Repository, revision 44 (6%)  Unzipping Android Support Repository, revision 44 (7%)  Unzipping Android Support Repository, revision 44 (8%)  Unzipping Android Support Repository, revision 44 (9%)  Unzipping Android Support Repository, revision 44 (10%)  Unzipping Android Support Repository, revision 44 (11%)  Unzipping Android Support Repository, revision 44 (12%)  Unzipping Android Support Repository, revision 44 (13%)  Unzipping Android Support Repository, revision 44 (14%)  Unzipping Android Support Repository, revision 44 (15%)  Unzipping Android Support Repository, revision 44 (16%)  Unzipping Android Support Repository, revision 44 (17%)  Unzipping Android Support Repository, revision 44 (18%)  Unzipping Android Support Repository, revision 44 (19%)  Unzipping Android Support Repository, revision 44 (20%)  Unzipping Android Support Repository, revision 44 (21%)  Unzipping Android Support Repository, revision 44 (22%)  Unzipping Android Support Repository, revision 44 (23%)  Unzipping Android Support Repository, revision 44 (24%)  Unzipping Android Support Repository, revision 44 (25%)  Unzipping Android Support Repository, revision 44 (26%)  Unzipping Android Support Repository, revision 44 (27%)  Unzipping Android Support Repository, revision 44 (28%)  Unzipping Android Support Repository, revision 44 (29%)  Unzipping Android Support Repository, revision 44 (30%)  Unzipping Android Support Repository, revision 44 (31%)  Unzipping Android Support Repository, revision 44 (32%)  Unzipping Android Support Repository, revision 44 (33%)  Unzipping Android Support Repository, revision 44 (34%)  Unzipping Android Support Repository, revision 44 (35%)  Unzipping Android Support Repository, revision 44 (36%)  Unzipping Android Support Repository, revision 44 (37%)  Unzipping Android Support Repository, revision 44 (38%)  Unzipping Android Support Repository, revision 44 (39%)  Unzipping Android Support Repository, revision 44 (40%)  Unzipping Android Support Repository, revision 44 (41%)  Unzipping Android Support Repository, revision 44 (42%)  Unzipping Android Support Repository, revision 44 (43%)  Unzipping Android Support Repository, revision 44 (44%)  Unzipping Android Support Repository, revision 44 (45%)  Unzipping Android Support Repository, revision 44 (46%)  Unzipping Android Support Repository, revision 44 (47%)  Unzipping Android Support Repository, revision 44 (48%)  Unzipping Android Support Repository, revision 44 (49%)  Unzipping Android Support Repository, revision 44 (50%)  Unzipping Android Support Repository, revision 44 (51%)  Unzipping Android Support Repository, revision 44 (52%)  Unzipping Android Support Repository, revision 44 (53%)  Unzipping Android Support Repository, revision 44 (54%)  Unzipping Android Support Repository, revision 44 (55%)  Unzipping Android Support Repository, revision 44 (56%)  Unzipping Android Support Repository, revision 44 (57%)  Unzipping Android Support Repository, revision 44 (58%)  Unzipping Android Support Repository, revision 44 (59%)  Unzipping Android Support Repository, revision 44 (60%)  Unzipping Android Support Repository, revision 44 (61%)  Unzipping Android Support Repository, revision 44 (62%)  Unzipping Android Support Repository, revision 44 (63%)  Unzipping Android Support Repository, revision 44 (64%)  Unzipping Android Support Repository, revision 44 (65%)  Unzipping Android Support Repository, revision 44 (66%)  Unzipping Android Support Repository, revision 44 (67%)  Unzipping Android Support Repository, revision 44 (68%)  Unzipping Android Support Repository, revision 44 (69%)  Unzipping Android Support Repository, revision 44 (70%)  Unzipping Android Support Repository, revision 44 (71%)  Unzipping Android Support Repository, revision 44 (72%)  Unzipping Android Support Repository, revision 44 (73%)  Unzipping Android Support Repository, revision 44 (74%)  Unzipping Android Support Repository, revision 44 (75%)  Unzipping Android Support Repository, revision 44 (76%)  Unzipping Android Support Repository, revision 44 (77%)  Unzipping Android Support Repository, revision 44 (78%)  Unzipping Android Support Repository, revision 44 (79%)  Unzipping Android Support Repository, revision 44 (80%)  Unzipping Android Support Repository, revision 44 (81%)  Unzipping Android Support Repository, revision 44 (82%)  Unzipping Android Support Repository, revision 44 (83%)  Unzipping Android Support Repository, revision 44 (84%)  Unzipping Android Support Repository, revision 44 (85%)  Unzipping Android Support Repository, revision 44 (86%)  Unzipping Android Support Repository, revision 44 (87%)  Unzipping Android Support Repository, revision 44 (88%)  Unzipping Android Support Repository, revision 44 (89%)  Unzipping Android Support Repository, revision 44 (90%)  Unzipping Android Support Repository, revision 44 (91%)  Unzipping Android Support Repository, revision 44 (92%)  Unzipping Android Support Repository, revision 44 (93%)  Unzipping Android Support Repository, revision 44 (94%)  Unzipping Android Support Repository, revision 44 (95%)  Unzipping Android Support Repository, revision 44 (96%)  Unzipping Android Support Repository, revision 44 (97%)  Unzipping Android Support Repository, revision 44 (98%)  Unzipping Android Support Repository, revision 44 (99%)    Installed Android Support Repository, revision 44
-  Done. 1 package installed.
-
-travis_time:end:05432b66:start=1488604697607716843,finish=1488604710410990347,duration=12803273504[0Ktravis_time:start:0b781930[0K$ android-update-sdk --components=extra-android-support
-Installing extra-android-support
-spawn android update sdk --no-ui --all --filter extra-android-support
-Refresh Sources:
-  Fetching https://dl-ssl.google.com/android/repository/addons_list-2.xml
-  Validate XML
-  Parse XML
-  Fetched Add-ons List successfully
-  Refresh Sources
-  Fetching URL: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/repository-10.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/repository-10.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/glass/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/extras/intel/addon.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-wear/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/android-tv/sys-img.xml
-  Fetching URL: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Validate XML: https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-  Parse XML:    https://dl-ssl.google.com/android/repository/sys-img/google_apis/sys-img.xml
-Error: Ignoring unknown package filter 'extra-android-support'
-Warning: The package filter removed all packages. There is nothing to install.
-         Please consider trying to update again without a package filter.
-
-travis_time:end:0b781930:start=1488604710416083209,finish=1488604711712690314,duration=1296607105[0Ktravis_fold:end:android.install[0K$ java -Xmx32m -version
-java version "1.7.0_76"
-Java(TM) SE Runtime Environment (build 1.7.0_76-b13)
-Java HotSpot(TM) 64-Bit Server VM (build 24.76-b04, mixed mode)
-$ javac -J-Xmx32m -version
-javac 1.7.0_76
-travis_fold:start:before_script.1[0Ktravis_time:start:00e074f6[0K$ . $HOME/.nvm/nvm.sh
-
-travis_time:end:00e074f6:start=1488604712141534575,finish=1488604712305580453,duration=164045878[0Ktravis_fold:end:before_script.1[0Ktravis_fold:start:before_script.2[0Ktravis_time:start:0fb4691e[0K$ nvm install 4
-                                                                           0.0%                                                                           0.0%                                                                           0.0%                                                                           0.0%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.5%                                                                           0.5%                                                                           0.5%                                                                           0.6%                                                                           0.6%                                                                           0.6%                                                                           0.7%                                                                           0.7%                                                                           0.7%                                                                           0.8%                                                                           0.8%                                                                           0.8%                                                                           0.9%                                                                           0.9%                                                                           0.9%                                                                           1.0%                                                                           1.0%                                                                           1.0%                                                                           1.0%                                                                           1.1%                                                                           1.1%                                                                           1.1%                                                                           1.2%                                                                           1.2%                                                                           1.2%                                                                           1.2%                                                                           1.3%                                                                           1.3%                                                                           1.3%                                                                           1.4%#                                                                          1.4%#                                                                          1.4%#                                                                          1.4%#                                                                          1.5%#                                                                          1.5%#                                                                          1.5%#                                                                          1.6%#                                                                          1.6%#                                                                          1.6%#                                                                          1.6%#                                                                          1.7%#                                                                          1.7%#                                                                          1.7%#                                                                          1.8%#                                                                          1.9%#                                                                          1.9%#                                                                          2.0%#                                                                          2.0%#                                                                          2.0%#                                                                          2.2%#                                                                          2.2%#                                                                          2.2%#                                                                          2.3%#                                                                          2.3%#                                                                          2.4%#                                                                          2.6%#                                                                          2.6%#                                                                          2.7%##                                                                         2.8%##                                                                         2.8%##                                                                         2.8%##                                                                         3.0%##                                                                         3.0%##                                                                         3.0%##                                                                         3.0%##                                                                         3.1%##                                                                         3.1%##                                                                         3.2%##                                                                         3.4%##                                                                         3.4%##                                                                         3.5%##                                                                         3.5%##                                                                         3.5%##                                                                         3.6%##                                                                         3.6%##                                                                         3.6%##                                                                         3.6%##                                                                         3.8%##                                                                         3.8%##                                                                         3.9%##                                                                         3.9%##                                                                         4.0%##                                                                         4.0%##                                                                         4.0%###                                                                        4.2%###                                                                        4.2%###                                                                        4.2%###                                                                        4.3%###                                                                        4.4%###                                                                        4.4%###                                                                        4.4%###                                                                        4.6%###                                                                        4.6%###                                                                        4.7%###                                                                        4.7%###                                                                        4.8%###                                                                        4.8%###                                                                        5.0%###                                                                        5.1%###                                                                        5.1%###                                                                        5.1%###                                                                        5.2%###                                                                        5.2%###                                                                        5.4%###                                                                        5.5%###                                                                        5.5%###                                                                        5.5%####                                                                       5.6%####                                                                       5.8%####                                                                       5.8%####                                                                       5.8%####                                                                       5.9%####                                                                       6.1%####                                                                       6.1%####                                                                       6.1%####                                                                       6.2%####                                                                       6.3%####                                                                       6.3%####                                                                       6.3%####                                                                       6.5%####                                                                       6.6%####                                                                       6.6%####                                                                       6.6%####                                                                       6.7%####                                                                       6.9%####                                                                       6.9%#####                                                                      7.0%#####                                                                      7.0%#####                                                                      7.1%#####                                                                      7.3%#####                                                                      7.3%#####                                                                      7.3%#####                                                                      7.4%#####                                                                      7.4%#####                                                                      7.5%#####                                                                      7.7%#####                                                                      7.7%#####                                                                      7.7%#####                                                                      7.8%#####                                                                      7.8%#####                                                                      7.9%#####                                                                      7.9%#####                                                                      8.1%#####                                                                      8.2%#####                                                                      8.2%#####                                                                      8.2%######                                                                     8.3%######                                                                     8.5%######                                                                     8.5%######                                                                     8.5%######                                                                     8.6%######                                                                     8.7%######                                                                     8.7%######                                                                     8.9%######                                                                     8.9%######                                                                     9.0%######                                                                     9.0%######                                                                     9.1%######                                                                     9.3%######                                                                     9.4%######                                                                     9.4%######                                                                     9.5%######                                                                     9.7%######                                                                     9.7%#######                                                                    9.8%#######                                                                   10.0%#######                                                                   10.1%#######                                                                   10.1%#######                                                                   10.2%#######                                                                   10.4%#######                                                                   10.4%#######                                                                   10.5%#######                                                                   10.5%#######                                                                   10.6%#######                                                                   10.8%#######                                                                   10.8%#######                                                                   10.9%#######                                                                   11.0%#######                                                                   11.0%########                                                                  11.2%########                                                                  11.3%########                                                                  11.3%########                                                                  11.4%########                                                                  11.6%########                                                                  11.6%########                                                                  11.7%########                                                                  11.8%########                                                                  11.8%########                                                                  11.8%########                                                                  12.0%########                                                                  12.1%########                                                                  12.1%########                                                                  12.1%########                                                                  12.2%########                                                                  12.4%########                                                                  12.4%#########                                                                 12.5%#########                                                                 12.6%#########                                                                 12.6%#########                                                                 12.6%#########                                                                 12.8%#########                                                                 12.9%#########                                                                 12.9%#########                                                                 12.9%#########                                                                 13.0%#########                                                                 13.2%#########                                                                 13.2%#########                                                                 13.2%#########                                                                 13.3%#########                                                                 13.4%#########                                                                 13.4%#########                                                                 13.4%#########                                                                 13.6%#########                                                                 13.7%#########                                                                 13.7%#########                                                                 13.7%#########                                                                 13.9%##########                                                                14.0%##########                                                                14.0%##########                                                                14.0%##########                                                                14.1%##########                                                                14.3%##########                                                                14.3%##########                                                                14.3%##########                                                                14.4%##########                                                                14.5%##########                                                                14.5%##########                                                                14.7%##########                                                                14.7%##########                                                                14.8%##########                                                                14.9%##########                                                                15.1%##########                                                                15.1%##########                                                                15.2%##########                                                                15.2%###########                                                               15.3%###########                                                               15.5%###########                                                               15.6%###########                                                               15.6%###########                                                               15.6%###########                                                               15.7%###########                                                               15.9%###########                                                               16.0%###########                                                               16.1%###########                                                               16.1%###########                                                               16.3%###########                                                               16.3%###########                                                               16.4%###########                                                               16.5%############                                                              16.7%############                                                              16.8%############                                                              16.8%############                                                              16.9%############                                                              17.1%############                                                              17.2%############                                                              17.2%############                                                              17.4%############                                                              17.5%############                                                              17.6%############                                                              17.8%############                                                              17.9%############                                                              17.9%############                                                              18.0%#############                                                             18.2%#############                                                             18.3%#############                                                             18.4%#############                                                             18.4%#############                                                             18.6%#############                                                             18.7%#############                                                             18.8%#############                                                             19.0%#############                                                             19.0%#############                                                             19.0%#############                                                             19.1%#############                                                             19.2%#############                                                             19.4%##############                                                            19.5%##############                                                            19.6%##############                                                            19.8%##############                                                            19.9%##############                                                            20.0%##############                                                            20.0%##############                                                            20.0%##############                                                            20.2%##############                                                            20.3%##############                                                            20.4%##############                                                            20.6%##############                                                            20.7%###############                                                           20.8%###############                                                           21.0%###############                                                           21.0%###############                                                           21.1%###############                                                           21.3%###############                                                           21.4%###############                                                           21.5%###############                                                           21.7%###############                                                           21.8%###############                                                           21.9%###############                                                           22.1%###############                                                           22.2%################                                                          22.3%################                                                          22.5%################                                                          22.6%################                                                          22.6%################                                                          22.7%################                                                          22.9%################                                                          23.0%################                                                          23.1%################                                                          23.3%################                                                          23.4%################                                                          23.5%#################                                                         23.7%#################                                                         23.8%#################                                                         23.9%#################                                                         24.1%#################                                                         24.2%#################                                                         24.2%#################                                                         24.2%#################                                                         24.3%#################                                                         24.5%#################                                                         24.6%#################                                                         24.7%#################                                                         24.9%##################                                                        25.0%##################                                                        25.2%##################                                                        25.3%##################                                                        25.3%##################                                                        25.3%##################                                                        25.4%##################                                                        25.6%##################                                                        25.7%##################                                                        25.8%##################                                                        26.0%##################                                                        26.1%##################                                                        26.2%##################                                                        26.4%###################                                                       26.5%###################                                                       26.6%###################                                                       26.8%###################                                                       26.8%###################                                                       26.9%###################                                                       27.0%###################                                                       27.2%###################                                                       27.3%###################                                                       27.4%###################                                                       27.6%###################                                                       27.7%####################                                                      27.8%####################                                                      27.8%####################                                                      28.0%####################                                                      28.1%####################                                                      28.2%####################                                                      28.4%####################                                                      28.5%####################                                                      28.7%####################                                                      28.8%####################                                                      28.9%####################                                                      29.1%#####################                                                     29.2%#####################                                                     29.3%#####################                                                     29.5%#####################                                                     29.6%#####################                                                     29.7%#####################                                                     29.9%#####################                                                     30.0%#####################                                                     30.1%#####################                                                     30.3%#####################                                                     30.4%#####################                                                     30.5%######################                                                    30.7%######################                                                    30.8%######################                                                    30.9%######################                                                    31.1%######################                                                    31.2%######################                                                    31.3%######################                                                    31.5%######################                                                    31.6%######################                                                    31.7%######################                                                    31.9%#######################                                                   32.0%#######################                                                   32.1%#######################                                                   32.3%#######################                                                   32.4%#######################                                                   32.6%#######################                                                   32.7%#######################                                                   32.8%#######################                                                   33.0%#######################                                                   33.1%#######################                                                   33.2%########################                                                  33.4%########################                                                  33.5%########################                                                  33.6%########################                                                  33.8%########################                                                  33.9%########################                                                  34.0%########################                                                  34.2%########################                                                  34.3%########################                                                  34.4%########################                                                  34.6%########################                                                  34.7%#########################                                                 34.8%#########################                                                 35.0%#########################                                                 35.1%#########################                                                 35.2%#########################                                                 35.4%#########################                                                 35.5%#########################                                                 35.6%#########################                                                 35.8%#########################                                                 35.9%#########################                                                 36.0%##########################                                                36.2%##########################                                                36.3%##########################                                                36.5%##########################                                                36.6%##########################                                                36.7%##########################                                                36.9%##########################                                                37.0%##########################                                                37.1%##########################                                                37.3%##########################                                                37.4%###########################                                               37.5%###########################                                               37.7%###########################                                               37.8%###########################                                               37.9%###########################                                               38.1%###########################                                               38.2%###########################                                               38.3%###########################                                               38.5%###########################                                               38.6%###########################                                               38.7%###########################                                               38.9%############################                                              39.0%############################                                              39.1%############################                                              39.3%############################                                              39.4%############################                                              39.5%############################                                              39.7%############################                                              39.8%############################                                              39.9%############################                                              40.1%############################                                              40.2%#############################                                             40.4%#############################                                             40.5%#############################                                             40.6%#############################                                             40.8%#############################                                             40.9%#############################                                             41.0%#############################                                             41.2%#############################                                             41.3%#############################                                             41.4%#############################                                             41.6%##############################                                            41.7%##############################                                            41.8%##############################                                            42.0%##############################                                            42.1%##############################                                            42.2%##############################                                            42.4%##############################                                            42.5%##############################                                            42.6%##############################                                            42.8%##############################                                            42.9%##############################                                            43.0%###############################                                           43.2%###############################                                           43.3%###############################                                           43.4%###############################                                           43.6%###############################                                           43.7%###############################                                           43.9%###############################                                           44.0%###############################                                           44.1%###############################                                           44.3%###############################                                           44.4%################################                                          44.5%################################                                          44.7%################################                                          44.8%################################                                          44.9%################################                                          45.1%################################                                          45.2%################################                                          45.3%################################                                          45.5%################################                                          45.6%################################                                          45.7%#################################                                         45.9%#################################                                         46.0%#################################                                         46.1%#################################                                         46.3%#################################                                         46.4%#################################                                         46.5%#################################                                         46.7%#################################                                         46.8%#################################                                         46.9%#################################                                         47.1%#################################                                         47.2%##################################                                        47.3%##################################                                        47.5%##################################                                        47.6%##################################                                        47.8%##################################                                        47.9%##################################                                        48.0%##################################                                        48.2%##################################                                        48.3%##################################                                        48.4%##################################                                        48.6%###################################                                       48.7%###################################                                       48.8%###################################                                       49.0%###################################                                       49.1%###################################                                       49.2%###################################                                       49.4%###################################                                       49.5%###################################                                       49.6%###################################                                       49.8%###################################                                       49.9%####################################                                      50.0%####################################                                      50.2%####################################                                      50.3%####################################                                      50.4%####################################                                      50.6%####################################                                      50.7%####################################                                      50.8%####################################                                      51.0%####################################                                      51.1%####################################                                      51.2%####################################                                      51.4%#####################################                                     51.5%#####################################                                     51.7%#####################################                                     51.8%#####################################                                     51.9%#####################################                                     52.1%#####################################                                     52.2%#####################################                                     52.3%#####################################                                     52.5%#####################################                                     52.6%#####################################                                     52.7%######################################                                    52.9%######################################                                    53.0%######################################                                    53.1%######################################                                    53.3%######################################                                    53.4%######################################                                    53.5%######################################                                    53.7%######################################                                    53.8%######################################                                    53.9%######################################                                    54.1%#######################################                                   54.2%#######################################                                   54.3%#######################################                                   54.5%#######################################                                   54.6%#######################################                                   54.7%#######################################                                   54.9%#######################################                                   55.0%#######################################                                   55.2%#######################################                                   55.3%#######################################                                   55.4%#######################################                                   55.6%########################################                                  55.7%########################################                                  55.8%########################################                                  56.0%########################################                                  56.1%########################################                                  56.2%########################################                                  56.4%########################################                                  56.5%########################################                                  56.6%########################################                                  56.8%########################################                                  56.9%#########################################                                 57.0%#########################################                                 57.2%#########################################                                 57.3%#########################################                                 57.4%#########################################                                 57.6%#########################################                                 57.7%#########################################                                 57.8%#########################################                                 58.0%#########################################                                 58.1%#########################################                                 58.2%##########################################                                58.4%##########################################                                58.5%##########################################                                58.6%##########################################                                58.8%##########################################                                58.9%##########################################                                59.1%##########################################                                59.2%##########################################                                59.3%##########################################                                59.5%##########################################                                59.6%###########################################                               59.7%###########################################                               59.9%###########################################                               60.0%###########################################                               60.1%###########################################                               60.3%###########################################                               60.4%###########################################                               60.5%###########################################                               60.7%###########################################                               60.8%###########################################                               60.9%###########################################                               61.1%############################################                              61.2%############################################                              61.3%############################################                              61.5%############################################                              61.6%############################################                              61.7%############################################                              61.9%############################################                              62.0%############################################                              62.1%############################################                              62.3%############################################                              62.4%#############################################                             62.5%#############################################                             62.7%#############################################                             62.8%#############################################                             63.0%#############################################                             63.1%#############################################                             63.2%#############################################                             63.4%#############################################                             63.5%#############################################                             63.6%#############################################                             63.8%##############################################                            63.9%##############################################                            64.0%##############################################                            64.2%##############################################                            64.3%##############################################                            64.4%##############################################                            64.6%##############################################                            64.7%##############################################                            64.8%##############################################                            65.0%##############################################                            65.1%##############################################                            65.2%###############################################                           65.4%###############################################                           65.5%###############################################                           65.6%###############################################                           65.8%###############################################                           65.9%###############################################                           66.0%###############################################                           66.2%###############################################                           66.3%###############################################                           66.4%###############################################                           66.6%################################################                          66.7%################################################                          66.9%################################################                          67.0%################################################                          67.1%################################################                          67.3%################################################                          67.4%################################################                          67.5%################################################                          67.7%################################################                          67.8%################################################                          67.9%#################################################                         68.1%#################################################                         68.2%#################################################                         68.3%#################################################                         68.5%#################################################                         68.6%#################################################                         68.7%#################################################                         68.9%#################################################                         69.0%#################################################                         69.1%#################################################                         69.3%#################################################                         69.4%##################################################                        69.5%##################################################                        69.7%##################################################                        69.8%##################################################                        69.9%##################################################                        70.1%##################################################                        70.2%##################################################                        70.4%##################################################                        70.5%##################################################                        70.6%##################################################                        70.8%###################################################                       70.9%###################################################                       71.0%###################################################                       71.2%###################################################                       71.3%###################################################                       71.4%###################################################                       71.6%###################################################                       71.7%###################################################                       71.8%###################################################                       72.0%###################################################                       72.1%####################################################                      72.2%####################################################                      72.4%####################################################                      72.5%####################################################                      72.6%####################################################                      72.8%####################################################                      72.9%####################################################                      73.0%####################################################                      73.2%####################################################                      73.3%####################################################                      73.4%####################################################                      73.6%#####################################################                     73.7%#####################################################                     73.8%#####################################################                     74.0%#####################################################                     74.1%#####################################################                     74.3%#####################################################                     74.4%#####################################################                     74.5%#####################################################                     74.7%#####################################################                     74.8%#####################################################                     74.9%######################################################                    75.1%######################################################                    75.2%######################################################                    75.3%######################################################                    75.5%######################################################                    75.6%######################################################                    75.7%######################################################                    75.9%######################################################                    76.0%######################################################                    76.1%######################################################                    76.3%#######################################################                   76.4%#######################################################                   76.5%#######################################################                   76.7%#######################################################                   76.8%#######################################################                   76.9%#######################################################                   77.1%#######################################################                   77.2%#######################################################                   77.3%#######################################################                   77.5%#######################################################                   77.6%#######################################################                   77.7%########################################################                  77.9%########################################################                  78.0%########################################################                  78.2%########################################################                  78.3%########################################################                  78.4%########################################################                  78.6%########################################################                  78.7%########################################################                  78.8%########################################################                  79.0%########################################################                  79.1%#########################################################                 79.2%#########################################################                 79.4%#########################################################                 79.5%#########################################################                 79.6%#########################################################                 79.8%#########################################################                 79.9%#########################################################                 80.0%#########################################################                 80.2%#########################################################                 80.3%#########################################################                 80.4%##########################################################                80.6%##########################################################                80.7%##########################################################                80.8%##########################################################                81.0%##########################################################                81.1%##########################################################                81.2%##########################################################                81.4%##########################################################                81.5%##########################################################                81.7%##########################################################                81.8%##########################################################                81.9%###########################################################               82.1%###########################################################               82.2%###########################################################               82.3%###########################################################               82.5%###########################################################               82.6%###########################################################               82.7%###########################################################               82.9%###########################################################               83.0%###########################################################               83.1%###########################################################               83.3%############################################################              83.4%############################################################              83.5%############################################################              83.7%############################################################              83.8%############################################################              83.9%############################################################              84.1%############################################################              84.2%############################################################              84.3%############################################################              84.5%############################################################              84.6%#############################################################             84.7%#############################################################             84.9%#############################################################             85.0%#############################################################             85.1%#############################################################             85.3%#############################################################             85.4%#############################################################             85.6%#############################################################             85.7%#############################################################             85.8%#############################################################             86.0%#############################################################             86.1%##############################################################            86.2%##############################################################            86.4%##############################################################            86.5%##############################################################            86.6%##############################################################            86.8%##############################################################            86.9%##############################################################            87.0%##############################################################            87.2%##############################################################            87.3%##############################################################            87.4%###############################################################           87.6%###############################################################           87.7%###############################################################           87.8%###############################################################           88.0%###############################################################           88.1%###############################################################           88.2%###############################################################           88.4%###############################################################           88.5%###############################################################           88.6%###############################################################           88.8%################################################################          88.9%################################################################          89.0%################################################################          89.2%################################################################          89.3%################################################################          89.5%################################################################          89.6%################################################################          89.7%################################################################          89.9%################################################################          90.0%################################################################          90.1%################################################################          90.3%#################################################################         90.4%#################################################################         90.5%#################################################################         90.7%#################################################################         90.8%#################################################################         90.9%#################################################################         91.1%#################################################################         91.2%#################################################################         91.3%#################################################################         91.5%#################################################################         91.6%##################################################################        91.7%##################################################################        91.9%##################################################################        92.0%##################################################################        92.1%##################################################################        92.3%##################################################################        92.4%##################################################################        92.5%##################################################################        92.7%##################################################################        92.8%##################################################################        92.9%###################################################################       93.1%###################################################################       93.2%###################################################################       93.4%###################################################################       93.5%###################################################################       93.6%###################################################################       93.8%###################################################################       93.9%###################################################################       94.0%###################################################################       94.2%###################################################################       94.3%###################################################################       94.4%####################################################################      94.6%####################################################################      94.7%####################################################################      94.8%####################################################################      95.0%####################################################################      95.1%####################################################################      95.2%####################################################################      95.4%####################################################################      95.5%####################################################################      95.6%####################################################################      95.8%#####################################################################     95.9%#####################################################################     96.0%#####################################################################     96.2%#####################################################################     96.3%#####################################################################     96.4%#####################################################################     96.6%#####################################################################     96.7%#####################################################################     96.9%#####################################################################     97.0%#####################################################################     97.1%######################################################################    97.3%######################################################################    97.4%######################################################################    97.5%######################################################################    97.7%######################################################################    97.8%######################################################################    97.9%######################################################################    98.1%######################################################################    98.2%######################################################################    98.3%######################################################################    98.5%######################################################################    98.6%#######################################################################   98.7%#######################################################################   98.9%#######################################################################   99.0%#######################################################################   99.1%#######################################################################   99.3%#######################################################################   99.4%#######################################################################   99.5%#######################################################################   99.7%#######################################################################   99.8%#######################################################################   99.9%######################################################################## 100.0%######################################################################## 100.0%######################################################################## 100.0%
-Checksums empty
-Now using node v4.8.0
-
-travis_time:end:0fb4691e:start=1488604712310368637,finish=1488604713336446787,duration=1026078150[0Ktravis_fold:end:before_script.2[0Ktravis_fold:start:before_script.3[0Ktravis_time:start:1f38c267[0K$ nvm use 4
-Now using node v4.8.0
-
-travis_time:end:1f38c267:start=1488604713341661101,finish=1488604713444304577,duration=102643476[0Ktravis_fold:end:before_script.3[0Ktravis_fold:start:before_script.4[0Ktravis_time:start:0d90c85d[0K$ npm install
--[0G\[0G|[0G/[0G-[0G\[0G|[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G-[0G\[0G|[0G[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mdeprecated[0m node-uuid@1.4.7: use uuid module instead
-[0m/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G-[0G\[0G|[0G/[0G-[0G-[0G\[0G[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mdeprecated[0m tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
-[0m|[0G[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mdeprecated[0m win-spawn@2.0.0: use [cross-spawn](https://github.com/IndigoUnited/node-cross-spawn) or [cross-spawn-async](https://github.com/IndigoUnited/node-cross-spawn-async) instead.
-[0m/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G-[0G 
-> spawn-sync@1.0.13 postinstall /home/travis/build/macacajs/macaca-android/node_modules/pre-commit/node_modules/cross-spawn/node_modules/spawn-sync
-> node postinstall
-
-\[0G|[0G/[0G-[0G\[0G|[0G/[0G-[0G 
-> pre-commit@1.1.1 install /home/travis/build/macacajs/macaca-android/node_modules/pre-commit
-> node install.js
-
-\[0G-[0G\[0G|[0G/[0G-[0G\[0G
-> uiautomator-client@1.1.2 install /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client
-> node ./scripts/build.js
-
-JAVA_HOME is set to /usr/lib/jvm/java-7-oracle
-Added file
-./build.xml
-Buildfile: /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client/build.xml
--check-env:
-[checkenv] Android SDK Tools Revision 24.0.2
-[checkenv] Installed at /usr/local/android-sdk
--build-setup:
-[getbuildtools] Using la[secure] Build Tools: 22.0.1
-[echo] Resolving Build Target for uiautomator-bootstrap...
-[getuitarget] Project Target:   Android 6.0
-[getuitarget] API level:        23
-[echo] ----------
-[echo] Creating output directories if needed...
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client/bin
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client/bin/classes
--pre-compile:
-compile:
-
-[javac] Compiling 38 source files to /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client/bin/classes
-[javac] Note: Some input files use unchecked or unsafe operations.
-[javac] Note: Recompile with -Xlint:unchecked for details.
--post-compile:
--dex:
-[dex] input: /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client/bin/classes
-
-[dex] Converting compiled files and external libraries into /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client/bin/classes.dex...
-
--post-dex:
--jar:
-[jar] Building jar: /home/travis/build/macacajs/macaca-android/node_modules/uiautomator-client/bin/uiautomator-bootstrap.jar
-
--post-jar:
-build:
-BUILD SUCCESSFUL
-Total time: 2 seconds
-uiautomator-bootstrap build success!
-
-> android-unicode@1.0.11 install /home/travis/build/macacajs/macaca-android/node_modules/android-unicode
-> node ./script/build.js
-
-JAVA_HOME is set to /usr/lib/jvm/java-7-oracle
-Buildfile: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/build.xml
--set-mode-check:
--set-debug-files:
--check-env:
-[checkenv] Android SDK Tools Revision 24.0.2
-[checkenv] Installed at /usr/local/android-sdk
--setup:
-[echo] Project Name: android_unicode_ime
-[gettype] Project Type: Application
--set-debug-mode:
--debug-obfuscation-check:
-
--pre-build:
--build-setup:
-[getbuildtools] Using la[secure] Build Tools: 22.0.1
-[echo] Resolving Build Target for android_unicode_ime...
-[gettarget] Project Target:   Android 6.0
-[gettarget] API level:        23
-[echo] ----------
-[echo] Creating output directories if needed...
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/libs
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/rsObj
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/rsLibs
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/gen
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/classes
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/dexedLibs
-[echo] ----------
-[echo] Resolving Dependencies for android_unicode_ime...
-[dependency] Library dependencies:
-[dependency] No Libraries
-[dependency]
-[dependency] ------------------
-
-[echo] ----------
-[echo] Building Libraries with 'debug'...
-
-[subant] No sub-builds to iterate on
-
--code-gen:
-
-[mergemanifest] Merging AndroidManifest files into one.
-
-[mergemanifest] Manifest merger disabled. Using project manifest only.
-[echo] Handling aidl files...
-[aidl] No AIDL files to compile.
-[echo] ----------
-
-[echo] Handling RenderScript files...
-
-[echo] ----------
-
-[echo] Handling Resources...
-
-[aapt] Generating resource IDs...
-
-[echo] ----------
-[echo] Handling BuildConfig class...
-
-[buildconfig] Generating BuildConfig class.
-
--pre-compile:
--compile:
-[javac] Compiling 11 source files to /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/classes
-[javac] Note: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/src/macaca/unicode/ime/charsetUtils/CharsetProvider.java uses unchecked or unsafe operations.
-[javac] Note: Recompile with -Xlint:unchecked for details.
-
--post-compile:
-
--obfuscate:
--dex:
-
-[dex] input: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/classes
-
-[dex] Converting compiled files and external libraries into /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/classes.dex...
--crunch:
-[crunch] Crunching PNG Files in source dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/res
-[crunch] To destination dir: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/res/mipmap-hdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-hdpi/ic_launcher.png
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-hdpi/ic_launcher.png: 0% size of source)
-
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/res/mipmap-mdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-mdpi/ic_launcher.png
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-mdpi/ic_launcher.png: 0% size of source)
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/res/mipmap-xhdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-xhdpi/ic_launcher.png
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-xhdpi/ic_launcher.png: 84% size of source)
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/res/mipmap-xxhdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-xxhdpi/ic_launcher.png
-
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/res/mipmap-xxhdpi/ic_launcher.png: 53% size of source)
-[crunch] Crunched 4 PNG files to update cache
-
--package-resources:
-
-[aapt] Creating full resource package...
-
--package:
-
-[apkbuilder] Current build type is different than previous build: forced apkbuilder run.
-
-[apkbuilder] Creating android_unicode_ime-debug-unaligned.apk and signing it with a debug key...
-
--post-package:
--do-debug:
-[zipalign] Running zip align on final apk...
-[echo] Debug Package: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/android_unicode_ime-debug.apk
-[propertyfile] Creating new property file: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/build.prop
-[propertyfile] Updating property file: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/build.prop
-[propertyfile] Updating property file: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/build.prop
-[propertyfile] Updating property file: /home/travis/build/macacajs/macaca-android/node_modules/android-unicode/bin/build.prop
--post-build:
-debug:
-BUILD SUCCESSFUL
-Total time: 3 seconds
-build success!
-
-> unlock-apk@0.1.16 install /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk
-> node ./script/build.js
-
-JAVA_HOME is set to /usr/lib/jvm/java-7-oracle
-Buildfile: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/build.xml
--set-mode-check:
--set-debug-files:
--check-env:
-[checkenv] Android SDK Tools Revision 24.0.2
-
-[checkenv] Installed at /usr/local/android-sdk
-
--setup:
-
-[echo] Project Name: unlock_apk
-
-[gettype] Project Type: Application
--set-debug-mode:
--debug-obfuscation-check:
--pre-build:
--build-setup:
-[getbuildtools] Using la[secure] Build Tools: 22.0.1
-[echo] Resolving Build Target for unlock_apk...
-[gettarget] Project Target:   Android 6.0
-
-[gettarget] API level:        23
-
-[gettarget] WARNING: No minSdkVersion value set. Application will install on all Android versions.
-[echo] ----------
-[echo] Creating output directories if needed...
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/libs
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/rsObj
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/rsLibs
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/gen
-
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/classes
-[mkdir] Created dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/dexedLibs
-
-[echo] ----------
-[echo] Resolving Dependencies for unlock_apk...
-[dependency] Library dependencies:
-[dependency] No Libraries
-[dependency]
-[dependency] ------------------
-
-[echo] ----------
-[echo] Building Libraries with 'debug'...
-
-[subant] No sub-builds to iterate on
-
--code-gen:
-
-[mergemanifest] Merging AndroidManifest files into one.
-[mergemanifest] Manifest merger disabled. Using project manifest only.
-[echo] Handling aidl files...
-[aidl] No AIDL files to compile.
-[echo] ----------
-     [echo] Handling RenderScript files...
-[echo] ----------
-[echo] Handling Resources...
-[aapt] Generating resource IDs...
-[echo] ----------
-[echo] Handling BuildConfig class...
-[buildconfig] Generating BuildConfig class.
--pre-compile:
--compile:
-[javac] Compiling 3 source files to /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/classes
-[javac] Note: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/src/xdf/android_unlock/MainActivity.java uses or overrides a deprecated API.
-[javac] Note: Recompile with -Xlint:deprecation for details.
--post-compile:
--obfuscate:
--dex:
-
-[dex] input: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/classes
-[dex] Converting compiled files and external libraries into /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/classes.dex...
-
--crunch:
-[crunch] Crunching PNG Files in source dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/res
-[crunch] To destination dir: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/res/mipmap-hdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-hdpi/ic_launcher.png
-
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-hdpi/ic_launcher.png: 0% size of source)
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/res/mipmap-mdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-mdpi/ic_launcher.png
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-mdpi/ic_launcher.png: 0% size of source)
-
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/res/mipmap-xhdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-xhdpi/ic_launcher.png
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-xhdpi/ic_launcher.png: 84% size of source)
-
-[crunch] Processing image to cache: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/res/mipmap-xxhdpi/ic_launcher.png => /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-xxhdpi/ic_launcher.png
-[crunch]   (processed image to cache entry /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/res/mipmap-xxhdpi/ic_launcher.png: 53% size of source)
-   [crunch] Crunched 4 PNG files to update cache
--package-resources:
-[aapt] Creating full resource package...
--package:
-[apkbuilder] Current build type is different than previous build: forced apkbuilder run.
-
-[apkbuilder] Creating unlock_apk-debug-unaligned.apk and signing it with a debug key...
-
--post-package:
--do-debug:
-[zipalign] Running zip align on final apk...
-[echo] Debug Package: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/unlock_apk-debug.apk
-[propertyfile] Creating new property file: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/build.prop
-
-[propertyfile] Updating property file: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/build.prop
-
-[propertyfile] Updating property file: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/build.prop
-[propertyfile] Updating property file: /home/travis/build/macacajs/macaca-android/node_modules/unlock-apk/bin/build.prop
--post-build:
-debug:
-BUILD SUCCESSFUL
-Total time: 2 seconds
-build success!
-
-> macaca-chromedriver@1.0.30 install /home/travis/build/macacajs/macaca-android/node_modules/macaca-chromedriver
-> node ./bin/macaca-chromedriver install
-
-[36m>> chromedriver cdn url: https://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip[39m
-[36m>> chromedriver local in /home/travis/build/macacajs/macaca-android/node_modules/macaca-chromedriver/exec/chromedriver[39m
-driver-base@0.1.4 node_modules/driver-base
-
-webdriver-dfn-error-code@1.0.4 node_modules/webdriver-dfn-error-code
-
-co-mocha@1.2.0 node_modules/co-mocha
-├── co@4.6.0
-└── is-generator@1.0.3
-
-should@11.2.0 node_modules/should
-├── should-format@3.0.3
-├── should-util@1.0.0
-├── should-type@1.4.0
-├── should-type-adaptors@1.0.1
-└── should-equal@1.0.1
-
-temp@0.8.3 node_modules/temp
-├── os-tmpdir@1.0.2
-└── rimraf@2.2.8
-
-mocha@3.2.0 node_modules/mocha
-├── escape-string-regexp@1.0.5
-├── diff@1.4.0
-├── browser-stdout@1.3.0
-├── growl@1.9.2
-├── json3@3.3.2
-├── commander@2.9.0 (graceful-readlink@1.0.1)
-├── supports-color@3.1.2 (has-flag@1.0.0)
-├── debug@2.2.0 (ms@0.7.1)
-├── mkdirp@0.5.1 (minimist@0.0.8)
-├── glob@7.0.5 (path-is-absolute@1.0.1, inherits@2.0.3, fs.realpath@1.0.0, once@1.4.0, inflight@1.0.6, minimatch@3.0.3)
-└── lodash.create@3.1.1 (lodash._basecreate@3.0.3, lodash._isiterateecall@3.0.9, lodash._baseassign@3.2.0)
-
-pre-commit@1.1.1 node_modules/pre-commit
-├── which@1.1.2 (is-absolute@0.1.7)
-└── cross-spawn@2.0.1 (cross-spawn-async@2.2.5, spawn-sync@1.0.13)
-
-istanbul@0.4.5 node_modules/istanbul
-├── abbrev@1.0.9
-├── async@1.5.2
-├── wordwrap@1.0.0
-├── nopt@3.0.6
-├── esprima@2.7.3
-├── supports-color@3.2.3 (has-flag@1.0.0)
-├── once@1.4.0 (wrappy@1.0.2)
-├── which@1.2.12 (isexe@1.1.2)
-├── mkdirp@0.5.1 (minimist@0.0.8)
-├── glob@5.0.15 (path-is-absolute@1.0.1, inherits@2.0.3, inflight@1.0.6, minimatch@3.0.3)
-├── resolve@1.1.7
-├── escodegen@1.8.1 (estraverse@1.9.3, esutils@2.0.2, optionator@0.8.2, source-map@0.2.0)
-├── js-yaml@3.8.2 (esprima@3.1.3, argparse@1.0.9)
-└── handlebars@4.0.6 (source-map@0.4.4, optimist@0.6.1, uglify-js@2.8.5)
-
-xlogger@1.0.6 node_modules/xlogger
-├── chalk@1.1.3 (escape-string-regexp@1.0.5, supports-color@2.0.0, ansi-styles@2.2.1, has-ansi@2.0.0, strip-ansi@3.0.1)
-└── xutil@1.0.3 (ipv4@0.0.4, node-uuid@1.4.7, detect-port@1.1.0, mkdirp@0.5.1, rimraf@2.5.4, moment@2.10.6, lodash@3.10.1)
-
-macaca-utils@0.1.9 node_modules/macaca-utils
-└── xutil@1.0.3 (ipv4@0.0.4, node-uuid@1.4.7, detect-port@1.1.0, mkdirp@0.5.1, rimraf@2.5.4, moment@2.10.6, lodash@3.10.1)
-
-macaca-adb@1.0.21 node_modules/macaca-adb
-├── commander@2.9.0 (graceful-readlink@1.0.1)
-├── chalk@1.1.3 (escape-string-regexp@1.0.5, ansi-styles@2.2.1, supports-color@2.0.0, has-ansi@2.0.0, strip-ansi@3.0.1)
-├── npm-update@1.0.5 (co-request@0.2.1)
-└── xutil@1.0.3 (ipv4@0.0.4, node-uuid@1.4.7, detect-port@1.1.0, mkdirp@0.5.1, rimraf@2.5.4, moment@2.10.6, lodash@3.10.1)
-
-jshint@2.9.4 node_modules/jshint
-├── strip-json-comments@1.0.4
-├── exit@0.1.2
-├── console-browserify@1.1.0 (date-now@0.1.4)
-├── shelljs@0.3.0
-├── minimatch@3.0.3 (brace-expansion@1.1.6)
-├── cli@1.0.1 (glob@7.1.1)
-├── htmlparser2@3.8.3 (domelementtype@1.3.0, entities@1.0.0, domhandler@2.3.0, readable-stream@1.1.14, domutils@1.5.1)
-└── lodash@3.7.0
-
-java-util@0.1.0 node_modules/java-util
-└── java-home@1.0.4 (xutil@1.0.3)
-
-uiautomator-client@1.1.2 node_modules/uiautomator-client
-├── win-spawn@2.0.0
-├── java-home@1.0.4
-├── ant-lite@1.0.2
-└── xutil@1.0.3 (ipv4@0.0.4, node-uuid@1.4.7, mkdirp@0.5.1, detect-port@1.1.0, rimraf@2.5.4, moment@2.10.6, lodash@3.10.1)
-
-android-unicode@1.0.11 node_modules/android-unicode
-└── ant-build@1.0.4 (win-spawn@2.0.0, java-home@1.0.4, ant-lite@1.0.2, xutil@1.0.3)
-
-unlock-apk@0.1.16 node_modules/unlock-apk
-└── ant-build@1.0.4 (win-spawn@2.0.0, java-home@1.0.4, ant-lite@1.0.2, xutil@1.0.3)
-
-macaca-chromedriver@1.0.30 node_modules/macaca-chromedriver
-├── adm-zip@0.4.7
-├── commander@2.9.0 (graceful-readlink@1.0.1)
-├── detect-port@1.1.0 (debug@2.6.1)
-└── request@2.69.0 (aws-sign2@0.6.0, tunnel-agent@0.4.3, forever-agent@0.6.1, oauth-sign@0.8.2, caseless@0.11.0, is-typedarray@1.0.0, stringstream@0.0.5, isstream@0.1.2, aws4@1.6.0, json-stringify-safe@5.0.1, extend@3.0.0, tough-cookie@2.2.2, node-uuid@1.4.7, qs@6.0.3, combined-stream@1.0.5, mime-types@2.1.14, hawk@3.1.3, bl@1.0.3, http-signature@1.1.1, har-validator@2.0.6, form-data@1.0.1)
-[2K
-travis_time:end:0d90c85d:start=1488604713450286283,finish=1488604745552016494,duration=32101730211[0Ktravis_fold:end:before_script.4[0Ktravis_time:start:34455018[0K$ make travis
-
-[0m[0m
-[0m  [secure][0m
-  [32m  ✓[0m[90m should be ok[0m
-
-
-[92m [0m[32m 1 passing[0m[90m (7ms)[0m
-
-=============================================================================
-Writing coverage object [/home/travis/build/macacajs/macaca-android/coverage/coverage.json]
-Writing coverage reports at [/home/travis/build/macacajs/macaca-android/coverage]
-=============================================================================
-
-=============================== Coverage summary ===============================
-[31;1mStatements   : 22.66% ( 87/384 )[0m
-[31;1mBranches     : 0% ( 0/106 )[0m
-[31;1mFunctions    : 0% ( 0/53 )[0m
-[31;1mLines        : 22.89% ( 87/380 )[0m
-================================================================================
-
-travis_time:end:34455018:start=1488604745558492824,finish=1488604748471308488,duration=2912815664[0K
-[32;1mThe command "make travis" exited with 0.[0m
-travis_fold:start:after_script[0Ktravis_time:start:09835d16[0K$ npm install coveralls@2 && cat ./coverage/lcov.info | coveralls
--[0Gcoveralls@2.11.16 node_modules/coveralls
-├── log-driver@1.2.5
-├── lcov-parse@0.0.10
-├── minimist@1.2.0
-├── js-yaml@3.6.1 (esprima@2.7.3, argparse@1.0.9)
-└── request@2.79.0 (tunnel-agent@0.4.3, aws-sign2@0.6.0, forever-agent@0.6.1, oauth-sign@0.8.2, caseless@0.11.0, is-typedarray@1.0.0, stringstream@0.0.5, aws4@1.6.0, isstream@0.1.2, json-stringify-safe@5.0.1, extend@3.0.0, uuid@3.0.1, qs@6.3.1, combined-stream@1.0.5, mime-types@2.1.14, tough-cookie@2.3.2, form-data@2.1.2, hawk@3.1.3, http-signature@1.1.1, har-validator@2.0.6)
-
-travis_time:end:09835d16:start=1488604748476133224,finish=1488604753422405276,duration=4946272052[0Ktravis_fold:end:after_script[0K
-Done. Your build exited with 0.

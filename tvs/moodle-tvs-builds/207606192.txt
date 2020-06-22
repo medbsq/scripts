@@ -1,1246 +1,0 @@
-travis_fold:start:worker_info[0K[33;1mWorker information[0m
-hostname: travis-worker-gce-org-prod4-7:45ce9706-62c4-4543-a446-ce220704816d
-version: v2.6.1-2-g9fbf704 https://github.com/travis-ci/worker/tree/9fbf704a6a755301e6b86b28a87b3f0636e502a8
-instance: testing-gce-53f63327-9cac-4929-9c7e-cb807bbe8bcd:travis-ci-nodejs-precise-1480652647
-startup: 20.925316138s
-travis_fold:end:worker_info[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
-Build language: node_js
-Build group: stable
-Build dist: precise
-Build id: 207606188
-Job id: 207606192
-travis-build version: c56b13141
-[34m[1mBuild image provisioning date and time[0m
-Fri Dec  2 04:39:02 UTC 2016
-[34m[1mOperating System Details[0m
-Distributor ID:	Ubuntu
-Description:	Ubuntu 12.04.5 LTS
-Release:	12.04
-Codename:	precise
-[34m[1mLinux Version[0m
-3.13.0-103-generic
-[34m[1mCookbooks Version[0m
-9c6cd11 https://github.com/travis-ci/travis-cookbooks/tree/9c6cd11
-[34m[1mGit version[0m
-git version 1.8.5.6
-[34m[1mbash version[0m
-GNU bash, version 4.2.25(1)-release (x86_64-pc-linux-gnu)
-Copyright (C) 2011 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-
-This is free software; you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-[34m[1mGCC version[0m
-gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
-Copyright (C) 2011 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-[34m[1mLLVM version[0m
-clang version 3.4 (tags/RELEASE_34/final)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-[34m[1mPre-installed Ruby versions[0m
-ruby-2.2.5
-[34m[1mPre-installed Node.js versions[0m
-iojs-v1.1.0
-v0.10
-v0.10.18
-v0.10.36
-v0.11.15
-v0.6.21
-v0.8.27
-[34m[1mPre-installed Go versions[0m
-1.4.2
-[34m[1mmysql --version[0m
-mysql  Ver 14.14 Distrib 5.5.53, for debian-linux-gnu (x86_64) using readline 6.2
-[34m[1mPre-installed PostgreSQL versions[0m
-9.1.24
-9.2.19
-9.3.15
-9.4.10
-9.5.5
-[34m[1mRedis version[0m
-redis-server 3.0.6
-[34m[1mriak version[0m
-2.0.2
-[34m[1mmemcached version[0m
-1.4.13
-[34m[1mMongoDB version[0m
-MongoDB 2.4.14
-[34m[1mCouchDB version[0m
-couchdb 1.6.1
-[34m[1mNeo4j version[0m
-1.9.4
-[34m[1mCassandra version[0m
-2.0.9
-[34m[1mElasticSearch version[0m
-1.4.0
-[34m[1mInstalled Sphinx versions[0m
-2.0.10
-2.1.9
-2.2.6
-[34m[1mDefault Sphinx version[0m
-2.2.6
-[34m[1mInstalled Firefox version[0m
-firefox 38.4.0esr
-[34m[1mPhantomJS version[0m
-1.9.8
-[34m[1mant -version[0m
-Apache Ant(TM) version 1.8.2 compiled on December 3 2011
-[34m[1mmvn -version[0m
-Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
-Maven home: /usr/local/maven
-Java version: 1.7.0_80, vendor: Oracle Corporation
-Java home: /usr/lib/jvm/java-7-oracle/jre
-Default locale: en, platform encoding: UTF-8
-OS name: "linux", version: "3.13.0-103-generic", arch: "amd64", family: "unix"
-travis_fold:end:system_info[0K
-travis_fold:start:fix.CVE-2015-7547[0K$ export DEBIAN_FRONTEND=noninteractive
-Reading package lists...
-Building dependency tree...
-Reading state information...
-libc6 is already the newest version.
-0 upgraded, 0 newly installed, 0 to remove and 95 not upgraded.
-travis_fold:end:fix.CVE-2015-7547[0Ktravis_fold:start:git.checkout[0Ktravis_time:start:00626ad8[0K$ git clone --depth=50 --branch=next https://github.com/pmarkert/hyperpotamus.git pmarkert/hyperpotamus
-Cloning into 'pmarkert/hyperpotamus'...
-remote: Counting objects: 1044, done.[K
-remote: Compressing objects:   0% (1/521)   [Kremote: Compressing objects:   1% (6/521)   [Kremote: Compressing objects:   2% (11/521)   [Kremote: Compressing objects:   3% (16/521)   [Kremote: Compressing objects:   4% (21/521)   [Kremote: Compressing objects:   5% (27/521)   [Kremote: Compressing objects:   6% (32/521)   [Kremote: Compressing objects:   7% (37/521)   [Kremote: Compressing objects:   8% (42/521)   [Kremote: Compressing objects:   9% (47/521)   [Kremote: Compressing objects:  10% (53/521)   [Kremote: Compressing objects:  11% (58/521)   [Kremote: Compressing objects:  12% (63/521)   [Kremote: Compressing objects:  13% (68/521)   [Kremote: Compressing objects:  14% (73/521)   [Kremote: Compressing objects:  15% (79/521)   [Kremote: Compressing objects:  16% (84/521)   [Kremote: Compressing objects:  17% (89/521)   [Kremote: Compressing objects:  18% (94/521)   [Kremote: Compressing objects:  19% (99/521)   [Kremote: Compressing objects:  20% (105/521)   [Kremote: Compressing objects:  21% (110/521)   [Kremote: Compressing objects:  22% (115/521)   [Kremote: Compressing objects:  23% (120/521)   [Kremote: Compressing objects:  24% (126/521)   [Kremote: Compressing objects:  25% (131/521)   [Kremote: Compressing objects:  26% (136/521)   [Kremote: Compressing objects:  27% (141/521)   [Kremote: Compressing objects:  28% (146/521)   [Kremote: Compressing objects:  29% (152/521)   [Kremote: Compressing objects:  30% (157/521)   [Kremote: Compressing objects:  31% (162/521)   [Kremote: Compressing objects:  32% (167/521)   [Kremote: Compressing objects:  33% (172/521)   [Kremote: Compressing objects:  34% (178/521)   [Kremote: Compressing objects:  35% (183/521)   [Kremote: Compressing objects:  36% (188/521)   [Kremote: Compressing objects:  37% (193/521)   [Kremote: Compressing objects:  38% (198/521)   [Kremote: Compressing objects:  39% (204/521)   [Kremote: Compressing objects:  40% (209/521)   [Kremote: Compressing objects:  41% (214/521)   [Kremote: Compressing objects:  42% (219/521)   [Kremote: Compressing objects:  43% (225/521)   [Kremote: Compressing objects:  44% (230/521)   [Kremote: Compressing objects:  45% (235/521)   [Kremote: Compressing objects:  46% (240/521)   [Kremote: Compressing objects:  47% (245/521)   [Kremote: Compressing objects:  48% (251/521)   [Kremote: Compressing objects:  49% (256/521)   [Kremote: Compressing objects:  50% (261/521)   [Kremote: Compressing objects:  51% (266/521)   [Kremote: Compressing objects:  52% (271/521)   [Kremote: Compressing objects:  53% (277/521)   [Kremote: Compressing objects:  54% (282/521)   [Kremote: Compressing objects:  55% (287/521)   [Kremote: Compressing objects:  56% (292/521)   [Kremote: Compressing objects:  57% (297/521)   [Kremote: Compressing objects:  58% (303/521)   [Kremote: Compressing objects:  59% (308/521)   [Kremote: Compressing objects:  60% (313/521)   [Kremote: Compressing objects:  61% (318/521)   [Kremote: Compressing objects:  62% (324/521)   [Kremote: Compressing objects:  63% (329/521)   [Kremote: Compressing objects:  64% (334/521)   [Kremote: Compressing objects:  65% (339/521)   [Kremote: Compressing objects:  66% (344/521)   [Kremote: Compressing objects:  67% (350/521)   [Kremote: Compressing objects:  68% (355/521)   [Kremote: Compressing objects:  69% (360/521)   [Kremote: Compressing objects:  70% (365/521)   [Kremote: Compressing objects:  71% (370/521)   [Kremote: Compressing objects:  72% (376/521)   [Kremote: Compressing objects:  73% (381/521)   [Kremote: Compressing objects:  74% (386/521)   [Kremote: Compressing objects:  75% (391/521)   [Kremote: Compressing objects:  76% (396/521)   [Kremote: Compressing objects:  77% (402/521)   [Kremote: Compressing objects:  78% (407/521)   [Kremote: Compressing objects:  79% (412/521)   [Kremote: Compressing objects:  80% (417/521)   [Kremote: Compressing objects:  81% (423/521)   [Kremote: Compressing objects:  82% (428/521)   [Kremote: Compressing objects:  83% (433/521)   [Kremote: Compressing objects:  84% (438/521)   [Kremote: Compressing objects:  85% (443/521)   [Kremote: Compressing objects:  86% (449/521)   [Kremote: Compressing objects:  87% (454/521)   [Kremote: Compressing objects:  88% (459/521)   [Kremote: Compressing objects:  89% (464/521)   [Kremote: Compressing objects:  90% (469/521)   [Kremote: Compressing objects:  91% (475/521)   [Kremote: Compressing objects:  92% (480/521)   [Kremote: Compressing objects:  93% (485/521)   [Kremote: Compressing objects:  94% (490/521)   [Kremote: Compressing objects:  95% (495/521)   [Kremote: Compressing objects:  96% (501/521)   [Kremote: Compressing objects:  97% (506/521)   [Kremote: Compressing objects:  98% (511/521)   [Kremote: Compressing objects:  99% (516/521)   [Kremote: Compressing objects: 100% (521/521)   [Kremote: Compressing objects: 100% (521/521), done.[K
-Receiving objects:   0% (1/1044)   Receiving objects:   1% (11/1044)   Receiving objects:   2% (21/1044)   Receiving objects:   3% (32/1044)   Receiving objects:   4% (42/1044)   Receiving objects:   5% (53/1044)   Receiving objects:   6% (63/1044)   Receiving objects:   7% (74/1044)   Receiving objects:   8% (84/1044)   Receiving objects:   9% (94/1044)   Receiving objects:  10% (105/1044)   Receiving objects:  11% (115/1044)   Receiving objects:  12% (126/1044)   Receiving objects:  13% (136/1044)   Receiving objects:  14% (147/1044)   Receiving objects:  15% (157/1044)   Receiving objects:  16% (168/1044)   Receiving objects:  17% (178/1044)   Receiving objects:  18% (188/1044)   Receiving objects:  19% (199/1044)   Receiving objects:  20% (209/1044)   Receiving objects:  21% (220/1044)   Receiving objects:  22% (230/1044)   Receiving objects:  23% (241/1044)   Receiving objects:  24% (251/1044)   Receiving objects:  25% (261/1044)   Receiving objects:  26% (272/1044)   Receiving objects:  27% (282/1044)   Receiving objects:  28% (293/1044)   Receiving objects:  29% (303/1044)   Receiving objects:  30% (314/1044)   Receiving objects:  31% (324/1044)   Receiving objects:  32% (335/1044)   Receiving objects:  33% (345/1044)   Receiving objects:  34% (355/1044)   Receiving objects:  35% (366/1044)   Receiving objects:  36% (376/1044)   Receiving objects:  37% (387/1044)   Receiving objects:  38% (397/1044)   Receiving objects:  39% (408/1044)   Receiving objects:  40% (418/1044)   Receiving objects:  41% (429/1044)   Receiving objects:  42% (439/1044)   Receiving objects:  43% (449/1044)   Receiving objects:  44% (460/1044)   Receiving objects:  45% (470/1044)   Receiving objects:  46% (481/1044)   Receiving objects:  47% (491/1044)   Receiving objects:  48% (502/1044)   Receiving objects:  49% (512/1044)   Receiving objects:  50% (522/1044)   Receiving objects:  51% (533/1044)   Receiving objects:  52% (543/1044)   Receiving objects:  53% (554/1044)   Receiving objects:  54% (564/1044)   remote: Total 1044 (delta 592), reused 864 (delta 471), pack-reused 0[K
-Receiving objects:  55% (575/1044)   Receiving objects:  56% (585/1044)   Receiving objects:  57% (596/1044)   Receiving objects:  58% (606/1044)   Receiving objects:  59% (616/1044)   Receiving objects:  60% (627/1044)   Receiving objects:  61% (637/1044)   Receiving objects:  62% (648/1044)   Receiving objects:  63% (658/1044)   Receiving objects:  64% (669/1044)   Receiving objects:  65% (679/1044)   Receiving objects:  66% (690/1044)   Receiving objects:  67% (700/1044)   Receiving objects:  68% (710/1044)   Receiving objects:  69% (721/1044)   Receiving objects:  70% (731/1044)   Receiving objects:  71% (742/1044)   Receiving objects:  72% (752/1044)   Receiving objects:  73% (763/1044)   Receiving objects:  74% (773/1044)   Receiving objects:  75% (783/1044)   Receiving objects:  76% (794/1044)   Receiving objects:  77% (804/1044)   Receiving objects:  78% (815/1044)   Receiving objects:  79% (825/1044)   Receiving objects:  80% (836/1044)   Receiving objects:  81% (846/1044)   Receiving objects:  82% (857/1044)   Receiving objects:  83% (867/1044)   Receiving objects:  84% (877/1044)   Receiving objects:  85% (888/1044)   Receiving objects:  86% (898/1044)   Receiving objects:  87% (909/1044)   Receiving objects:  88% (919/1044)   Receiving objects:  89% (930/1044)   Receiving objects:  90% (940/1044)   Receiving objects:  91% (951/1044)   Receiving objects:  92% (961/1044)   Receiving objects:  93% (971/1044)   Receiving objects:  94% (982/1044)   Receiving objects:  95% (992/1044)   Receiving objects:  96% (1003/1044)   Receiving objects:  97% (1013/1044)   Receiving objects:  98% (1024/1044)   Receiving objects:  99% (1034/1044)   Receiving objects: 100% (1044/1044)   Receiving objects: 100% (1044/1044), 1.30 MiB | 0 bytes/s, done.
-Resolving deltas:   0% (0/592)   Resolving deltas:   5% (30/592)   Resolving deltas:  10% (65/592)   Resolving deltas:  12% (75/592)   Resolving deltas:  13% (79/592)   Resolving deltas:  19% (116/592)   Resolving deltas:  20% (120/592)   Resolving deltas:  21% (129/592)   Resolving deltas:  23% (139/592)   Resolving deltas:  25% (151/592)   Resolving deltas:  26% (154/592)   Resolving deltas:  27% (164/592)   Resolving deltas:  28% (166/592)   Resolving deltas:  29% (173/592)   Resolving deltas:  30% (179/592)   Resolving deltas:  31% (186/592)   Resolving deltas:  32% (193/592)   Resolving deltas:  33% (197/592)   Resolving deltas:  34% (202/592)   Resolving deltas:  35% (208/592)   Resolving deltas:  36% (216/592)   Resolving deltas:  37% (223/592)   Resolving deltas:  38% (225/592)   Resolving deltas:  39% (236/592)   Resolving deltas:  40% (238/592)   Resolving deltas:  41% (243/592)   Resolving deltas:  42% (251/592)   Resolving deltas:  43% (255/592)   Resolving deltas:  45% (271/592)   Resolving deltas:  46% (273/592)   Resolving deltas:  47% (282/592)   Resolving deltas:  48% (285/592)   Resolving deltas:  52% (310/592)   Resolving deltas:  57% (338/592)   Resolving deltas:  58% (346/592)   Resolving deltas:  59% (354/592)   Resolving deltas:  60% (356/592)   Resolving deltas:  61% (363/592)   Resolving deltas:  62% (369/592)   Resolving deltas:  63% (376/592)   Resolving deltas:  64% (379/592)   Resolving deltas:  67% (399/592)   Resolving deltas:  69% (410/592)   Resolving deltas:  70% (415/592)   Resolving deltas:  71% (422/592)   Resolving deltas:  72% (430/592)   Resolving deltas:  77% (457/592)   Resolving deltas:  78% (462/592)   Resolving deltas:  79% (468/592)   Resolving deltas:  80% (475/592)   Resolving deltas:  81% (480/592)   Resolving deltas:  82% (490/592)   Resolving deltas:  83% (493/592)   Resolving deltas:  84% (498/592)   Resolving deltas:  85% (504/592)   Resolving deltas:  87% (516/592)   Resolving deltas:  88% (523/592)   Resolving deltas:  89% (527/592)   Resolving deltas:  90% (534/592)   Resolving deltas:  91% (539/592)   Resolving deltas:  92% (546/592)   Resolving deltas:  94% (562/592)   Resolving deltas:  95% (563/592)   Resolving deltas:  96% (573/592)   Resolving deltas:  97% (579/592)   Resolving deltas:  98% (581/592)   Resolving deltas:  99% (587/592)   Resolving deltas: 100% (592/592)   Resolving deltas: 100% (592/592), done.
-Checking connectivity... done.
-
-travis_time:end:00626ad8:start=1488604715077260751,finish=1488604716028320203,duration=951059452[0K$ cd pmarkert/hyperpotamus
-$ git checkout -qf 1339eef8c6a26f7e8dc37de85e6a0029f6d64576
-travis_fold:end:git.checkout[0K
-[33;1mSetting environment variables from .travis.yml[0m
-$ export CALFINATED=true
-
-[33;1mUpdating nvm to v0.32.0[0m
-travis_time:start:007c9628[0K$ nvm install node
-                                                                           0.0%                                                                           0.0%                                                                           0.0%                                                                           0.0%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.1%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.2%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.3%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.4%                                                                           0.5%                                                                           0.5%                                                                           0.5%                                                                           0.5%                                                                           0.5%                                                                           0.5%                                                                           0.6%                                                                           0.6%                                                                           0.6%                                                                           0.7%                                                                           0.7%                                                                           0.7%                                                                           0.8%                                                                           0.8%                                                                           0.8%                                                                           0.8%                                                                           0.9%                                                                           0.9%                                                                           0.9%                                                                           0.9%                                                                           1.0%                                                                           1.0%                                                                           1.1%                                                                           1.1%                                                                           1.1%                                                                           1.2%                                                                           1.2%                                                                           1.3%                                                                           1.3%                                                                           1.3%                                                                           1.4%#                                                                          1.4%#                                                                          1.4%#                                                                          1.5%#                                                                          1.5%#                                                                          1.5%#                                                                          1.6%#                                                                          1.6%#                                                                          1.7%#                                                                          1.7%#                                                                          1.7%#                                                                          1.8%#                                                                          1.8%#                                                                          1.9%#                                                                          1.9%#                                                                          1.9%#                                                                          1.9%#                                                                          1.9%#                                                                          2.0%#                                                                          2.0%#                                                                          2.1%#                                                                          2.1%#                                                                          2.2%#                                                                          2.4%#                                                                          2.4%#                                                                          2.5%#                                                                          2.7%##                                                                         2.8%##                                                                         2.8%##                                                                         3.0%##                                                                         3.2%##                                                                         3.2%##                                                                         3.2%##                                                                         3.3%##                                                                         3.5%##                                                                         3.5%##                                                                         3.6%##                                                                         3.8%##                                                                         3.8%##                                                                         4.0%##                                                                         4.1%##                                                                         4.1%###                                                                        4.3%###                                                                        4.4%###                                                                        4.6%###                                                                        4.7%###                                                                        4.9%###                                                                        5.1%###                                                                        5.2%###                                                                        5.4%###                                                                        5.5%####                                                                       5.7%####                                                                       5.9%####                                                                       6.0%####                                                                       6.2%####                                                                       6.3%####                                                                       6.5%####                                                                       6.6%####                                                                       6.8%#####                                                                      7.0%#####                                                                      7.1%#####                                                                      7.1%#####                                                                      7.3%#####                                                                      7.4%#####                                                                      7.6%#####                                                                      7.7%#####                                                                      7.9%#####                                                                      8.1%#####                                                                      8.2%######                                                                     8.4%######                                                                     8.5%######                                                                     8.5%######                                                                     8.7%######                                                                     8.9%######                                                                     9.0%######                                                                     9.2%######                                                                     9.3%######                                                                     9.5%######                                                                     9.6%#######                                                                    9.8%#######                                                                   10.0%#######                                                                   10.1%#######                                                                   10.3%#######                                                                   10.4%#######                                                                   10.6%#######                                                                   10.8%#######                                                                   10.9%#######                                                                   11.1%########                                                                  11.2%########                                                                  11.4%########                                                                  11.5%########                                                                  11.7%########                                                                  11.9%########                                                                  12.0%########                                                                  12.2%########                                                                  12.3%########                                                                  12.5%#########                                                                 12.7%#########                                                                 12.8%#########                                                                 13.0%#########                                                                 13.1%#########                                                                 13.3%#########                                                                 13.4%#########                                                                 13.6%#########                                                                 13.8%##########                                                                13.9%##########                                                                14.1%##########                                                                14.2%##########                                                                14.4%##########                                                                14.6%##########                                                                14.7%##########                                                                14.9%##########                                                                15.0%##########                                                                15.2%###########                                                               15.3%###########                                                               15.5%###########                                                               15.7%###########                                                               15.8%###########                                                               16.0%###########                                                               16.1%###########                                                               16.3%###########                                                               16.4%###########                                                               16.6%############                                                              16.8%############                                                              16.9%############                                                              17.1%############                                                              17.2%############                                                              17.4%############                                                              17.6%############                                                              17.7%############                                                              17.9%############                                                              18.0%#############                                                             18.2%#############                                                             18.3%#############                                                             18.5%#############                                                             18.7%#############                                                             18.8%#############                                                             19.0%#############                                                             19.1%#############                                                             19.3%##############                                                            19.5%##############                                                            19.6%##############                                                            19.8%##############                                                            19.9%##############                                                            20.1%##############                                                            20.2%##############                                                            20.4%##############                                                            20.6%##############                                                            20.7%###############                                                           20.9%###############                                                           21.0%###############                                                           21.2%###############                                                           21.4%###############                                                           21.5%###############                                                           21.7%###############                                                           21.8%###############                                                           22.0%###############                                                           22.1%################                                                          22.3%################                                                          22.5%################                                                          22.6%################                                                          22.8%################                                                          22.9%################                                                          23.1%################                                                          23.3%################                                                          23.4%################                                                          23.6%#################                                                         23.7%#################                                                         23.9%#################                                                         24.0%#################                                                         24.2%#################                                                         24.4%#################                                                         24.5%#################                                                         24.7%#################                                                         24.8%#################                                                         25.0%##################                                                        25.1%##################                                                        25.3%##################                                                        25.5%##################                                                        25.6%##################                                                        25.8%##################                                                        25.9%##################                                                        26.1%##################                                                        26.3%###################                                                       26.4%###################                                                       26.6%###################                                                       26.7%###################                                                       26.9%###################                                                       27.0%###################                                                       27.2%###################                                                       27.4%###################                                                       27.5%###################                                                       27.7%####################                                                      27.8%####################                                                      28.0%####################                                                      28.2%####################                                                      28.3%####################                                                      28.5%####################                                                      28.6%####################                                                      28.8%####################                                                      28.9%####################                                                      29.1%#####################                                                     29.3%#####################                                                     29.4%#####################                                                     29.6%#####################                                                     29.7%#####################                                                     29.9%#####################                                                     30.1%#####################                                                     30.2%#####################                                                     30.4%#####################                                                     30.5%######################                                                    30.7%######################                                                    30.8%######################                                                    31.0%######################                                                    31.2%######################                                                    31.3%######################                                                    31.5%######################                                                    31.6%######################                                                    31.8%#######################                                                   31.9%#######################                                                   32.1%#######################                                                   32.3%#######################                                                   32.4%#######################                                                   32.6%#######################                                                   32.7%#######################                                                   32.9%#######################                                                   33.1%#######################                                                   33.2%########################                                                  33.4%########################                                                  33.5%########################                                                  33.7%########################                                                  33.8%########################                                                  34.0%########################                                                  34.2%########################                                                  34.3%########################                                                  34.5%########################                                                  34.6%#########################                                                 34.8%#########################                                                 35.0%#########################                                                 35.1%#########################                                                 35.3%#########################                                                 35.4%#########################                                                 35.6%#########################                                                 35.7%#########################                                                 35.9%#########################                                                 36.1%##########################                                                36.2%##########################                                                36.4%##########################                                                36.5%##########################                                                36.7%##########################                                                36.9%##########################                                                37.0%##########################                                                37.2%##########################                                                37.3%##########################                                                37.5%###########################                                               37.6%###########################                                               37.8%###########################                                               38.0%###########################                                               38.1%###########################                                               38.3%###########################                                               38.4%###########################                                               38.6%###########################                                               38.8%############################                                              38.9%############################                                              39.1%############################                                              39.2%############################                                              39.4%############################                                              39.5%############################                                              39.7%############################                                              39.9%############################                                              40.0%############################                                              40.2%#############################                                             40.3%#############################                                             40.5%#############################                                             40.6%#############################                                             40.8%#############################                                             41.0%#############################                                             41.1%#############################                                             41.3%#############################                                             41.4%#############################                                             41.6%##############################                                            41.8%##############################                                            41.9%##############################                                            42.1%##############################                                            42.2%##############################                                            42.4%##############################                                            42.5%##############################                                            42.7%##############################                                            42.9%##############################                                            43.0%###############################                                           43.2%###############################                                           43.3%###############################                                           43.5%###############################                                           43.7%###############################                                           43.8%###############################                                           44.0%###############################                                           44.1%###############################                                           44.3%################################                                          44.4%################################                                          44.6%################################                                          44.8%################################                                          44.9%################################                                          45.1%################################                                          45.2%################################                                          45.4%################################                                          45.6%################################                                          45.7%#################################                                         45.9%#################################                                         46.0%#################################                                         46.2%#################################                                         46.3%#################################                                         46.5%#################################                                         46.7%#################################                                         46.8%#################################                                         47.0%#################################                                         47.1%##################################                                        47.3%##################################                                        47.5%##################################                                        47.6%##################################                                        47.8%##################################                                        47.9%##################################                                        48.1%##################################                                        48.2%##################################                                        48.4%##################################                                        48.6%###################################                                       48.7%###################################                                       48.9%###################################                                       49.0%###################################                                       49.2%###################################                                       49.3%###################################                                       49.5%###################################                                       49.7%###################################                                       49.8%###################################                                       50.0%####################################                                      50.1%####################################                                      50.3%####################################                                      50.5%####################################                                      50.6%####################################                                      50.8%####################################                                      50.9%####################################                                      51.1%####################################                                      51.2%#####################################                                     51.4%#####################################                                     51.6%#####################################                                     51.7%#####################################                                     51.9%#####################################                                     52.0%#####################################                                     52.2%#####################################                                     52.4%#####################################                                     52.5%#####################################                                     52.7%######################################                                    52.8%######################################                                    53.0%######################################                                    53.1%######################################                                    53.3%######################################                                    53.5%######################################                                    53.6%######################################                                    53.8%######################################                                    53.9%######################################                                    54.1%#######################################                                   54.3%#######################################                                   54.4%#######################################                                   54.6%#######################################                                   54.7%#######################################                                   54.9%#######################################                                   55.0%#######################################                                   55.2%#######################################                                   55.4%#######################################                                   55.5%########################################                                  55.7%########################################                                  55.8%########################################                                  56.0%########################################                                  56.2%########################################                                  56.3%########################################                                  56.5%########################################                                  56.6%########################################                                  56.8%########################################                                  56.9%#########################################                                 57.1%#########################################                                 57.3%#########################################                                 57.4%#########################################                                 57.6%#########################################                                 57.7%#########################################                                 57.9%#########################################                                 58.0%#########################################                                 58.2%##########################################                                58.4%##########################################                                58.5%##########################################                                58.7%##########################################                                58.8%##########################################                                59.0%##########################################                                59.2%##########################################                                59.3%##########################################                                59.5%##########################################                                59.6%###########################################                               59.8%###########################################                               59.9%###########################################                               60.1%###########################################                               60.3%###########################################                               60.4%###########################################                               60.6%###########################################                               60.7%###########################################                               60.9%###########################################                               61.1%############################################                              61.2%############################################                              61.4%############################################                              61.5%############################################                              61.7%############################################                              61.8%############################################                              62.0%############################################                              62.2%############################################                              62.3%############################################                              62.5%#############################################                             62.6%#############################################                             62.8%#############################################                             63.0%#############################################                             63.1%#############################################                             63.3%#############################################                             63.4%#############################################                             63.6%#############################################                             63.7%##############################################                            63.9%##############################################                            64.1%##############################################                            64.2%##############################################                            64.4%##############################################                            64.5%##############################################                            64.7%##############################################                            64.9%##############################################                            65.0%##############################################                            65.2%###############################################                           65.3%###############################################                           65.5%###############################################                           65.6%###############################################                           65.8%###############################################                           66.0%###############################################                           66.1%###############################################                           66.3%###############################################                           66.4%###############################################                           66.6%################################################                          66.7%################################################                          66.9%################################################                          67.1%################################################                          67.2%################################################                          67.4%################################################                          67.5%################################################                          67.7%################################################                          67.9%################################################                          68.0%#################################################                         68.2%#################################################                         68.3%#################################################                         68.5%#################################################                         68.6%#################################################                         68.8%#################################################                         69.0%#################################################                         69.1%#################################################                         69.3%#################################################                         69.4%##################################################                        69.6%##################################################                        69.8%##################################################                        69.9%##################################################                        70.1%##################################################                        70.2%##################################################                        70.4%##################################################                        70.5%##################################################                        70.7%###################################################                       70.9%###################################################                       71.0%###################################################                       71.2%###################################################                       71.3%###################################################                       71.5%###################################################                       71.7%###################################################                       71.8%###################################################                       72.0%###################################################                       72.1%####################################################                      72.3%####################################################                      72.4%####################################################                      72.6%####################################################                      72.8%####################################################                      72.9%####################################################                      73.1%####################################################                      73.2%####################################################                      73.4%####################################################                      73.6%#####################################################                     73.7%#####################################################                     73.9%#####################################################                     74.0%#####################################################                     74.2%#####################################################                     74.3%#####################################################                     74.5%#####################################################                     74.7%#####################################################                     74.8%#####################################################                     75.0%######################################################                    75.1%######################################################                    75.3%######################################################                    75.4%######################################################                    75.6%######################################################                    75.8%######################################################                    75.9%######################################################                    76.1%######################################################                    76.2%#######################################################                   76.4%#######################################################                   76.6%#######################################################                   76.7%#######################################################                   76.9%#######################################################                   77.0%#######################################################                   77.2%#######################################################                   77.3%#######################################################                   77.5%#######################################################                   77.7%########################################################                  77.8%########################################################                  78.0%########################################################                  78.1%########################################################                  78.3%########################################################                  78.5%########################################################                  78.6%########################################################                  78.8%########################################################                  78.9%########################################################                  79.1%#########################################################                 79.2%#########################################################                 79.4%#########################################################                 79.6%#########################################################                 79.7%#########################################################                 79.9%#########################################################                 80.0%#########################################################                 80.2%#########################################################                 80.4%#########################################################                 80.5%##########################################################                80.7%##########################################################                80.8%##########################################################                81.0%##########################################################                81.1%##########################################################                81.3%##########################################################                81.5%##########################################################                81.6%##########################################################                81.8%##########################################################                81.9%###########################################################               82.1%###########################################################               82.3%###########################################################               82.4%###########################################################               82.6%###########################################################               82.7%###########################################################               82.9%###########################################################               83.0%###########################################################               83.2%############################################################              83.4%############################################################              83.5%############################################################              83.7%############################################################              83.8%############################################################              84.0%############################################################              84.1%############################################################              84.3%############################################################              84.5%############################################################              84.6%#############################################################             84.8%#############################################################             84.9%#############################################################             85.1%#############################################################             85.3%#############################################################             85.4%#############################################################             85.6%#############################################################             85.7%#############################################################             85.9%#############################################################             86.0%##############################################################            86.2%##############################################################            86.4%##############################################################            86.5%##############################################################            86.7%##############################################################            86.8%##############################################################            87.0%##############################################################            87.2%##############################################################            87.3%##############################################################            87.5%###############################################################           87.6%###############################################################           87.8%###############################################################           87.9%###############################################################           88.1%###############################################################           88.3%###############################################################           88.4%###############################################################           88.6%###############################################################           88.7%################################################################          88.9%################################################################          89.1%################################################################          89.2%################################################################          89.4%################################################################          89.5%################################################################          89.7%################################################################          89.8%################################################################          90.0%################################################################          90.2%#################################################################         90.3%#################################################################         90.5%#################################################################         90.6%#################################################################         90.8%#################################################################         91.0%#################################################################         91.1%#################################################################         91.3%#################################################################         91.4%#################################################################         91.6%##################################################################        91.7%##################################################################        91.9%##################################################################        92.1%##################################################################        92.2%##################################################################        92.4%##################################################################        92.5%##################################################################        92.7%##################################################################        92.8%##################################################################        93.0%###################################################################       93.2%###################################################################       93.3%###################################################################       93.5%###################################################################       93.6%###################################################################       93.8%###################################################################       94.0%###################################################################       94.1%###################################################################       94.3%###################################################################       94.4%####################################################################      94.6%####################################################################      94.7%####################################################################      94.9%####################################################################      95.1%####################################################################      95.2%####################################################################      95.4%####################################################################      95.5%####################################################################      95.7%#####################################################################     95.9%#####################################################################     96.0%#####################################################################     96.2%#####################################################################     96.3%#####################################################################     96.5%#####################################################################     96.6%#####################################################################     96.8%#####################################################################     97.0%#####################################################################     97.1%######################################################################    97.3%######################################################################    97.4%######################################################################    97.6%######################################################################    97.8%######################################################################    97.9%######################################################################    98.1%######################################################################    98.2%######################################################################    98.4%######################################################################    98.5%#######################################################################   98.7%#######################################################################   98.9%#######################################################################   99.0%#######################################################################   99.2%#######################################################################   99.3%#######################################################################   99.5%#######################################################################   99.7%#######################################################################   99.8%#######################################################################  100.0%######################################################################## 100.0%######################################################################## 100.0%######################################################################## 100.0%
-Computing checksum with sha256sum
-Checksums matched!
-Now using node v7.7.1 (npm v4.1.2)
-
-travis_time:end:007c9628:start=1488604716964749738,finish=1488604720123715882,duration=3158966144[0K$ node --version
-v7.7.1
-$ npm --version
-4.1.2
-$ nvm --version
-0.32.0
-travis_fold:start:install[0Ktravis_time:start:08ccdbb8[0K$ npm install 
-[37;40mnpm[0m [0m[30;43mWARN[0m [0m[35mdeprecated[0m minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-[0m[37;40mnpm[0m [0m[30;43mWARN[0m [0m[35mprefer global[0m jison@0.4.13 should be installed with -g
-[0m
-> jsonpath@0.2.11 postinstall /home/travis/build/pmarkert/hyperpotamus/node_modules/jsonpath
-> node lib/aesprim.js > generated/aesprim-browser.js
-
-hyperpotamus@0.30.3 /home/travis/build/pmarkert/hyperpotamus
-├── [40m[33masync@2.1.5[39m[49m 
-├─┬ [40m[33maws-sdk@2.22.0[39m[49m 
-│ ├─┬ [40m[33mbuffer@4.9.1[39m[49m 
-│ │ ├── [40m[33mbase64-js@1.2.0[39m[49m 
-│ │ ├── [40m[33mieee754@1.1.8[39m[49m 
-│ │ └── [40m[33misarray@1.0.0[39m[49m 
-│ ├── [40m[33mcrypto-browserify@1.0.9[39m[49m 
-│ ├── [40m[33mjmespath@0.15.0[39m[49m 
-│ ├── [40m[33mquerystring@0.2.0[39m[49m 
-│ ├── [40m[33msax@1.1.5[39m[49m 
-│ ├─┬ [40m[33murl@0.10.3[39m[49m 
-│ │ └── [40m[33mpunycode@1.3.2[39m[49m 
-│ ├── [40m[33muuid@3.0.0[39m[49m 
-│ ├── [40m[33mxml2js@0.4.15[39m[49m 
-│ └─┬ [40m[33mxmlbuilder@2.6.2[39m[49m 
-│   └── [40m[33mlodash@3.5.0[39m[49m 
-├── [40m[33mbluebird@3.5.0[39m[49m 
-├─┬ [40m[33mbody-parser@1.17.0[39m[49m 
-│ ├── [40m[33mbytes@2.4.0[39m[49m 
-│ ├── [40m[33mcontent-type@1.0.2[39m[49m 
-│ ├─┬ [40m[33mdebug@2.6.1[39m[49m 
-│ │ └── [40m[33mms@0.7.2[39m[49m 
-│ ├── [40m[33mdepd@1.1.0[39m[49m 
-│ ├─┬ [40m[33mhttp-errors@1.6.1[39m[49m 
-│ │ └── [40m[33minherits@2.0.3[39m[49m 
-│ ├── [40m[33miconv-lite@0.4.15[39m[49m 
-│ ├─┬ [40m[33mon-finished@2.3.0[39m[49m 
-│ │ └── [40m[33mee-first@1.1.1[39m[49m 
-│ ├── [40m[33mqs@6.3.1[39m[49m 
-│ ├─┬ [40m[33mraw-body@2.2.0[39m[49m 
-│ │ └── [40m[33munpipe@1.0.0[39m[49m 
-│ ���─┬ [40m[33mtype-is@1.6.14[39m[49m 
-│   └── [40m[33mmedia-typer@0.3.0[39m[49m 
-├── [40m[33mcalfinated@1.0.1[39m[49m 
-├─┬ [40m[33mchai@3.5.0[39m[49m 
-│ ├── [40m[33massertion-error@1.0.2[39m[49m 
-│ ├─┬ [40m[33mdeep-eql@0.1.3[39m[49m 
-│ │ └── [40m[33mtype-detect@0.1.1[39m[49m 
-│ └── [40m[33mtype-detect@1.0.0[39m[49m 
-├─┬ [40m[33mcheerio@0.22.0[39m[49m 
-│ ├─┬ [40m[33mcss-select@1.2.0[39m[49m 
-│ │ ├── [40m[33mboolbase@1.0.0[39m[49m 
-│ │ ├── [40m[33mcss-what@2.1.0[39m[49m 
-│ │ ├── [40m[33mdomutils@1.5.1[39m[49m 
-│ │ └── [40m[33mnth-check@1.0.1[39m[49m 
-│ ├─┬ [40m[33mdom-serializer@0.1.0[39m[49m 
-│ │ └── [40m[33mdomelementtype@1.1.3[39m[49m 
-│ ├── [40m[33mentities@1.1.1[39m[49m 
-│ ├─┬ [40m[33mhtmlparser2@3.9.2[39m[49m 
-│ │ ├── [40m[33mdomelementtype@1.3.0[39m[49m 
-│ │ ├── [40m[33mdomhandler@2.3.0[39m[49m 
-│ │ └─┬ [40m[33mreadable-stream@2.2.3[39m[49m 
-│ │   ├── [40m[33mbuffer-shims@1.0.0[39m[49m 
-│ │   ├── [40m[33mprocess-nextick-args@1.0.7[39m[49m 
-│ │   ├── [40m[33mstring_decoder@0.10.31[39m[49m 
-│ │   └── [40m[33mutil-deprecate@1.0.2[39m[49m 
-│ ├── [40m[33mlodash.assignin@4.2.0[39m[49m 
-│ ├── [40m[33mlodash.bind@4.2.1[39m[49m 
-│ ├── [40m[33mlodash.defaults@4.2.0[39m[49m 
-│ ├── [40m[33mlodash.filter@4.6.0[39m[49m 
-│ ├── [40m[33mlodash.flatten@4.4.0[39m[49m 
-│ ├── [40m[33mlodash.foreach@4.5.0[39m[49m 
-│ ├── [40m[33mlodash.map@4.6.0[39m[49m 
-│ ├── [40m[33mlodash.merge@4.6.0[39m[49m 
-│ ├── [40m[33mlodash.pick@4.4.0[39m[49m 
-│ ├── [40m[33mlodash.reduce@4.6.0[39m[49m 
-│ ├── [40m[33mlodash.reject@4.6.0[39m[49m 
-│ └── [40m[33mlodash.some@4.6.0[39m[49m 
-├── [40m[33mcolors@1.1.2[39m[49m 
-├─┬ [40m[33mcookie-parser@1.4.3[39m[49m 
-│ ├── [40m[33mcookie@0.3.1[39m[49m 
-│ └── [40m[33mcookie-signature@1.0.6[39m[49m 
-├─┬ [40m[33mexpress@4.15.0[39m[49m 
-│ ├─┬ [40m[33maccepts@1.3.3[39m[49m 
-│ │ └── [40m[33mnegotiator@0.6.1[39m[49m 
-│ ├── [40m[33marray-flatten@1.1.1[39m[49m 
-│ ├── [40m[33mcontent-disposition@0.5.2[39m[49m 
-│ ├── [40m[33mencodeurl@1.0.1[39m[49m 
-│ ├── [40m[33mescape-html@1.0.3[39m[49m 
-│ ├── [40m[33metag@1.8.0[39m[49m 
-│ ├── [40m[33mfinalhandler@1.0.0[39m[49m 
-│ ├── [40m[33mfresh@0.5.0[39m[49m 
-│ ├── [40m[33mmerge-descriptors@1.0.1[39m[49m 
-│ ├── [40m[33mmethods@1.1.2[39m[49m 
-│ ├── [40m[33mparseurl@1.3.1[39m[49m 
-│ ├── [40m[33mpath-to-regexp@0.1.7[39m[49m 
-│ ├─┬ [40m[33mproxy-addr@1.1.3[39m[49m 
-│ │ ├── [40m[33mforwarded@0.1.0[39m[49m 
-│ │ └── [40m[33mipaddr.js@1.2.0[39m[49m 
-│ ├── [40m[33mrange-parser@1.2.0[39m[49m 
-│ ├─┬ [40m[33msend@0.15.0[39m[49m 
-│ │ ├── [40m[33mdestroy@1.0.4[39m[49m 
-│ │ └── [40m[33mmime@1.3.4[39m[49m 
-│ ├── [40m[33mserve-static@1.12.0[39m[49m 
-│ ├── [40m[33msetprototypeof@1.0.3[39m[49m 
-│ ├── [40m[33mstatuses@1.3.1[39m[49m 
-│ ├── [40m[33mutils-merge@1.0.0[39m[49m 
-│ └── [40m[33mvary@1.1.0[39m[49m 
-├─┬ [40m[33mfast-csv@2.4.0[39m[49m 
-│ ├─┬ [40m[33mextended@0.0.6[39m[49m 
-│ │ └─┬ [40m[33mextender@0.0.10[39m[49m 
-│ │   └── [40m[33mdeclare.js@0.0.8[39m[49m 
-│ ├── [40m[33mis-extended@0.0.10[39m[49m 
-│ ├─┬ [40m[33mobject-extended@0.0.7[39m[49m 
-│ │ └─┬ [40m[33marray-extended@0.0.11[39m[49m 
-│ │   └── [40m[33marguments-extended@0.0.3[39m[49m 
-│ └─┬ [40m[33mstring-extended@0.0.8[39m[49m 
-│   └── [40m[33mdate-extended@0.0.6[39m[49m 
-├─┬ [40m[33mjs-yaml@3.8.2[39m[49m 
-│ ├─┬ [40m[33margparse@1.0.9[39m[49m 
-│ │ └── [40m[33msprintf-js@1.0.3[39m[49m 
-│ └── [40m[33mesprima@3.1.3[39m[49m 
-├─┬ [40m[33mjsonpath@0.2.11[39m[49m 
-│ ├── [40m[33mesprima@1.2.2[39m[49m 
-│ ├─┬ [40m[33mjison@0.4.13[39m[49m 
-│ │ ├── [40m[33mcjson@0.2.1[39m[49m 
-│ │ ├── [40m[33mebnf-parser@0.1.10[39m[49m 
-│ │ ├─┬ [40m[33mescodegen@0.0.21[39m[49m 
-│ │ │ ├── [40m[33mesprima@1.0.4[39m[49m 
-│ │ │ ├── [40m[33mestraverse@0.0.4[39m[49m 
-│ │ │ └── [40m[33msource-map@0.5.6[39m[49m 
-│ │ ├── [40m[33mesprima@1.0.4[39m[49m 
-│ │ ├── [40m[33mjison-lex@0.2.1[39m[49m 
-│ │ ├── [40m[33mJSONSelect@0.4.0[39m[49m 
-│ │ ├── [40m[33mlex-parser@0.1.4[39m[49m 
-│ │ └─┬ [40m[33mnomnom@1.5.2[39m[49m 
-│ │   ├── [40m[33mcolors@0.5.1[39m[49m 
-│ │   └── [40m[33munderscore@1.1.7[39m[49m 
-│ ├─┬ [40m[33mstatic-eval@0.2.3[39m[49m 
-│ │ └─┬ [40m[33mescodegen@0.0.28[39m[49m 
-│ │   ├── [40m[33mesprima@1.0.4[39m[49m 
-│ │   └── [40m[33mestraverse@1.3.2[39m[49m 
-│ └── [40m[33munderscore@1.7.0[39m[49m 
-├── [40m[33mlodash@4.17.4[39m[49m 
-├── [40m[33mmarkup-js@1.5.21-pmarkert[39m[49m 
-├─┬ [40m[33mmkdirp@0.5.1[39m[49m 
-│ └── [40m[33mminimist@0.0.8[39m[49m 
-├─┬ [40m[33mmocha@3.2.0[39m[49m 
-│ ├── [40m[33mbrowser-stdout@1.3.0[39m[49m 
-│ ├─┬ [40m[33mcommander@2.9.0[39m[49m 
-│ │ └── [40m[33mgraceful-readlink@1.0.1[39m[49m 
-│ ├─┬ [40m[33mdebug@2.2.0[39m[49m 
-│ │ └── [40m[33mms@0.7.1[39m[49m 
-│ ├── [40m[33mdiff@1.4.0[39m[49m 
-│ ├── [40m[33mescape-string-regexp@1.0.5[39m[49m 
-│ ├─┬ [40m[33mglob@7.0.5[39m[49m 
-│ │ ├── [40m[33mfs.realpath@1.0.0[39m[49m 
-│ │ ├─┬ [40m[33minflight@1.0.6[39m[49m 
-│ │ │ └── [40m[33mwrappy@1.0.2[39m[49m 
-│ │ ├─┬ [40m[33mminimatch@3.0.3[39m[49m 
-│ │ │ └─┬ [40m[33mbrace-expansion@1.1.6[39m[49m 
-│ │ │   ├── [40m[33mbalanced-match@0.4.2[39m[49m 
-│ │ │   └── [40m[33mconcat-map@0.0.1[39m[49m 
-│ │ ├── [40m[33monce@1.4.0[39m[49m 
-│ │ └── [40m[33mpath-is-absolute@1.0.1[39m[49m 
-│ ├── [40m[33mgrowl@1.9.2[39m[49m 
-│ ├── [40m[33mjson3@3.3.2[39m[49m 
-│ ├─┬ [40m[33mlodash.create@3.1.1[39m[49m 
-│ │ ├─┬ [40m[33mlodash._baseassign@3.2.0[39m[49m 
-│ │ │ ├── [40m[33mlodash._basecopy@3.0.1[39m[49m 
-│ │ │ └─┬ [40m[33mlodash.keys@3.1.2[39m[49m 
-│ │ │   ├── [40m[33mlodash._getnative@3.9.1[39m[49m 
-│ │ │   ├── [40m[33mlodash.isarguments@3.1.0[39m[49m 
-│ │ │   └── [40m[33mlodash.isarray@3.0.4[39m[49m 
-│ │ ├── [40m[33mlodash._basecreate@3.0.3[39m[49m 
-│ │ └── [40m[33mlodash._isiterateecall@3.0.9[39m[49m 
-│ └─┬ [40m[33msupports-color@3.1.2[39m[49m 
-│   └── [40m[33mhas-flag@1.0.0[39m[49m 
-├── [40m[33mmoment@2.17.1[39m[49m 
-├── [40m[33mmoment-timezone@0.5.11[39m[49m 
-├── [40m[33mnamed-regexp@0.1.1[39m[49m 
-├─┬ [40m[33mprompt@1.0.0[39m[49m 
-│ ├── [40m[33mpkginfo@0.4.0[39m[49m 
-│ ├─┬ [40m[33mread@1.0.7[39m[49m 
-│ │ └── [40m[33mmute-stream@0.0.7[39m[49m 
-│ ├── [40m[33mrevalidator@0.1.8[39m[49m 
-│ ├─┬ [40m[33mutile@0.3.0[39m[49m 
-│ │ ├── [40m[33masync@0.9.2[39m[49m 
-│ │ ├── [40m[33mdeep-equal@0.2.2[39m[49m 
-│ │ ├── [40m[33mi@0.3.5[39m[49m 
-│ │ ├── [40m[33mncp@1.0.1[39m[49m 
-│ ��� └─┬ [40m[33mrimraf@2.6.1[39m[49m 
-│ │   └── [40m[33mglob@7.1.1[39m[49m 
-│ └─┬ [40m[33mwinston@2.1.1[39m[49m 
-│   ├── [40m[33masync@1.0.0[39m[49m 
-│   ├── [40m[33mcolors@1.0.3[39m[49m 
-│   ├── [40m[33mcycle@1.0.3[39m[49m 
-│   ├── [40m[33meyes@0.1.8[39m[49m 
-│   ├── [40m[33mpkginfo@0.3.1[39m[49m 
-│   └── [40m[33mstack-trace@0.0.9[39m[49m 
-├─┬ [40m[33mrequest@2.80.0[39m[49m 
-│ ├── [40m[33maws-sign2@0.6.0[39m[49m 
-│ ├── [40m[33maws4@1.6.0[39m[49m 
-│ ├── [40m[33mcaseless@0.12.0[39m[49m 
-│ ├─┬ [40m[33mcombined-stream@1.0.5[39m[49m 
-│ │ └── [40m[33mdelayed-stream@1.0.0[39m[49m 
-│ ├── [40m[33mextend@3.0.0[39m[49m 
-│ ├── [40m[33mforever-agent@0.6.1[39m[49m 
-│ ├─┬ [40m[33mform-data@2.1.2[39m[49m 
-│ │ └── [40m[33masynckit@0.4.0[39m[49m 
-│ ├─┬ [40m[33mhar-validator@4.2.0[39m[49m 
-│ │ ├─┬ [40m[33majv@4.11.3[39m[49m 
-│ │ │ ├── [40m[33mco@4.6.0[39m[49m 
-│ │ │ └─┬ [40m[33mjson-stable-stringify@1.0.1[39m[49m 
-│ │ │   └── [40m[33mjsonify@0.0.0[39m[49m 
-│ │ └── [40m[33mhar-schema@1.0.5[39m[49m 
-│ ├─┬ [40m[33mhawk@3.1.3[39m[49m 
-│ │ ├── [40m[33mboom@2.10.1[39m[49m 
-│ │ ├── [40m[33mcryptiles@2.0.5[39m[49m 
-│ │ ├── [40m[33mhoek@2.16.3[39m[49m 
-│ │ └── [40m[33msntp@1.0.9[39m[49m 
-│ ├─┬ [40m[33mhttp-signature@1.1.1[39m[49m 
-��� │ ├── [40m[33massert-plus@0.2.0[39m[49m 
-│ │ ├─┬ [40m[33mjsprim@1.3.1[39m[49m 
-│ │ │ ├── [40m[33mextsprintf@1.0.2[39m[49m 
-│ │ │ ├── [40m[33mjson-schema@0.2.3[39m[49m 
-│ │ │ └── [40m[33mverror@1.3.6[39m[49m 
-│ │ └─┬ [40m[33msshpk@1.11.0[39m[49m 
-│ │   ├── [40m[33masn1@0.2.3[39m[49m 
-│ │   ├── [40m[33massert-plus@1.0.0[39m[49m 
-│ │   ├── [40m[33mbcrypt-pbkdf@1.0.1[39m[49m 
-│ │   ├─┬ [40m[33mdashdash@1.14.1[39m[49m 
-│ │   │ └── [40m[33massert-plus@1.0.0[39m[49m 
-│ │   ├── [40m[33mecc-jsbn@0.1.1[39m[49m 
-│ │   ├─┬ [40m[33mgetpass@0.1.6[39m[49m 
-│ │   │ └── [40m[33massert-plus@1.0.0[39m[49m 
-│ │   ├── [40m[33mjodid25519@1.0.2[39m[49m 
-│ │   ├── [40m[33mjsbn@0.1.1[39m[49m 
-│ │   └── [40m[33mtweetnacl@0.14.5[39m[49m 
-│ ├── [40m[33mis-typedarray@1.0.0[39m[49m 
-│ ├── [40m[33misstream@0.1.2[39m[49m 
-│ ├── [40m[33mjson-stringify-safe@5.0.1[39m[49m 
-│ ├─┬ [40m[33mmime-types@2.1.14[39m[49m 
-│ │ └── [40m[33mmime-db@1.26.0[39m[49m 
-│ ├── [40m[33moauth-sign@0.8.2[39m[49m 
-│ ├── [40m[33mperformance-now@0.2.0[39m[49m 
-│ ├── [40m[33mstringstream@0.0.5[39m[49m 
-│ └── [40m[33mtunnel-agent@0.4.3[39m[49m 
-├── [40m[33mrequest-as-curl@0.1.0[39m[49m 
-├── [40m[33msemver@5.3.0[39m[49m 
-├─┬ [40m[33msocks5-http-client@1.0.2[39m[49m 
-│ └─��� [40m[33msocks5-client@1.1.2[39m[49m 
-│   └─┬ [40m[33mip-address@4.2.0[39m[49m 
-│     ├─┬ [40m[33mcli@0.6.6[39m[49m 
-│     │ ├── [40m[33mexit@0.1.2[39m[49m 
-│     │ └─┬ [40m[33mglob@3.2.11[39m[49m 
-│     │   └─┬ [40m[33mminimatch@0.3.0[39m[49m 
-│     │     ├── [40m[33mlru-cache@2.7.3[39m[49m 
-│     │     └── [40m[33msigmund@1.0.1[39m[49m 
-│     ├─┬ [40m[33mcliff@0.1.10[39m[49m 
-│     │ ├── [40m[33mcolors@1.0.3[39m[49m 
-│     │ └─┬ [40m[33mwinston@0.8.3[39m[49m 
-│     │   ├── [40m[33masync@0.2.10[39m[49m 
-│     │   ├── [40m[33mcolors@0.6.2[39m[49m 
-│     │   └── [40m[33mpkginfo@0.3.1[39m[49m 
-│     ├── [40m[33mjsbn@0.0.0[39m[49m 
-│     ├─┬ [40m[33mlodash.find@3.2.1[39m[49m 
-│     │ ├─┬ [40m[33mlodash._basecallback@3.3.1[39m[49m 
-│     │ │ ├── [40m[33mlodash._baseisequal@3.0.7[39m[49m 
-│     │ │ └── [40m[33mlodash.pairs@3.0.1[39m[49m 
-│     │ ├── [40m[33mlodash._baseeach@3.0.4[39m[49m 
-│     │ ├── [40m[33mlodash._basefind@3.0.0[39m[49m 
-│     │ └── [40m[33mlodash._basefindindex@3.6.0[39m[49m 
-│     ├─┬ [40m[33mlodash.merge@3.3.2[39m[49m 
-│     │ ├── [40m[33mlodash._arraycopy@3.0.0[39m[49m 
-│     │ ├── [40m[33mlodash._arrayeach@3.0.0[39m[49m 
-│     │ ├─┬ [40m[33mlodash._createassigner@3.1.1[39m[49m 
-│     │ │ ├── [40m[33mlodash._bindcallback@3.0.1[39m[49m 
-│     │ │ └── [40m[33mlodash.restparam@3.6.1[39m[49m 
-│     │ ├─┬ [40m[33mlodash.isplainobject@3.2.0[39m[49m 
-│     │ │ └── [40m[33mlodash._basefor@3.0.3[39m[49m 
-│     │ ├── [40m[33mlodash.istypedarray@3.0.6[39m[49m 
-│     │ ├── [40m[33mlodash.keysin@3.0.8[39m[49m 
-│     │ └── [40m[33mlodash.toplainobject@3.0.0[39m[49m 
-│     └── [40m[33msprintf@0.1.5[39m[49m 
-├─┬ [40m[33mtough-cookie@2.3.2[39m[49m 
-│ └── [40m[33mpunycode@1.4.1[39m[49m 
-├─┬ [40m[33mverror@1.9.0[39m[49m 
-│ ├── [40m[33massert-plus@1.0.0[39m[49m 
-│ ├── [40m[33mcore-util-is@1.0.2[39m[49m 
-│ └── [40m[33mextsprintf@1.3.0[39m[49m 
-├── [40m[33mxmldom@0.1.27[39m[49m 
-├── [40m[33mxpath@0.0.23[39m[49m 
-├─┬ [40m[33myaml-include@1.2.0[39m[49m 
-│ └── [40m[33mrecursive-readdir-sync@1.0.6[39m[49m 
-└─┬ [40m[33myargs@6.6.0[39m[49m 
-  ├── [40m[33mcamelcase@3.0.0[39m[49m 
-  ├─┬ [40m[33mcliui@3.2.0[39m[49m 
-  │ ├─┬ [40m[33mstrip-ansi@3.0.1[39m[49m 
-  │ │ └── [40m[33mansi-regex@2.1.1[39m[49m 
-  │ └── [40m[33mwrap-ansi@2.1.0[39m[49m 
-  ├── [40m[33mdecamelize@1.2.0[39m[49m 
-  ├── [40m[33mget-caller-file@1.0.2[39m[49m 
-  ├─┬ [40m[33mos-locale@1.4.0[39m[49m 
-  │ └─┬ [40m[33mlcid@1.0.0[39m[49m 
-  │   └── [40m[33minvert-kv@1.0.0[39m[49m 
-  ├─┬ [40m[33mread-pkg-up@1.0.1[39m[49m 
-  │ ├─┬ [40m[33mfind-up@1.1.2[39m[49m 
-  │ │ ├── [40m[33mpath-exists@2.1.0[39m[49m 
-  │ │ └─┬ [40m[33mpinkie-promise@2.0.1[39m[49m 
-  │ │   └── [40m[33mpinkie@2.0.4[39m[49m 
-  │ └─┬ [40m[33mread-pkg@1.1.0[39m[49m 
-  │   ├─┬ [40m[33mload-json-file@1.1.0[39m[49m 
-  │   │ ├── [40m[33mgraceful-fs@4.1.11[39m[49m 
-  │   │ ├─┬ [40m[33mparse-json@2.2.0[39m[49m 
-  │   │ │ └─┬ [40m[33merror-ex@1.3.1[39m[49m 
-  │   │ │   └── [40m[33mis-arrayish@0.2.1[39m[49m 
-  │   │ ├── [40m[33mpify@2.3.0[39m[49m 
-  │   │ └─┬ [40m[33mstrip-bom@2.0.0[39m[49m 
-  │   │   └── [40m[33mis-utf8@0.2.1[39m[49m 
-  │   ├─┬ [40m[33mnormalize-package-data@2.3.5[39m[49m 
-  │   │ ├── [40m[33mhosted-git-info@2.2.0[39m[49m 
-  │   │ ├─┬ [40m[33mis-builtin-module@1.0.0[39m[49m 
-  │   │ │ └── [40m[33mbuiltin-modules@1.1.1[39m[49m 
-  │   │ └─┬ [40m[33mvalidate-npm-package-license@3.0.1[39m[49m 
-  │   │   ├─┬ [40m[33mspdx-correct@1.0.2[39m[49m 
-  │   │   │ └── [40m[33mspdx-license-ids@1.2.2[39m[49m 
-  │   │   └── [40m[33mspdx-expression-parse@1.0.4[39m[49m 
-  │   └── [40m[33mpath-type@1.1.0[39m[49m 
-  ├── [40m[33mrequire-directory@2.1.1[39m[49m 
-  ├── [40m[33mrequire-main-filename@1.0.1[39m[49m 
-  ├── [40m[33mset-blocking@2.0.0[39m[49m 
-  ├─┬ [40m[33mstring-width@1.0.2[39m[49m 
-  │ ├── [40m[33mcode-point-at@1.1.0[39m[49m 
-  │ └─┬ [40m[33mis-fullwidth-code-point@1.0.0[39m[49m 
-  │   └── [40m[33mnumber-is-nan@1.0.1[39m[49m 
-  ├── [40m[33mwhich-module@1.0.0[39m[49m 
-  ├── [40m[33my18n@3.2.1[39m[49m 
-  └── [40m[33myargs-parser@4.2.1[39m[49m 
-
-
-travis_time:end:08ccdbb8:start=1488604721062591356,finish=1488604740670866200,duration=19608274844[0Ktravis_fold:end:install[0Ktravis_time:start:05a16dc9[0K$ npm test
-
-> hyperpotamus@0.30.3 test /home/travis/build/pmarkert/hyperpotamus
-> mocha $NODE_DEBUG_OPTION
-
-
-[0m[0m
-[0m  HTTP Tests[0m
-[0m    YAML file tests[0m
-    [32m  ✓[0m[90m scripts/actions_only.yml[0m
-    [32m  ✓[0m[90m scripts/capture_header.yml[0m[33m (49ms)[0m
-    [32m  ✓[0m[90m scripts/capture_jquery.yml[0m[33m (45ms)[0m
-    [32m  ✓[0m[90m scripts/capture_regex.yml[0m
-    [32m  ✓[0m[90m scripts/capture_regex_fail_jump.yml[0m
-    [32m  ✓[0m[90m scripts/capture_regex_multi.yml[0m
-    [32m  ✓[0m[90m scripts/compare.yml[0m
-    [32m  ✓[0m[90m scripts/cookies.yml[0m
-    [32m  ✓[0m[90m scripts/default_request_options.yml[0m
-    [32m  ✓[0m[90m scripts/default_response_actions.yml[0m
-    [32m  ✓[0m[90m scripts/delay.yml[0m
-    [32m  ✓[0m[90m scripts/foreach_shared_array.yml[0m
-    [32m  ✓[0m[90m scripts/foreach_shared_object.yml[0m
-    [32m  ✓[0m[90m scripts/foreach_shared_property.yml[0m
-    [32m  ✓[0m[90m scripts/function_asynchronous.yml[0m
-    [32m  ✓[0m[90m scripts/function_imports_array.yml[0m
-    [32m  ✓[0m[90m scripts/function_imports_object.yml[0m
-    [32m  ✓[0m[90m scripts/function_reference.yml[0m
-    [32m  ✓[0m[90m scripts/function_synchronous.yml[0m
-    [32m  ✓[0m[90m scripts/goto.yml[0m
-    [32m  ✓[0m[90m scripts/header_regex.yml[0m
-    [32m  ✓[0m[90m scripts/header_simple.yml[0m
-    [32m  ✓[0m[90m scripts/headers_custom.yml[0m
-    [32m  ✓[0m[90m scripts/headers_language.yml[0m
-    [32m  ✓[0m[90m scripts/headers_useragent.yml[0m
-    [32m  ✓[0m[90m scripts/if.yml[0m
-    [32m  ✓[0m[90m scripts/in.yml[0m
-    [32m  ✓[0m[90m scripts/include_action.yml[0m
-    [32m  ✓[0m[90m scripts/include_actions.yml[0m
-    [32m  ✓[0m[90m scripts/include_property.yml[0m
-    [32m  ✓[0m[90m scripts/include_step.yml[0m
-    [32m  ✓[0m[90m scripts/include_steps.yml[0m
-    [32m  ✓[0m[90m scripts/include_steps_recursive.yml[0m
-    [32m  ✓[0m[90m scripts/include_value.yml[0m
-    [32m  ✓[0m[90m scripts/increment.yml[0m
-    [32m  ✓[0m[90m scripts/interpolate.yml[0m
-    [32m  ✓[0m[90m scripts/iterate.yml[0m
-    [32m  ✓[0m[90m scripts/json.yml[0m
-    [32m  ✓[0m[90m scripts/json_array.yml[0m
-    [32m  ✓[0m[90m scripts/jump_end.yml[0m
-    [32m  ✓[0m[90m scripts/jump_failure.yml[0m[33m (47ms)[0m
-    [32m  ✓[0m[90m scripts/jump_self.yml[0m
-    [32m  ✓[0m[90m scripts/jump_success.yml[0m
-    [32m  ✓[0m[90m scripts/multistep.yml[0m
-    [32m  ✓[0m[90m scripts/no_request.yml[0m
-    [32m  ✓[0m[90m scripts/noop.yml[0m
-    [32m  ✓[0m[90m scripts/not_jump_failure.yml[0m
-    [32m  ✓[0m[90m scripts/not_jump_success.yml[0m
-    [32m  ✓[0m[90m scripts/null_request.yml[0m
-    [32m  ✓[0m[90m scripts/post_form_data.yml[0m
-    [32m  ✓[0m[90m scripts/post_json_data.yml[0m
-    [32m  ✓[0m[90m scripts/prompt.yml[0m
-    [32m  ✓[0m[90m scripts/put_json_data.yml[0m
-    [32m  ✓[0m[90m scripts/redirect_follow.yml[0m
-    [32m  ✓[0m[90m scripts/regex_explicit.yml[0m
-    [32m  ✓[0m[90m scripts/regex_inline.yml[0m
-    [32m  ✓[0m[90m scripts/regex_object.yml[0m
-    [32m  ✓[0m[90m scripts/replace.yml[0m
-    [32m  ✓[0m[90m scripts/replace_array.yml[0m
-    [32m  ✓[0m[90m scripts/resolve.yml[0m
-    [32m  ✓[0m[90m scripts/set.yml[0m
-    [32m  ✓[0m[90m scripts/simple.yml[0m
-    [32m  ✓[0m[90m scripts/single.yml[0m
-    [32m  ✓[0m[90m scripts/status_302.yml[0m
-    [32m  ✓[0m[90m scripts/status_404.yml[0m
-    [32m  ✓[0m[90m scripts/status_500.yml[0m
-    [32m  ✓[0m[90m scripts/status_explicit.yml[0m
-    [32m  ✓[0m[90m scripts/status_inline.yml[0m
-    [32m  ���[0m[90m scripts/status_list.yml[0m
-    [32m  ✓[0m[90m scripts/text_explicit.yml[0m
-    [32m  ✓[0m[90m scripts/text_implicit.yml[0m
-    [32m  ✓[0m[90m scripts/url_shortcut.yml[0m
-[0m    Logical tests[0m
-    [32m  ✓[0m[90m logical/and.yml[0m
-    [32m  ✓[0m[90m logical/and_2.yml[0m
-    [32m  ✓[0m[90m logical/and_3.yml[0m
-    [32m  ✓[0m[90m logical/and_nested_and.yml[0m
-    [32m  ✓[0m[90m logical/and_nested_not.yml[0m
-    [32m  ✓[0m[90m logical/and_nested_or.yml[0m
-    [32m  ✓[0m[90m logical/and_triple_nested.yml[0m
-    [32m  ✓[0m[90m logical/if_else.yml[0m
-    [32m  ✓[0m[90m logical/if_then.yml[0m
-    [32m  ✓[0m[90m logical/if_then_else_else.yml[0m
-    [32m  ✓[0m[90m logical/if_then_else_then.yml[0m
-    [32m  ✓[0m[90m logical/not.yml[0m
-    [32m  ✓[0m[90m logical/not_nested_and.yml[0m
-    [32m  ✓[0m[90m logical/not_nested_not.yml[0m
-    [32m  ✓[0m[90m logical/not_nested_or.yml[0m
-    [32m  ✓[0m[90m logical/not_triple_nested.yml[0m
-    [32m  ✓[0m[90m logical/or.yml[0m
-    [32m  ✓[0m[90m logical/or_2.yml[0m
-    [32m  ✓[0m[90m logical/or_3.yml[0m
-    [32m  ✓[0m[90m logical/or_nested_and.yml[0m
-    [32m  ✓[0m[90m logical/or_nested_not.yml[0m
-    [32m  ✓[0m[90m logical/or_nested_or.yml[0m
-    [32m  ✓[0m[90m logical/or_triple_nested.yml[0m
-[0m    YAML file tests with data[0m
-    [32m  ✓[0m[90m data_scripts/data.yml[0m
-    [32m  ✓[0m[90m data_scripts/validate_equals_array.yml[0m
-[0m    YAML file tests that should fail[0m
-    [32m  ✓[0m[90m failure_scripts/and_nested_and.yml[0m
-    [32m  ✓[0m[90m failure_scripts/and_nested_not.yml[0m
-    [32m  ✓[0m[90m failure_scripts/and_nested_or.yml[0m
-    [32m  ✓[0m[90m failure_scripts/fail.yml[0m
-    [32m  ✓[0m[90m failure_scripts/header_text.yml[0m
-    [32m  ✓[0m[90m failure_scripts/if_else.yml[0m
-    [32m  ✓[0m[90m failure_scripts/if_then.yml[0m
-    [32m  ✓[0m[90m failure_scripts/if_then_else_else.yml[0m
-    [32m  ✓[0m[90m failure_scripts/if_then_else_then.yml[0m
-    [32m  ✓[0m[90m failure_scripts/missing_header.yml[0m
-    [32m  ✓[0m[90m failure_scripts/not.yml[0m
-    [32m  ✓[0m[90m failure_scripts/not_nested_and.yml[0m
-    [32m  ✓[0m[90m failure_scripts/not_nested_not.yml[0m
-    [32m  ✓[0m[90m failure_scripts/not_nested_or.yml[0m
-    [32m  ✓[0m[90m failure_scripts/or.yml[0m
-    [32m  ✓[0m[90m failure_scripts/or_2.yml[0m
-    [32m  ✓[0m[90m failure_scripts/regex.yml[0m
-    [32m  ✓[0m[90m failure_scripts/status.yml[0m
-    [32m  ✓[0m[90m failure_scripts/status_500.yml[0m
-    [32m  ✓[0m[90m failure_scripts/text.yml[0m
-
-[0m  String Interpolation[0m
-[0m    Normal Tokens[0m
-    [32m  ✓[0m[90m Whitespace both sides[0m
-    [32m  ✓[0m[90m No whitespace[0m
-    [32m  ✓[0m[90m Trailing whitespace[0m
-[0m    Url-Encode token[0m
-    [32m  ✓[0m[90m Encode[0m
-    [32m  ✓[0m[90m Encode encode[0m
-    [32m  ✓[0m[90m Encode encode decode[0m
-    [32m  ✓[0m[90m Encode decode[0m
-[0m    Optional token[0m
-    [32m  ✓[0m[90m Optional[0m
-    [32m  ✓[0m[90m Option optional, default[0m
-[0m    Format the date[0m
-    [32m  ✓[0m[90m date_format[0m
-[0m    Random numbers[0m
-    [32m  ✓[0m[90m Should generate a random number within a range[0m
-    [32m  ✓[0m[90m Should generate a random number within a range and whitespace[0m
-    [32m  ✓[0m[90m Should return the number if min == max[0m
-    [32m  ✓[0m[90m Should throw an error if min > max[0m
-    [32m  ✓[0m[90m Should generate a random number from X -> X+1 (same number)[0m
-    [32m  ✓[0m[90m Should generate a random number from 0 to max-1[0m
-[0m    Random array elements[0m
-    [32m  ✓[0m[90m Should return a random element from an array[0m
-    [32m  ✓[0m[90m Should return the single element from a single-element array[0m
-    [32m  ✓[0m[90m Should return the element from a non array[0m
-[0m    Multiple tokens[0m
-    [32m  ✓[0m[90m Process multiple tokens[0m
-[0m    Array access[0m
-    [32m  ✓[0m[90m First element[0m
-    [32m  ✓[0m[90m Third element[0m
-    [32m  ✓[0m[90m Out of bounds[0m
-    [32m  ✓[0m[90m Non-array[0m
-    [32m  ✓[0m[90m Non-array, fake index[0m
-[0m    Array join[0m
-    [32m  ✓[0m[90m Comma-delimited[0m
-    [32m  ✓[0m[90m Pipe-delimited[0m
-    [32m  ✓[0m[90m Default delimiter[0m
-    [32m  ✓[0m[90m Tab delimiter[0m
-    [32m  ✓[0m[90m Space delimiter[0m
-
-[0m  Normalize[0m
-  [32m  ✓[0m[90m scripts/actions_only.yml[0m
-  [32m  ✓[0m[90m scripts/capture_header.yml[0m
-  [32m  ✓[0m[90m scripts/capture_jquery.yml[0m
-  [32m  ✓[0m[90m scripts/capture_regex.yml[0m
-  [32m  ✓[0m[90m scripts/capture_regex_fail_jump.yml[0m
-  [32m  ✓[0m[90m scripts/capture_regex_multi.yml[0m
-  [32m  ✓[0m[90m scripts/compare.yml[0m
-  [32m  ✓[0m[90m scripts/cookies.yml[0m
-  [32m  ✓[0m[90m scripts/default_request_options.yml[0m
-  [32m  ✓[0m[90m scripts/default_response_actions.yml[0m
-  [32m  ✓[0m[90m scripts/delay.yml[0m
-  [32m  ✓[0m[90m scripts/goto.yml[0m
-  [32m  ✓[0m[90m scripts/header_regex.yml[0m
-  [32m  ✓[0m[90m scripts/header_simple.yml[0m
-  [32m  ✓[0m[90m scripts/headers_custom.yml[0m
-  [32m  ✓[0m[90m scripts/headers_language.yml[0m
-  [32m  ✓[0m[90m scripts/headers_useragent.yml[0m
-  [32m  ✓[0m[90m scripts/if.yml[0m
-  [32m  ✓[0m[90m scripts/in.yml[0m
-  [32m  ✓[0m[90m scripts/include_action.yml[0m
-  [32m  ✓[0m[90m scripts/include_actions.yml[0m
-  [32m  ✓[0m[90m scripts/include_property.yml[0m
-  [32m  ✓[0m[90m scripts/include_step.yml[0m
-  [32m  ✓[0m[90m scripts/include_steps.yml[0m
-  [32m  ✓[0m[90m scripts/include_steps_recursive.yml[0m
-  [32m  ✓[0m[90m scripts/include_value.yml[0m
-  [32m  ✓[0m[90m scripts/increment.yml[0m
-  [32m  ✓[0m[90m scripts/interpolate.yml[0m
-  [32m  ✓[0m[90m scripts/iterate.yml[0m
-  [32m  ✓[0m[90m scripts/json.yml[0m
-  [32m  ✓[0m[90m scripts/json_array.yml[0m
-  [32m  ✓[0m[90m scripts/jump_end.yml[0m
-  [32m  ✓[0m[90m scripts/jump_failure.yml[0m
-  [32m  ✓[0m[90m scripts/jump_self.yml[0m
-  [32m  ✓[0m[90m scripts/jump_success.yml[0m
-  [32m  ✓[0m[90m scripts/multistep.yml[0m
-  [32m  ✓[0m[90m scripts/no_request.yml[0m
-  [32m  ✓[0m[90m scripts/noop.yml[0m
-  [32m  ✓[0m[90m scripts/not_jump_failure.yml[0m
-  [32m  ✓[0m[90m scripts/not_jump_success.yml[0m
-  [32m  ✓[0m[90m scripts/null_request.yml[0m
-  [32m  ✓[0m[90m scripts/post_form_data.yml[0m
-  [32m  ✓[0m[90m scripts/post_json_data.yml[0m
-  [32m  ✓[0m[90m scripts/put_json_data.yml[0m
-  [32m  ✓[0m[90m scripts/redirect_follow.yml[0m
-  [32m  ✓[0m[90m scripts/regex_explicit.yml[0m
-  [32m  ✓[0m[90m scripts/regex_inline.yml[0m
-  [32m  ✓[0m[90m scripts/regex_object.yml[0m
-  [32m  ✓[0m[90m scripts/replace.yml[0m
-  [32m  ✓[0m[90m scripts/replace_array.yml[0m
-  [32m  ✓[0m[90m scripts/resolve.yml[0m
-  [32m  ✓[0m[90m scripts/set.yml[0m
-  [32m  ✓[0m[90m scripts/simple.yml[0m
-  [32m  ✓[0m[90m scripts/single.yml[0m
-  [32m  ✓[0m[90m scripts/status_302.yml[0m
-  [32m  ✓[0m[90m scripts/status_404.yml[0m
-  [32m  ✓[0m[90m scripts/status_500.yml[0m
-  [32m  ✓[0m[90m scripts/status_explicit.yml[0m
-  [32m  ✓[0m[90m scripts/status_inline.yml[0m
-  [32m  ✓[0m[90m scripts/status_list.yml[0m
-  [32m  ✓[0m[90m scripts/text_explicit.yml[0m
-  [32m  ✓[0m[90m scripts/text_implicit.yml[0m
-  [32m  ✓[0m[90m scripts/url_shortcut.yml[0m
-
-[0m  Normalize logical[0m
-  [32m  ✓[0m[90m logical/and.yml[0m
-  [32m  ✓[0m[90m logical/and_2.yml[0m
-  [32m  ✓[0m[90m logical/and_3.yml[0m
-  [32m  ✓[0m[90m logical/and_nested_and.yml[0m
-  [32m  ✓[0m[90m logical/and_nested_not.yml[0m
-  [32m  ✓[0m[90m logical/and_nested_or.yml[0m
-  [32m  ✓[0m[90m logical/and_triple_nested.yml[0m
-  [32m  ✓[0m[90m logical/if_else.yml[0m
-  [32m  ✓[0m[90m logical/if_then.yml[0m
-  [32m  ✓[0m[90m logical/if_then_else_else.yml[0m
-  [32m  ✓[0m[90m logical/if_then_else_then.yml[0m
-  [32m  ✓[0m[90m logical/not.yml[0m
-  [32m  ✓[0m[90m logical/not_nested_and.yml[0m
-  [32m  ✓[0m[90m logical/not_nested_not.yml[0m
-  [32m  ✓[0m[90m logical/not_nested_or.yml[0m
-  [32m  ✓[0m[90m logical/not_triple_nested.yml[0m
-  [32m  ✓[0m[90m logical/or.yml[0m
-  [32m  ✓[0m[90m logical/or_2.yml[0m
-  [32m  ✓[0m[90m logical/or_3.yml[0m
-  [32m  ✓[0m[90m logical/or_nested_and.yml[0m
-  [32m  ✓[0m[90m logical/or_nested_not.yml[0m
-  [32m  ✓[0m[90m logical/or_nested_or.yml[0m
-  [32m  ✓[0m[90m logical/or_triple_nested.yml[0m
-
-[0m  actions/[0m
-[0m    and.js[0m
-[0m      normalize()[0m
-[0m        should succesfully normalize[0m
-        [32m  ✓[0m[90m an array[0m
-        [32m  ✓[0m[90m an array of 1 element[0m
-        [32m  ✓[0m[90m an array of 0 elements[0m
-        [32m  ✓[0m[90m an 'and' action[0m
-[0m        should not normalize[0m
-        [32m  ✓[0m[90m null[0m
-        [32m  ✓[0m[90m integer[0m
-        [32m  ✓[0m[90m string[0m
-        [32m  ✓[0m[90m true[0m
-        [32m  ✓[0m[90m false[0m
-        [32m  ✓[0m[90m Date[0m
-        [32m  ✓[0m[90m an object without .and[0m
-[0m        should throw an error for invalid actions[0m
-        [32m  ✓[0m[90m .and is true[0m
-        [32m  ✓[0m[90m .and is a string[0m
-        [32m  ✓[0m[90m .and is null[0m
-[0m      process()[0m
-[0m        should successfully process[0m
-        [32m  ✓[0m[90m an empty array[0m
-        [32m  ✓[0m[90m an array of 1[0m
-        [32m  ✓[0m[90m an array of actions[0m
-[0m        should fail with[0m
-        [32m  ✓[0m[90m a single failing action[0m
-        [32m  ✓[0m[90m a failing action after a successful one[0m
-        [32m  ✓[0m[90m multiple failing actions[0m
-        [32m  ✓[0m[90m short-circuit evaluation of nested actions[0m
-[0m    body.js[0m
-[0m      normalize()[0m
-      [32m  ✓[0m[90m should not exist[0m
-[0m      process()[0m
-      [32m  ✓[0m[90m should fail when not used inside of a request/response action[0m
-[0m        with different response types[0m
-[0m          should succeed given[0m
-          [32m  ✓[0m[90m a string[0m
-          [32m  ✓[0m[90m an empty string[0m
-          [32m  ✓[0m[90m a json object[0m
-[0m          should fail give[0m
-          [32m  ✓[0m[90m null[0m
-[0m          different .body values[0m
-[0m            should succeed given[0m
-            [32m  ✓[0m[90m an empty string[0m
-            [32m  ✓[0m[90m normal key[0m
-            [32m  ✓[0m[90m dotted notaion key[0m
-[0m            should fail given[0m
-            [32m  ✓[0m[90m null[0m
-            [32m  ✓[0m[90m true[0m
-            [32m  ✓[0m[90m false[0m
-            [32m  ✓[0m[90m a date[0m
-            [32m  ✓[0m[90m a number[0m
-            [32m  ✓[0m[90m an array[0m
-            [32m  ✓[0m[90m an object[0m
-[0m    compare.js[0m
-[0m      normalize()[0m
-[0m        should rewrite[0m
-        [32m  ✓[0m[90m equals[0m
-        [32m  ✓[0m[90m equal[0m
-        [32m  ✓[0m[90m equal_to[0m
-        [32m  ✓[0m[90m less_than[0m
-        [32m  ✓[0m[90m less_than_or_equal_to[0m
-        [32m  ✓[0m[90m less_than_or_equal[0m
-        [32m  ✓[0m[90m less_than_or_equals[0m
-        [32m  ✓[0m[90m greater_than[0m
-        [32m  ✓[0m[90m greater_than_or_equal_to[0m
-        [32m  ✓[0m[90m greater_than_or_equal[0m
-        [32m  ✓[0m[90m greater_than_or_equals[0m
-        [32m  ✓[0m[90m not_equal[0m
-        [32m  ✓[0m[90m not_equals[0m
-        [32m  ✓[0m[90m not_equal_to[0m
-[0m        should normalize[0m
-        [32m  ✓[0m[90m =[0m
-        [32m  ✓[0m[90m ==[0m
-        [32m  ✓[0m[90m <[0m
-        [32m  ✓[0m[90m <=[0m
-        [32m  ✓[0m[90m >[0m
-        [32m  ✓[0m[90m >=[0m
-        [32m  ✓[0m[90m !=[0m
-        [32m  ✓[0m[90m <>[0m
-[0m      process[0m
-[0m        operator: =[0m
-[0m          should succeed with[0m
-          [32m  ✓[0m[90m empty strings[0m
-          [32m  ✓[0m[90m strings[0m
-          [32m  ✓[0m[90m numbers (0)[0m
-          [32m  ✓[0m[90m numbers (1)[0m
-          [32m  ✓[0m[90m numbers (-1)[0m
-          [32m  ✓[0m[90m dates[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m moment dates[0m
-[0m          should fail with[0m
-          [32m  ✓[0m[90m unequal strings[0m
-          [32m  ✓[0m[90m unequal numbers[0m
-          [32m  ✓[0m[90m unequal dates[0m
-          [32m  ✓[0m[90m unequal moments[0m
-          [32m  ✓[0m[90m unequal booleans[0m
-          [32m  ✓[0m[90m unequal after 2nd element[0m
-[0m        operator: !=[0m
-[0m          should succeed with[0m
-          [32m  ✓[0m[90m unequal strings[0m
-          [32m  ✓[0m[90m unequal numbers[0m
-          [32m  ✓[0m[90m unequal dates[0m
-          [32m  ✓[0m[90m unequal moments[0m
-          [32m  ✓[0m[90m unequal booleans[0m
-[0m          should fail with[0m
-          [32m  ✓[0m[90m empty strings[0m
-          [32m  ✓[0m[90m strings[0m
-          [32m  ✓[0m[90m numbers (0)[0m
-          [32m  ✓[0m[90m numbers (1)[0m
-          [32m  ✓[0m[90m numbers (-1)[0m
-          [32m  ✓[0m[90m dates[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m moment dates[0m
-          [32m  ✓[0m[90m unequal after 2nd element[0m
-[0m        operator: <[0m
-[0m          should succeed with[0m
-          [32m  ✓[0m[90m strings[0m
-          [32m  ✓[0m[90m numbers[0m
-          [32m  ✓[0m[90m dates[0m
-          [32m  ✓[0m[90m moments[0m
-[0m          should fail with[0m
-          [32m  ✓[0m[90m booleans[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m empty strings[0m
-          [32m  ✓[0m[90m equal strings[0m
-          [32m  ✓[0m[90m greater_than strings[0m
-          [32m  ✓[0m[90m equal numbers (0)[0m
-          [32m  ✓[0m[90m equal numbers (1)[0m
-          [32m  ✓[0m[90m greater_than numbers (-1)[0m
-          [32m  ✓[0m[90m equal dates[0m
-          [32m  ✓[0m[90m greater_than dates[0m
-          [32m  ✓[0m[90m equal moment dates[0m
-          [32m  ✓[0m[90m greater_than moment dates[0m
-          [32m  ✓[0m[90m after 2nd element[0m
-[0m        operator: <=[0m
-[0m          should succeed with[0m
-          [32m  ✓[0m[90m strings[0m
-          [32m  ✓[0m[90m numbers[0m
-          [32m  ✓[0m[90m dates[0m
-          [32m  ✓[0m[90m moments[0m
-          [32m  ✓[0m[90m empty strings[0m
-          [32m  ✓[0m[90m equal strings[0m
-          [32m  ✓[0m[90m equal numbers (0)[0m
-          [32m  ✓[0m[90m equal numbers (1)[0m
-          [32m  ✓[0m[90m equal dates[0m
-          [32m  ✓[0m[90m equal moment dates[0m
-[0m          should fail with[0m
-          [32m  ✓[0m[90m booleans[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m greater_than strings[0m
-          [32m  ✓[0m[90m greater_than numbers (-1)[0m
-          [32m  ✓[0m[90m greater_than dates[0m
-          [32m  ✓[0m[90m greater_than moment dates[0m
-          [32m  ✓[0m[90m after 2nd element[0m
-[0m        operator: >[0m
-[0m          should succeed with[0m
-          [32m  ✓[0m[90m strings[0m
-          [32m  ✓[0m[90m numbers[0m
-          [32m  ✓[0m[90m dates[0m
-          [32m  ✓[0m[90m moments[0m
-[0m          should fail with[0m
-          [32m  ✓[0m[90m booleans[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m empty strings[0m
-          [32m  ✓[0m[90m equal strings[0m
-          [32m  ✓[0m[90m greater_than strings[0m
-          [32m  ✓[0m[90m equal numbers (0)[0m
-          [32m  ✓[0m[90m equal numbers (3)[0m
-          [32m  ✓[0m[90m less_than numbers (-1)[0m
-          [32m  ✓[0m[90m equal dates[0m
-          [32m  ✓[0m[90m less_than dates[0m
-          [32m  ✓[0m[90m equal moment dates[0m
-          [32m  ✓[0m[90m less_than moment dates[0m
-          [32m  ✓[0m[90m after 2nd element[0m
-[0m        operator: >=[0m
-[0m          should succeed with[0m
-          [32m  ✓[0m[90m strings[0m
-          [32m  ✓[0m[90m numbers[0m
-          [32m  ✓[0m[90m dates[0m
-          [32m  ✓[0m[90m moments[0m
-          [32m  ✓[0m[90m empty strings[0m
-          [32m  ✓[0m[90m equal strings[0m
-          [32m  ✓[0m[90m equal numbers (0)[0m
-          [32m  ✓[0m[90m equal numbers (1)[0m
-          [32m  ✓[0m[90m equal dates[0m
-          [32m  ✓[0m[90m equal moment dates[0m
-[0m          should fail with[0m
-          [32m  ✓[0m[90m booleans[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m less_than strings[0m
-          [32m  ✓[0m[90m less_than numbers (-1)[0m
-          [32m  ✓[0m[90m less_than dates[0m
-          [32m  ✓[0m[90m less_than moment dates[0m
-          [32m  ✓[0m[90m after 2nd element[0m
-[0m        should fail with mis-matched types[0m
-        [32m  ✓[0m[90m string, number[0m
-        [32m  ✓[0m[90m string, true[0m
-        [32m  ✓[0m[90m string, false[0m
-        [32m  ✓[0m[90m string, date[0m
-        [32m  ✓[0m[90m string, moment[0m
-        [32m  ✓[0m[90m string, null[0m
-        [32m  ✓[0m[90m number, string[0m
-        [32m  ✓[0m[90m number, true[0m
-        [32m  ✓[0m[90m number, false[0m
-        [32m  ✓[0m[90m number, date[0m
-        [32m  ✓[0m[90m number, moment[0m
-        [32m  ✓[0m[90m number, null[0m
-        [32m  ✓[0m[90m true, string[0m
-        [32m  ✓[0m[90m true, number[0m
-        [32m  ✓[0m[90m true, date[0m
-        [32m  ✓[0m[90m true, moment[0m
-        [32m  ✓[0m[90m true, null[0m
-        [32m  ✓[0m[90m false, string[0m
-        [32m  ✓[0m[90m false, number[0m
-        [32m  ✓[0m[90m false, date[0m
-        [32m  ✓[0m[90m false, moment[0m
-        [32m  ✓[0m[90m false, null[0m
-        [32m  ✓[0m[90m date, string[0m
-        [32m  ✓[0m[90m date, number[0m
-        [32m  ✓[0m[90m date, true[0m
-        [32m  ✓[0m[90m date, false[0m
-        [32m  ✓[0m[90m date, moment[0m
-        [32m  ✓[0m[90m date, null[0m
-        [32m  ✓[0m[90m moment, string[0m
-        [32m  ✓[0m[90m moment, number[0m
-        [32m  ✓[0m[90m moment, true[0m
-        [32m  ✓[0m[90m moment, false[0m
-        [32m  ✓[0m[90m moment, date[0m
-        [32m  ✓[0m[90m moment, null[0m
-[0m        should fail with invalid types[0m
-        [32m  ✓[0m[90m no elements[0m
-        [32m  ✓[0m[90m 1 element[0m
-        [32m  ✓[0m[90m NaN value[0m
-        [32m  ✓[0m[90m array values[0m
-        [32m  ✓[0m[90m object values[0m
-        [32m  ✓[0m[90m true value for compare .array property[0m
-        [32m  ✓[0m[90m false value for compare .array property[0m
-        [32m  ✓[0m[90m string value for compare .array property[0m
-        [32m  ✓[0m[90m date value for compare .array property[0m
-        [32m  ✓[0m[90m null value for compare .array property[0m
-        [32m  ✓[0m[90m object value for compare .array property[0m
-[0m    cookies.js[0m
-[0m      process()[0m
-[0m        should succeed with[0m
-        [32m  ✓[0m[90m an empty array[0m
-        [32m  ✓[0m[90m a single cookie[0m
-        [32m  ✓[0m[90m a single cookie in an array[0m
-        [32m  ✓[0m[90m an array with 2 cookies[0m
-[0m        should fail with[0m
-        [32m  ✓[0m[90m an empty cookie[0m
-        [32m  ✓[0m[90m a missing value[0m
-        [32m  ✓[0m[90m a bad expiration[0m
-[0m        match tests[0m
-        [32m  ✓[0m[90m no cookies[0m
-        [32m  ✓[0m[90m match one cookie[0m
-        [32m  ✓[0m[90m match two cookies[0m
-        [32m  ✓[0m[90m match with null domain cookie[0m
-[0m    delay.js[0m
-[0m      normalize()[0m
-      [32m  ✓[0m[90m should not exist[0m
-[0m      process()[0m
-[0m        Valid values[0m
-        [32m  ✓[0m[90m value=0 (number)[0m
-        [32m  ✓[0m[90m value=1 (number)[0m
-        [32m  ✓[0m[90m value=100 (number)[0m[31m (100ms)[0m
-[0m        invalid types[0m
-        [32m  ✓[0m[90m value='0' (string)[0m
-        [32m  ✓[0m[90m value='1' (string)[0m
-        [32m  ✓[0m[90m value=true[0m
-        [32m  ✓[0m[90m value=false[0m
-        [32m  ✓[0m[90m value=-1 (number)[0m
-        [32m  ✓[0m[90m value=null[0m
-[0m    fail.js[0m
-[0m      normalize()[0m
-[0m        should succesfully normalize[0m
-        [32m  ✓[0m[90m false[0m
-        [32m  ✓[0m[90m a failure action[0m
-[0m        should not normalize[0m
-        [32m  ✓[0m[90m null[0m
-        [32m  ✓[0m[90m integer[0m
-        [32m  ✓[0m[90m string[0m
-        [32m  ✓[0m[90m true[0m
-        [32m  ✓[0m[90m Date[0m
-        [32m  ✓[0m[90m an object without .fail[0m
-[0m        should throw an error for invalid actions[0m
-        [32m  ✓[0m[90m .fail is true[0m
-        [32m  ✓[0m[90m .fail is false[0m
-        [32m  ✓[0m[90m .fail is a number[0m
-        [32m  ✓[0m[90m .fail is null[0m
-        [32m  ✓[0m[90m .fail is an array[0m
-        [32m  ✓[0m[90m .fail is an object[0m
-        [32m  ✓[0m[90m .fail is a date[0m
-[0m      process()[0m
-      [32m  ✓[0m[90m should fail with a specific message[0m
-[0m    pop.js[0m
-[0m      normalize()[0m
-      [32m  ✓[0m[90m should not exist[0m
-[0m      process()[0m
-[0m        .key values[0m
-[0m          should succeed given[0m
-          [32m  ✓[0m[90m empty string[0m
-          [32m  ✓[0m[90m a normal key[0m
-          [32m  ✓[0m[90m a dotted notation key[0m
-[0m          should fail given[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m a date[0m
-          [32m  ✓[0m[90m an array[0m
-          [32m  ✓[0m[90m an object[0m
-[0m        .array values[0m
-[0m          should succeed given[0m
-          [32m  ✓[0m[90m a proper array[0m
-          [32m  ✓[0m[90m a key for a nested array[0m
-          [32m  ✓[0m[90m a key for an array inside of an array[0m
-[0m          should fail given[0m
-          [32m  ✓[0m[90m undefined[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m a key that doesn't exist[0m
-          [32m  ✓[0m[90m a key that isn't for an array[0m
-[0m    request_defaults.js[0m
-[0m      normalize()[0m
-[0m        should succesfully normalize[0m
-        [32m  ✓[0m[90m an empty array[0m
-        [32m  ✓[0m[90m a single unqualified item[0m
-        [32m  ✓[0m[90m a single qualified item[0m
-        [32m  ✓[0m[90m a single qualified, aliased item[0m
-[0m        should not normalize[0m
-        [32m  ✓[0m[90m null[0m
-        [32m  ✓[0m[90m integer[0m
-        [32m  ✓[0m[90m string[0m
-        [32m  ✓[0m[90m true[0m
-        [32m  ✓[0m[90m false[0m
-        [32m  ✓[0m[90m Date[0m
-        [32m  ✓[0m[90m an object without .and[0m
-[0m        should throw an error for invalid actions[0m
-        [32m  ✓[0m[90m element has both .value and .request[0m
-        [32m  ✓[0m[90m request_defaults is a string[0m
-        [32m  ✓[0m[90m request_defaults is a boolean[0m
-[0m      process()[0m
-[0m        should succeed with[0m
-        [32m  ✓[0m[90m an empty array[0m
-        [32m  ✓[0m[90m a single request_default[0m
-        [32m  ✓[0m[90m multiple request_defaults[0m
-[0m    set.js[0m
-[0m      normalize()[0m
-[0m        should succesfully normalize[0m
-[0m          defaults[0m
-          [32m  ✓[0m[90m shortcut[0m
-          [32m  ✓[0m[90m shortcut, empty object[0m
-          [32m  ✓[0m[90m explicit source[0m
-          [32m  ✓[0m[90m explicit source and string target[0m
-          [32m  ✓[0m[90m explicit source and object target[0m
-          [32m  ✓[0m[90m explicit source and object target with extra fields[0m
-          [32m  ✓[0m[90m explicit source and object target, overwrite=false[0m
-          [32m  ✓[0m[90m explicit source and object target, overwrite=true[0m
-          [32m  ✓[0m[90m shortcut preserves top-level properties[0m
-          [32m  ✓[0m[90m explicit preserves top-level properties[0m
-[0m          set[0m
-          [32m  ✓[0m[90m shortcut[0m
-          [32m  ✓[0m[90m shortcut, empty object[0m
-          [32m  ✓[0m[90m explicit source[0m
-          [32m  ✓[0m[90m explicit source and string target[0m
-          [32m  ✓[0m[90m explicit source and object target[0m
-          [32m  ✓[0m[90m explicit source and object target with extra fields[0m
-          [32m  ✓[0m[90m explicit source and object target, overwrite=false[0m
-          [32m  ���[0m[90m explicit source and object target, overwrite=true[0m
-          [32m  ✓[0m[90m shortcut preserves top-level properties[0m
-          [32m  ✓[0m[90m explicit preserves top-level properties[0m
-[0m          merge[0m
-          [32m  ✓[0m[90m shortcut[0m
-          [32m  ✓[0m[90m shortcut, empty object[0m
-          [32m  ✓[0m[90m explicit source[0m
-          [32m  ✓[0m[90m explicit source and string target[0m
-          [32m  ✓[0m[90m explicit source and object target[0m
-          [32m  ✓[0m[90m explicit source and object target with extra fields[0m
-          [32m  ✓[0m[90m explicit source and object target, overwrite=false[0m
-          [32m  ✓[0m[90m explicit source and object target, overwrite=true[0m
-          [32m  ✓[0m[90m shortcut preserves top-level properties[0m
-          [32m  ✓[0m[90m explicit preserves top-level properties[0m
-[0m        should not normalize[0m
-        [32m  ✓[0m[90m null[0m
-        [32m  ✓[0m[90m integer[0m
-        [32m  ✓[0m[90m string[0m
-        [32m  ✓[0m[90m true[0m
-        [32m  ✓[0m[90m Date[0m
-        [32m  ✓[0m[90m an object without .defaults, .set, or .merge[0m
-[0m        should throw an error for invalid actions[0m
-        [32m  ✓[0m[90m .defaults is true[0m
-        [32m  ✓[0m[90m .defaults is false[0m
-        [32m  ✓[0m[90m .defaults is a number[0m
-        [32m  ✓[0m[90m .defaults is null[0m
-        [32m  ✓[0m[90m .defaults is an array[0m
-        [32m  ✓[0m[90m .defaults is a date[0m
-        [32m  ✓[0m[90m .set is true[0m
-        [32m  ✓[0m[90m .set is false[0m
-        [32m  ✓[0m[90m .set is a number[0m
-        [32m  ✓[0m[90m .set is null[0m
-        [32m  ✓[0m[90m .set is an array[0m
-        [32m  ✓[0m[90m .set is a date[0m
-        [32m  ✓[0m[90m .merge is true[0m
-        [32m  ✓[0m[90m .merge is false[0m
-        [32m  ✓[0m[90m .merge is a number[0m
-        [32m  ✓[0m[90m .merge is null[0m
-        [32m  ✓[0m[90m .merge is an array[0m
-        [32m  ✓[0m[90m .merge is a date[0m
-[0m      process()[0m
-[0m        mode=set[0m
-[0m          target=null[0m
-          [32m  ✓[0m[90m new property[0m
-          [32m  ✓[0m[90m existing property[0m
-          [32m  ✓[0m[90m nested property[0m
-          [32m  ✓[0m[90m dotted property[0m
-[0m          target=string_key[0m
-          [32m  ✓[0m[90m new property[0m
-          [32m  ✓[0m[90m existing property[0m
-          [32m  ✓[0m[90m new nested property[0m
-          [32m  ✓[0m[90m existing nested property[0m
-          [32m  ✓[0m[90m existing nested property with sibling values[0m
-          [32m  ✓[0m[90m existing nested property with existing child values[0m
-[0m        mode=defaults[0m
-[0m          target=null[0m
-          [32m  ✓[0m[90m new property[0m
-          [32m  ✓[0m[90m existing property[0m
-          [32m  ✓[0m[90m nested property[0m
-          [32m  ✓[0m[90m dotted property[0m
-[0m          target=string_key[0m
-          [32m  ✓[0m[90m new property[0m
-          [32m  ✓[0m[90m existing property[0m
-          [32m  ✓[0m[90m new nested property[0m
-          [32m  ✓[0m[90m existing nested property[0m
-          [32m  ✓[0m[90m existing nested property with sibling values[0m
-          [32m  ✓[0m[90m existing nested property with existing child values[0m
-[0m        mode=merge[0m
-[0m          target=null[0m
-          [32m  ✓[0m[90m new property[0m
-          [32m  ✓[0m[90m existing property[0m
-          [32m  ✓[0m[90m nested property[0m
-          [32m  ✓[0m[90m dotted property[0m
-[0m          target=string_key[0m
-          [32m  ✓[0m[90m new property[0m
-          [32m  ✓[0m[90m existing property[0m
-          [32m  ✓[0m[90m new nested property[0m
-          [32m  ✓[0m[90m existing nested property[0m
-          [32m  ✓[0m[90m existing nested property with sibling values[0m
-          [32m  ✓[0m[90m existing nested property with existing child values[0m
-[0m    shift.js[0m
-[0m      normalize()[0m
-      [32m  ✓[0m[90m should not exist[0m
-[0m      process()[0m
-[0m        .key values[0m
-[0m          should succeed given[0m
-          [32m  ✓[0m[90m empty string[0m
-          [32m  ✓[0m[90m a normal key[0m
-          [32m  ✓[0m[90m a dotted notation key[0m
-[0m          should fail given[0m
-          [32m  ✓[0m[90m true[0m
-          [32m  ✓[0m[90m false[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m a date[0m
-          [32m  ✓[0m[90m an array[0m
-          [32m  ✓[0m[90m an object[0m
-[0m        .array values[0m
-[0m          should succeed given[0m
-          [32m  ✓[0m[90m a proper array[0m
-          [32m  ✓[0m[90m a key for a nested array[0m
-          [32m  ✓[0m[90m a key for an array inside of an array[0m
-[0m          should fail given[0m
-          [32m  ✓[0m[90m undefined[0m
-          [32m  ✓[0m[90m null[0m
-          [32m  ✓[0m[90m a key that doesn't exist[0m
-          [32m  ✓[0m[90m a key that isn't for an array[0m
-[0m    text.js[0m
-[0m      process()[0m
-      [32m  ✓[0m[90m should fail when not used inside of a request/response action[0m
-[0m        with different response types[0m
-[0m          should succeed given[0m
-          [32m  ✓[0m[90m a match[0m
-          [32m  ✓[0m[90m an exact match[0m
-          [32m  ✓[0m[90m a match at the beginning[0m
-          [32m  ✓[0m[90m a match at the end[0m
-          [32m  ✓[0m[90m a phrase[0m
-[0m          should fail given[0m
-          [32m  ✓[0m[90m an unmatched string[0m
-          [32m  ✓[0m[90m null for .text[0m
-          [32m  ✓[0m[90m undefined for .text[0m
-          [32m  ✓[0m[90m a number for .text[0m
-          [32m  ✓[0m[90m a date for .text[0m
-          [32m  ✓[0m[90m an object for .text[0m
-          [32m  ✓[0m[90m an array for .text[0m
-
-
-[92m [0m[32m 630 passing[0m[90m (2s)[0m
-
-
-travis_time:end:05a16dc9:start=1488604740675058881,finish=1488604744248384179,duration=3573325298[0K
-[32;1mThe command "npm test" exited with 0.[0m
-[33;1mSkipping a deployment with the npm provider because this is not a tagged commit[0m
-
-Done. Your build exited with 0.

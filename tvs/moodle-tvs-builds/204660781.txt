@@ -1,1072 +1,0 @@
-travis_fold:start:worker_info[0K[33;1mWorker information[0m
-hostname: i-01fa818-precise-production-2-worker-org-docker.travisci.net:c75f528a-150e-4a00-9f98-d82625f82b88
-version: v2.5.0 https://github.com/travis-ci/worker/tree/da3a43228dffc0fcca5a46569ca786b22991979f
-instance: 3e50ff5:travis:python
-startup: 656.940486ms
-travis_fold:end:worker_info[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
-Build language: python
-Build group: stable
-Build dist: precise
-Build id: 204660775
-Job id: 204660781
-travis-build version: c56b13141
-[34m[1mBuild image provisioning date and time[0m
-Thu Feb  5 15:09:33 UTC 2015
-[34m[1mOperating System Details[0m
-Distributor ID:	Ubuntu
-Description:	Ubuntu 12.04.5 LTS
-Release:	12.04
-Codename:	precise
-[34m[1mLinux Version[0m
-3.13.0-29-generic
-[34m[1mCookbooks Version[0m
-a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
-[34m[1mGCC version[0m
-gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
-Copyright (C) 2011 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-[34m[1mLLVM version[0m
-clang version 3.4 (tags/RELEASE_34/final)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-[34m[1mPre-installed Ruby versions[0m
-ruby-1.9.3-p551
-[34m[1mPre-installed Node.js versions[0m
-v0.10.36
-[34m[1mPre-installed Go versions[0m
-1.4.1
-[34m[1mRedis version[0m
-redis-server 2.8.19
-[34m[1mriak version[0m
-2.0.2
-[34m[1mMongoDB version[0m
-MongoDB 2.4.12
-[34m[1mCouchDB version[0m
-couchdb 1.6.1
-[34m[1mNeo4j version[0m
-1.9.4
-[34m[1mRabbitMQ Version[0m
-3.4.3
-[34m[1mElasticSearch version[0m
-1.4.0
-[34m[1mInstalled Sphinx versions[0m
-2.0.10
-2.1.9
-2.2.6
-[34m[1mDefault Sphinx version[0m
-2.2.6
-[34m[1mInstalled Firefox version[0m
-firefox 31.0esr
-[34m[1mPhantomJS version[0m
-1.9.8
-[34m[1mant -version[0m
-Apache Ant(TM) version 1.8.2 compiled on December 3 2011
-[34m[1mmvn -version[0m
-Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
-Maven home: /usr/local/maven
-Java version: 1.7.0_76, vendor: Oracle Corporation
-Java home: /usr/lib/jvm/java-7-oracle/jre
-Default locale: en_US, platform encoding: ANSI_X3.4-1968
-OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
-travis_fold:end:system_info[0K
-travis_fold:start:fix.CVE-2015-7547[0K$ export DEBIAN_FRONTEND=noninteractive
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  libc-bin libc-dev-bin libc6-dev
-Suggested packages:
-  glibc-doc
-The following packages will be upgraded:
-  libc-bin libc-dev-bin libc6 libc6-dev
-4 upgraded, 0 newly installed, 0 to remove and 258 not upgraded.
-Need to get 8,840 kB of archives.
-After this operation, 14.3 kB disk space will be freed.
-Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6-dev amd64 2.15-0ubuntu10.15 [2,943 kB]
-Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-dev-bin amd64 2.15-0ubuntu10.15 [84.7 kB]
-Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-bin amd64 2.15-0ubuntu10.15 [1,177 kB]
-Get:4 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6 amd64 2.15-0ubuntu10.15 [4,636 kB]
-Fetched 8,840 kB in 0s (29.6 MB/s)
-Preconfiguring packages ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 72431 files and directories currently installed.)
-Preparing to replace libc6-dev 2.15-0ubuntu10.10 (using .../libc6-dev_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc6-dev ...
-Preparing to replace libc-dev-bin 2.15-0ubuntu10.10 (using .../libc-dev-bin_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc-dev-bin ...
-Preparing to replace libc-bin 2.15-0ubuntu10.10 (using .../libc-bin_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc-bin ...
-Processing triggers for man-db ...
-Setting up libc-bin (2.15-0ubuntu10.15) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 72430 files and directories currently installed.)
-Preparing to replace libc6 2.15-0ubuntu10.10 (using .../libc6_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc6 ...
-Setting up libc6 (2.15-0ubuntu10.15) ...
-Setting up libc-dev-bin (2.15-0ubuntu10.15) ...
-Setting up libc6-dev (2.15-0ubuntu10.15) ...
-Processing triggers for libc-bin ...
-ldconfig deferred processing now taking place
-travis_fold:end:fix.CVE-2015-7547[0Ktravis_fold:start:git.checkout[0Ktravis_time:start:1d9ca696[0K$ git clone --depth=50 https://github.com/akretion/delivery-carrier.git akretion/delivery-carrier
-Cloning into 'akretion/delivery-carrier'...
-remote: Counting objects: 968, done.[K
-remote: Compressing objects:   0% (1/489)   [Kremote: Compressing objects:   1% (5/489)   [Kremote: Compressing objects:   2% (10/489)   [Kremote: Compressing objects:   3% (15/489)   [Kremote: Compressing objects:   4% (20/489)   [Kremote: Compressing objects:   5% (25/489)   [Kremote: Compressing objects:   6% (30/489)   [Kremote: Compressing objects:   7% (35/489)   [Kremote: Compressing objects:   8% (40/489)   [Kremote: Compressing objects:   9% (45/489)   [Kremote: Compressing objects:  10% (49/489)   [Kremote: Compressing objects:  11% (54/489)   [Kremote: Compressing objects:  12% (59/489)   [Kremote: Compressing objects:  13% (64/489)   [Kremote: Compressing objects:  14% (69/489)   [Kremote: Compressing objects:  15% (74/489)   [Kremote: Compressing objects:  16% (79/489)   [Kremote: Compressing objects:  17% (84/489)   [Kremote: Compressing objects:  18% (89/489)   [Kremote: Compressing objects:  19% (93/489)   [Kremote: Compressing objects:  20% (98/489)   [Kremote: Compressing objects:  21% (103/489)   [Kremote: Compressing objects:  22% (108/489)   [Kremote: Compressing objects:  23% (113/489)   [Kremote: Compressing objects:  24% (118/489)   [Kremote: Compressing objects:  25% (123/489)   [Kremote: Compressing objects:  26% (128/489)   [Kremote: Compressing objects:  27% (133/489)   [Kremote: Compressing objects:  28% (137/489)   [Kremote: Compressing objects:  29% (142/489)   [Kremote: Compressing objects:  30% (147/489)   [Kremote: Compressing objects:  31% (152/489)   [Kremote: Compressing objects:  32% (157/489)   [Kremote: Compressing objects:  33% (162/489)   [Kremote: Compressing objects:  34% (167/489)   [Kremote: Compressing objects:  35% (172/489)   [Kremote: Compressing objects:  36% (177/489)   [Kremote: Compressing objects:  37% (181/489)   [Kremote: Compressing objects:  38% (186/489)   [Kremote: Compressing objects:  39% (191/489)   [Kremote: Compressing objects:  40% (196/489)   [Kremote: Compressing objects:  41% (201/489)   [Kremote: Compressing objects:  42% (206/489)   [Kremote: Compressing objects:  43% (211/489)   [Kremote: Compressing objects:  44% (216/489)   [Kremote: Compressing objects:  45% (221/489)   [Kremote: Compressing objects:  46% (225/489)   [Kremote: Compressing objects:  47% (230/489)   [Kremote: Compressing objects:  48% (235/489)   [Kremote: Compressing objects:  49% (240/489)   [Kremote: Compressing objects:  50% (245/489)   [Kremote: Compressing objects:  51% (250/489)   [Kremote: Compressing objects:  52% (255/489)   [Kremote: Compressing objects:  53% (260/489)   [Kremote: Compressing objects:  54% (265/489)   [Kremote: Compressing objects:  55% (269/489)   [Kremote: Compressing objects:  56% (274/489)   [Kremote: Compressing objects:  57% (279/489)   [Kremote: Compressing objects:  58% (284/489)   [Kremote: Compressing objects:  59% (289/489)   [Kremote: Compressing objects:  60% (294/489)   [Kremote: Compressing objects:  61% (299/489)   [Kremote: Compressing objects:  62% (304/489)   [Kremote: Compressing objects:  63% (309/489)   [Kremote: Compressing objects:  64% (313/489)   [Kremote: Compressing objects:  65% (318/489)   [Kremote: Compressing objects:  66% (323/489)   [Kremote: Compressing objects:  67% (328/489)   [Kremote: Compressing objects:  68% (333/489)   [Kremote: Compressing objects:  69% (338/489)   [Kremote: Compressing objects:  70% (343/489)   [Kremote: Compressing objects:  71% (348/489)   [Kremote: Compressing objects:  72% (353/489)   [Kremote: Compressing objects:  73% (357/489)   [Kremote: Compressing objects:  74% (362/489)   [Kremote: Compressing objects:  75% (367/489)   [Kremote: Compressing objects:  76% (372/489)   [Kremote: Compressing objects:  77% (377/489)   [Kremote: Compressing objects:  78% (382/489)   [Kremote: Compressing objects:  79% (387/489)   [Kremote: Compressing objects:  80% (392/489)   [Kremote: Compressing objects:  81% (397/489)   [Kremote: Compressing objects:  82% (401/489)   [Kremote: Compressing objects:  83% (406/489)   [Kremote: Compressing objects:  84% (411/489)   [Kremote: Compressing objects:  85% (416/489)   [Kremote: Compressing objects:  86% (421/489)   [Kremote: Compressing objects:  87% (426/489)   [Kremote: Compressing objects:  88% (431/489)   [Kremote: Compressing objects:  89% (436/489)   [Kremote: Compressing objects:  90% (441/489)   [Kremote: Compressing objects:  91% (445/489)   [Kremote: Compressing objects:  92% (450/489)   [Kremote: Compressing objects:  93% (455/489)   [Kremote: Compressing objects:  94% (460/489)   [Kremote: Compressing objects:  95% (465/489)   [Kremote: Compressing objects:  96% (470/489)   [Kremote: Compressing objects:  97% (475/489)   [Kremote: Compressing objects:  98% (480/489)   [Kremote: Compressing objects:  99% (485/489)   [Kremote: Compressing objects: 100% (489/489)   [Kremote: Compressing objects: 100% (489/489), done.[K
-Receiving objects:   0% (1/968)   Receiving objects:   1% (10/968)   Receiving objects:   2% (20/968)   Receiving objects:   3% (30/968)   Receiving objects:   4% (39/968)   Receiving objects:   5% (49/968)   Receiving objects:   6% (59/968)   Receiving objects:   7% (68/968)   Receiving objects:   8% (78/968)   Receiving objects:   9% (88/968)   Receiving objects:  10% (97/968)   Receiving objects:  11% (107/968)   Receiving objects:  12% (117/968)   Receiving objects:  13% (126/968)   Receiving objects:  14% (136/968)   Receiving objects:  15% (146/968)   Receiving objects:  16% (155/968)   Receiving objects:  17% (165/968)   Receiving objects:  18% (175/968)   Receiving objects:  19% (184/968)   Receiving objects:  20% (194/968)   Receiving objects:  21% (204/968)   Receiving objects:  22% (213/968)   Receiving objects:  23% (223/968)   Receiving objects:  24% (233/968)   Receiving objects:  25% (242/968)   Receiving objects:  26% (252/968)   Receiving objects:  27% (262/968)   Receiving objects:  28% (272/968)   Receiving objects:  29% (281/968)   Receiving objects:  30% (291/968)   Receiving objects:  31% (301/968)   Receiving objects:  32% (310/968)   Receiving objects:  33% (320/968)   Receiving objects:  34% (330/968)   Receiving objects:  35% (339/968)   Receiving objects:  36% (349/968)   Receiving objects:  37% (359/968)   Receiving objects:  38% (368/968)   Receiving objects:  39% (378/968)   Receiving objects:  40% (388/968)   Receiving objects:  41% (397/968)   Receiving objects:  42% (407/968)   Receiving objects:  43% (417/968)   Receiving objects:  44% (426/968)   Receiving objects:  45% (436/968)   Receiving objects:  46% (446/968)   Receiving objects:  47% (455/968)   Receiving objects:  48% (465/968)   Receiving objects:  49% (475/968)   Receiving objects:  50% (484/968)   Receiving objects:  51% (494/968)   Receiving objects:  52% (504/968)   Receiving objects:  53% (514/968)   Receiving objects:  54% (523/968)   Receiving objects:  55% (533/968)   Receiving objects:  56% (543/968)   Receiving objects:  57% (552/968)   Receiving objects:  58% (562/968)   Receiving objects:  59% (572/968)   Receiving objects:  60% (581/968)   Receiving objects:  61% (591/968)   Receiving objects:  62% (601/968)   Receiving objects:  63% (610/968)   Receiving objects:  64% (620/968)   Receiving objects:  65% (630/968)   Receiving objects:  66% (639/968)   Receiving objects:  67% (649/968)   Receiving objects:  68% (659/968)   Receiving objects:  69% (668/968)   Receiving objects:  70% (678/968)   Receiving objects:  71% (688/968)   Receiving objects:  72% (697/968)   remote: Total 968 (delta 485), reused 824 (delta 413), pack-reused 0[K
-Receiving objects:  73% (707/968)   Receiving objects:  74% (717/968)   Receiving objects:  75% (726/968)   Receiving objects:  76% (736/968)   Receiving objects:  77% (746/968)   Receiving objects:  78% (756/968)   Receiving objects:  79% (765/968)   Receiving objects:  80% (775/968)   Receiving objects:  81% (785/968)   Receiving objects:  82% (794/968)   Receiving objects:  83% (804/968)   Receiving objects:  84% (814/968)   Receiving objects:  85% (823/968)   Receiving objects:  86% (833/968)   Receiving objects:  87% (843/968)   Receiving objects:  88% (852/968)   Receiving objects:  89% (862/968)   Receiving objects:  90% (872/968)   Receiving objects:  91% (881/968)   Receiving objects:  92% (891/968)   Receiving objects:  93% (901/968)   Receiving objects:  94% (910/968)   Receiving objects:  95% (920/968)   Receiving objects:  96% (930/968)   Receiving objects:  97% (939/968)   Receiving objects:  98% (949/968)   Receiving objects:  99% (959/968)   Receiving objects: 100% (968/968)   Receiving objects: 100% (968/968), 2.63 MiB | 0 bytes/s, done.
-Resolving deltas:   0% (0/485)   Resolving deltas:   2% (11/485)   Resolving deltas:   6% (33/485)   Resolving deltas:  10% (50/485)   Resolving deltas:  12% (63/485)   Resolving deltas:  13% (65/485)   Resolving deltas:  14% (68/485)   Resolving deltas:  15% (75/485)   Resolving deltas:  16% (79/485)   Resolving deltas:  17% (85/485)   Resolving deltas:  18% (90/485)   Resolving deltas:  19% (94/485)   Resolving deltas:  21% (106/485)   Resolving deltas:  22% (108/485)   Resolving deltas:  23% (116/485)   Resolving deltas:  24% (121/485)   Resolving deltas:  25% (123/485)   Resolving deltas:  27% (132/485)   Resolving deltas:  28% (136/485)   Resolving deltas:  29% (144/485)   Resolving deltas:  30% (146/485)   Resolving deltas:  31% (152/485)   Resolving deltas:  32% (157/485)   Resolving deltas:  33% (162/485)   Resolving deltas:  34% (165/485)   Resolving deltas:  36% (178/485)   Resolving deltas:  37% (181/485)   Resolving deltas:  38% (189/485)   Resolving deltas:  39% (191/485)   Resolving deltas:  41% (199/485)   Resolving deltas:  42% (204/485)   Resolving deltas:  44% (214/485)   Resolving deltas:  45% (222/485)   Resolving deltas:  46% (227/485)   Resolving deltas:  47% (228/485)   Resolving deltas:  50% (246/485)   Resolving deltas:  52% (254/485)   Resolving deltas:  53% (259/485)   Resolving deltas:  54% (264/485)   Resolving deltas:  56% (275/485)   Resolving deltas:  58% (284/485)   Resolving deltas:  60% (293/485)   Resolving deltas:  64% (313/485)   Resolving deltas:  65% (319/485)   Resolving deltas:  66% (321/485)   Resolving deltas:  67% (329/485)   Resolving deltas:  68% (331/485)   Resolving deltas:  69% (338/485)   Resolving deltas:  70% (340/485)   Resolving deltas:  71% (345/485)   Resolving deltas:  72% (354/485)   Resolving deltas:  73% (358/485)   Resolving deltas:  74% (363/485)   Resolving deltas:  78% (380/485)   Resolving deltas:  79% (384/485)   Resolving deltas:  80% (391/485)   Resolving deltas:  81% (394/485)   Resolving deltas:  82% (400/485)   Resolving deltas:  85% (414/485)   Resolving deltas:  86% (418/485)   Resolving deltas:  90% (437/485)   Resolving deltas:  91% (443/485)   Resolving deltas:  92% (447/485)   Resolving deltas:  94% (459/485)   Resolving deltas:  96% (466/485)   Resolving deltas:  98% (478/485)   Resolving deltas:  99% (483/485)   Resolving deltas: 100% (485/485)   Resolving deltas: 100% (485/485), done.
-Checking connectivity... done.
-
-travis_time:end:1d9ca696:start=1487869601065753133,finish=1487869601656263710,duration=590510577[0K$ cd akretion/delivery-carrier
-travis_time:start:0795336e[0K$ git fetch origin +refs/pull/76/merge:
-remote: Counting objects: 3231, done.[K
-remote: Compressing objects:   0% (1/1066)   [Kremote: Compressing objects:   1% (11/1066)   [Kremote: Compressing objects:   2% (22/1066)   [Kremote: Compressing objects:   3% (32/1066)   [Kremote: Compressing objects:   4% (43/1066)   [Kremote: Compressing objects:   5% (54/1066)   [Kremote: Compressing objects:   6% (64/1066)   [Kremote: Compressing objects:   7% (75/1066)   [Kremote: Compressing objects:   8% (86/1066)   [Kremote: Compressing objects:   9% (96/1066)   [Kremote: Compressing objects:  10% (107/1066)   [Kremote: Compressing objects:  11% (118/1066)   [Kremote: Compressing objects:  12% (128/1066)   [Kremote: Compressing objects:  13% (139/1066)   [Kremote: Compressing objects:  14% (150/1066)   [Kremote: Compressing objects:  15% (160/1066)   [Kremote: Compressing objects:  16% (171/1066)   [Kremote: Compressing objects:  17% (182/1066)   [Kremote: Compressing objects:  18% (192/1066)   [Kremote: Compressing objects:  19% (203/1066)   [Kremote: Compressing objects:  20% (214/1066)   [Kremote: Compressing objects:  21% (224/1066)   [Kremote: Compressing objects:  22% (235/1066)   [Kremote: Compressing objects:  23% (246/1066)   [Kremote: Compressing objects:  24% (256/1066)   [Kremote: Compressing objects:  25% (267/1066)   [Kremote: Compressing objects:  26% (278/1066)   [Kremote: Compressing objects:  27% (288/1066)   [Kremote: Compressing objects:  28% (299/1066)   [Kremote: Compressing objects:  29% (310/1066)   [Kremote: Compressing objects:  30% (320/1066)   [Kremote: Compressing objects:  31% (331/1066)   [Kremote: Compressing objects:  32% (342/1066)   [Kremote: Compressing objects:  33% (352/1066)   [Kremote: Compressing objects:  34% (363/1066)   [Kremote: Compressing objects:  35% (374/1066)   [Kremote: Compressing objects:  36% (384/1066)   [Kremote: Compressing objects:  37% (395/1066)   [Kremote: Compressing objects:  38% (406/1066)   [Kremote: Compressing objects:  39% (416/1066)   [Kremote: Compressing objects:  40% (427/1066)   [Kremote: Compressing objects:  41% (438/1066)   [Kremote: Compressing objects:  42% (448/1066)   [Kremote: Compressing objects:  43% (459/1066)   [Kremote: Compressing objects:  44% (470/1066)   [Kremote: Compressing objects:  45% (480/1066)   [Kremote: Compressing objects:  46% (491/1066)   [Kremote: Compressing objects:  47% (502/1066)   [Kremote: Compressing objects:  48% (512/1066)   [Kremote: Compressing objects:  49% (523/1066)   [Kremote: Compressing objects:  50% (533/1066)   [Kremote: Compressing objects:  51% (544/1066)   [Kremote: Compressing objects:  52% (555/1066)   [Kremote: Compressing objects:  53% (565/1066)   [Kremote: Compressing objects:  54% (576/1066)   [Kremote: Compressing objects:  55% (587/1066)   [Kremote: Compressing objects:  56% (597/1066)   [Kremote: Compressing objects:  57% (608/1066)   [Kremote: Compressing objects:  58% (619/1066)   [Kremote: Compressing objects:  59% (629/1066)   [Kremote: Compressing objects:  60% (640/1066)   [Kremote: Compressing objects:  61% (651/1066)   [Kremote: Compressing objects:  62% (661/1066)   [Kremote: Compressing objects:  63% (672/1066)   [Kremote: Compressing objects:  64% (683/1066)   [Kremote: Compressing objects:  65% (693/1066)   [Kremote: Compressing objects:  66% (704/1066)   [Kremote: Compressing objects:  67% (715/1066)   [Kremote: Compressing objects:  68% (725/1066)   [Kremote: Compressing objects:  69% (736/1066)   [Kremote: Compressing objects:  70% (747/1066)   [Kremote: Compressing objects:  71% (757/1066)   [Kremote: Compressing objects:  72% (768/1066)   [Kremote: Compressing objects:  73% (779/1066)   [Kremote: Compressing objects:  74% (789/1066)   [Kremote: Compressing objects:  75% (800/1066)   [Kremote: Compressing objects:  76% (811/1066)   [Kremote: Compressing objects:  77% (821/1066)   [Kremote: Compressing objects:  78% (832/1066)   [Kremote: Compressing objects:  79% (843/1066)   [Kremote: Compressing objects:  80% (853/1066)   [Kremote: Compressing objects:  81% (864/1066)   [Kremote: Compressing objects:  82% (875/1066)   [Kremote: Compressing objects:  83% (885/1066)   [Kremote: Compressing objects:  84% (896/1066)   [Kremote: Compressing objects:  85% (907/1066)   [Kremote: Compressing objects:  86% (917/1066)   [Kremote: Compressing objects:  87% (928/1066)   [Kremote: Compressing objects:  88% (939/1066)   [Kremote: Compressing objects:  89% (949/1066)   [Kremote: Compressing objects:  90% (960/1066)   [Kremote: Compressing objects:  91% (971/1066)   [Kremote: Compressing objects:  92% (981/1066)   [Kremote: Compressing objects:  93% (992/1066)   [Kremote: Compressing objects:  94% (1003/1066)   [Kremote: Compressing objects:  95% (1013/1066)   [Kremote: Compressing objects:  96% (1024/1066)   [Kremote: Compressing objects:  97% (1035/1066)   [Kremote: Compressing objects:  98% (1045/1066)   [Kremote: Compressing objects:  99% (1056/1066)   [Kremote: Compressing objects: 100% (1066/1066)   [Kremote: Compressing objects: 100% (1066/1066), done.[K
-Receiving objects:   0% (1/3231)   Receiving objects:   1% (33/3231)   Receiving objects:   2% (65/3231)   Receiving objects:   3% (97/3231)   Receiving objects:   4% (130/3231)   Receiving objects:   5% (162/3231)   Receiving objects:   6% (194/3231)   Receiving objects:   7% (227/3231)   Receiving objects:   8% (259/3231)   Receiving objects:   9% (291/3231)   Receiving objects:  10% (324/3231)   Receiving objects:  11% (356/3231)   Receiving objects:  12% (388/3231)   Receiving objects:  13% (421/3231)   Receiving objects:  14% (453/3231)   Receiving objects:  15% (485/3231)   Receiving objects:  16% (517/3231)   Receiving objects:  17% (550/3231)   Receiving objects:  18% (582/3231)   Receiving objects:  19% (614/3231)   Receiving objects:  20% (647/3231)   Receiving objects:  21% (679/3231)   Receiving objects:  22% (711/3231)   Receiving objects:  23% (744/3231)   Receiving objects:  24% (776/3231)   Receiving objects:  25% (808/3231)   Receiving objects:  26% (841/3231)   Receiving objects:  27% (873/3231)   Receiving objects:  28% (905/3231)   Receiving objects:  29% (937/3231)   Receiving objects:  30% (970/3231)   Receiving objects:  31% (1002/3231)   Receiving objects:  32% (1034/3231)   Receiving objects:  33% (1067/3231)   Receiving objects:  34% (1099/3231)   Receiving objects:  35% (1131/3231)   Receiving objects:  36% (1164/3231)   Receiving objects:  37% (1196/3231)   Receiving objects:  38% (1228/3231)   Receiving objects:  39% (1261/3231)   Receiving objects:  40% (1293/3231)   Receiving objects:  41% (1325/3231)   Receiving objects:  42% (1358/3231)   Receiving objects:  43% (1390/3231)   Receiving objects:  44% (1422/3231)   Receiving objects:  45% (1454/3231)   Receiving objects:  46% (1487/3231)   Receiving objects:  47% (1519/3231)   Receiving objects:  48% (1551/3231)   Receiving objects:  49% (1584/3231)   Receiving objects:  50% (1616/3231)   Receiving objects:  51% (1648/3231)   Receiving objects:  52% (1681/3231)   Receiving objects:  53% (1713/3231)   Receiving objects:  54% (1745/3231)   Receiving objects:  55% (1778/3231)   Receiving objects:  56% (1810/3231)   Receiving objects:  57% (1842/3231)   Receiving objects:  58% (1874/3231)   Receiving objects:  59% (1907/3231)   Receiving objects:  60% (1939/3231)   Receiving objects:  61% (1971/3231)   Receiving objects:  62% (2004/3231)   Receiving objects:  63% (2036/3231)   Receiving objects:  64% (2068/3231)   Receiving objects:  65% (2101/3231)   Receiving objects:  66% (2133/3231)   Receiving objects:  67% (2165/3231)   Receiving objects:  68% (2198/3231)   Receiving objects:  69% (2230/3231)   Receiving objects:  70% (2262/3231)   Receiving objects:  71% (2295/3231)   Receiving objects:  72% (2327/3231)   Receiving objects:  73% (2359/3231)   Receiving objects:  74% (2391/3231)   Receiving objects:  75% (2424/3231)   Receiving objects:  76% (2456/3231)   Receiving objects:  77% (2488/3231)   Receiving objects:  78% (2521/3231)   Receiving objects:  79% (2553/3231)   Receiving objects:  80% (2585/3231)   Receiving objects:  81% (2618/3231)   Receiving objects:  82% (2650/3231)   Receiving objects:  83% (2682/3231)   Receiving objects:  84% (2715/3231)   Receiving objects:  85% (2747/3231)   Receiving objects:  86% (2779/3231)   Receiving objects:  87% (2811/3231)   Receiving objects:  88% (2844/3231)   Receiving objects:  89% (2876/3231)   Receiving objects:  90% (2908/3231)   Receiving objects:  91% (2941/3231)   Receiving objects:  92% (2973/3231)   Receiving objects:  93% (3005/3231)   Receiving objects:  94% (3038/3231)   Receiving objects:  95% (3070/3231)   Receiving objects:  96% (3102/3231)   Receiving objects:  97% (3135/3231)   Receiving objects:  98% (3167/3231)   Receiving objects:  99% (3199/3231)   remote: Total 3231 (delta 2240), reused 3097 (delta 2122), pack-reused 0[K
-Receiving objects: 100% (3231/3231)   Receiving objects: 100% (3231/3231), 1.14 MiB | 0 bytes/s, done.
-Resolving deltas:   0% (0/2240)   Resolving deltas:   1% (33/2240)   Resolving deltas:   2% (48/2240)   Resolving deltas:   3% (77/2240)   Resolving deltas:   4% (91/2240)   Resolving deltas:   5% (124/2240)   Resolving deltas:   6% (144/2240)   Resolving deltas:   7% (159/2240)   Resolving deltas:   8% (186/2240)   Resolving deltas:   9% (220/2240)   Resolving deltas:  10% (225/2240)   Resolving deltas:  11% (249/2240)   Resolving deltas:  12% (271/2240)   Resolving deltas:  13% (299/2240)   Resolving deltas:  14% (320/2240)   Resolving deltas:  15% (340/2240)   Resolving deltas:  16% (367/2240)   Resolving deltas:  17% (382/2240)   Resolving deltas:  18% (417/2240)   Resolving deltas:  19% (433/2240)   Resolving deltas:  20% (459/2240)   Resolving deltas:  21% (476/2240)   Resolving deltas:  22% (499/2240)   Resolving deltas:  23% (519/2240)   Resolving deltas:  24% (558/2240)   Resolving deltas:  25% (582/2240)   Resolving deltas:  26% (588/2240)   Resolving deltas:  27% (605/2240)   Resolving deltas:  28% (640/2240)   Resolving deltas:  29% (668/2240)   Resolving deltas:  30% (675/2240)   Resolving deltas:  31% (700/2240)   Resolving deltas:  32% (717/2240)   Resolving deltas:  33% (740/2240)   Resolving deltas:  34% (778/2240)   Resolving deltas:  35% (803/2240)   Resolving deltas:  36% (810/2240)   Resolving deltas:  37% (851/2240)   Resolving deltas:  38% (852/2240)   Resolving deltas:  40% (901/2240)   Resolving deltas:  41% (939/2240)   Resolving deltas:  42% (941/2240)   Resolving deltas:  43% (967/2240)   Resolving deltas:  44% (987/2240)   Resolving deltas:  45% (1013/2240)   Resolving deltas:  46% (1034/2240)   Resolving deltas:  47% (1058/2240)   Resolving deltas:  48% (1088/2240)   Resolving deltas:  49% (1115/2240)   Resolving deltas:  50% (1127/2240)   Resolving deltas:  51% (1156/2240)   Resolving deltas:  53% (1192/2240)   Resolving deltas:  54% (1216/2240)   Resolving deltas:  55% (1237/2240)   Resolving deltas:  61% (1373/2240)   Resolving deltas:  62% (1404/2240)   Resolving deltas:  63% (1430/2240)   Resolving deltas:  65% (1462/2240)   Resolving deltas:  67% (1504/2240)   Resolving deltas:  68% (1527/2240)   Resolving deltas:  70% (1577/2240)   Resolving deltas:  71% (1609/2240)   Resolving deltas:  80% (1814/2240)   Resolving deltas:  81% (1825/2240)   Resolving deltas:  85% (1908/2240)   Resolving deltas:  86% (1930/2240)   Resolving deltas:  88% (1974/2240)   Resolving deltas:  90% (2030/2240)   Resolving deltas:  91% (2052/2240)   Resolving deltas:  92% (2062/2240)   Resolving deltas:  93% (2084/2240)   Resolving deltas:  94% (2109/2240)   Resolving deltas:  95% (2129/2240)   Resolving deltas:  96% (2155/2240)   Resolving deltas:  98% (2203/2240)   Resolving deltas:  99% (2226/2240)   Resolving deltas: 100% (2240/2240)   Resolving deltas: 100% (2240/2240), completed with 70 local objects.
-From https://github.com/akretion/delivery-carrier
- * branch            refs/pull/76/merge -> FETCH_HEAD
-
-travis_time:end:0795336e:start=1487869601663013779,finish=1487869602288628912,duration=625615133[0K$ git checkout -qf FETCH_HEAD
-travis_fold:end:git.checkout[0Ktravis_fold:start:apt[0K[33;1mInstalling APT Packages (BETA)[0m
-$ export DEBIAN_FRONTEND=noninteractive
-travis_time:start:0a6976c0[0K$ sudo -E apt-get -yq update &>> ~/apt-get-update.log
-
-travis_time:end:0a6976c0:start=1487869602354044804,finish=1487869607682462671,duration=5328417867[0Ktravis_time:start:06ee762e[0K$ sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install expect-dev python-lxml wkhtmltopdf
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  expect
-Suggested packages:
-  python-lxml-dbg
-The following NEW packages will be installed:
-  expect expect-dev python-lxml wkhtmltopdf
-0 upgraded, 4 newly installed, 0 to remove and 258 not upgraded.
-Need to get 1,008 kB of archives.
-After this operation, 3,117 kB of additional disk space will be used.
-Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/main expect amd64 5.45-2 [163 kB]
-Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/main expect-dev amd64 5.45-2 [80.0 kB]
-Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python-lxml amd64 2.3.2-1ubuntu0.2 [661 kB]
-Get:4 http://us.archive.ubuntu.com/ubuntu/ precise/universe wkhtmltopdf amd64 0.9.9-3 [104 kB]
-Fetched 1,008 kB in 0s (8,784 kB/s)
-Selecting previously unselected package expect.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 72430 files and directories currently installed.)
-Unpacking expect (from .../expect_5.45-2_amd64.deb) ...
-Selecting previously unselected package expect-dev.
-Unpacking expect-dev (from .../expect-dev_5.45-2_amd64.deb) ...
-Selecting previously unselected package python-lxml.
-Unpacking python-lxml (from .../python-lxml_2.3.2-1ubuntu0.2_amd64.deb) ...
-Selecting previously unselected package wkhtmltopdf.
-Unpacking wkhtmltopdf (from .../wkhtmltopdf_0.9.9-3_amd64.deb) ...
-Processing triggers for man-db ...
-Setting up expect (5.45-2) ...
-Setting up expect-dev (5.45-2) ...
-Setting up python-lxml (2.3.2-1ubuntu0.2) ...
-Setting up wkhtmltopdf (0.9.9-3) ...
-Processing triggers for libc-bin ...
-ldconfig deferred processing now taking place
-
-travis_time:end:06ee762e:start=1487869607688037201,finish=1487869618320295318,duration=10632258117[0Ktravis_fold:end:apt[0K
-[33;1mThis job is running on container-based infrastructure, which does not allow use of 'sudo', setuid and setguid executables.[0m
-[33;1mIf you require sudo, add 'sudo: required' to your .travis.yml[0m
-[33;1mSee https://docs.travis-ci.com/user/workers/container-based-infrastructure/ for details.[0m
-
-[33;1mSetting environment variables from .travis.yml[0m
-$ export VERSION="9.0"
-$ export TESTS="0"
-$ export LINT_CHECK="0"
-$ export TRANSIFEX="0"
-$ export TRANSIFEX_USER='transbot@odoo-community.org'
-$ export TESTS="1"
-$ export ODOO_REPO="odoo/odoo"
-
-travis_time:start:10b98970[0K$ source ~/virtualenv/python2.7_with_system_site_packages/bin/activate
-
-travis_time:end:10b98970:start=1487869622562476348,finish=1487869622567870389,duration=5394041[0Ktravis_fold:start:cache.1[0KSetting up build cache
-$ export CASHER_DIR=$HOME/.casher
-travis_time:start:26590166[0K$ Installing caching utilities
-
-travis_time:end:26590166:start=1487869622819997753,finish=1487869622860211460,duration=40213707[0Ktravis_time:start:0286ca80[0K
-travis_time:end:0286ca80:start=1487869622866168893,finish=1487869622870162002,duration=3993109[0Ktravis_time:start:0000d896[0K[32;1mattempting to download cache archive[0m
-[32;1mfetching PR.76/cache-linux-precise-1508dbffb67065df0d9053be49ba5c3de74b63c0f477c46feef60aa8e063c665--python-2.7.tgz[0m
-[32;1mfound cache[0m
-
-travis_time:end:0000d896:start=1487869622874650599,finish=1487869625951501917,duration=3076851318[0Ktravis_fold:end:cache.1[0Ktravis_fold:start:cache.pip[0K
-travis_time:start:0451f360[0K
-travis_time:end:0451f360:start=1487869625957898902,finish=1487869625963081862,duration=5182960[0Ktravis_time:start:04f47cd0[0K[32;1madding /home/travis/.cache/pip to cache[0m
-
-travis_time:end:04f47cd0:start=1487869625968763567,finish=1487869628974450123,duration=3005686556[0Ktravis_fold:end:cache.pip[0K$ python --version
-Python 2.7.3
-$ pip --version
-pip 6.0.7 from /home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages (python 2.7)
-travis_fold:start:install.1[0Ktravis_time:start:0d08b7d8[0K$ git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
-Cloning into '/home/travis/maintainer-quality-tools'...
-remote: Counting objects: 123, done.[K
-remote: Compressing objects:   1% (1/95)   [Kremote: Compressing objects:   2% (2/95)   [Kremote: Compressing objects:   3% (3/95)   [Kremote: Compressing objects:   4% (4/95)   [Kremote: Compressing objects:   5% (5/95)   [Kremote: Compressing objects:   6% (6/95)   [Kremote: Compressing objects:   7% (7/95)   [Kremote: Compressing objects:   8% (8/95)   [Kremote: Compressing objects:   9% (9/95)   [Kremote: Compressing objects:  10% (10/95)   [Kremote: Compressing objects:  11% (11/95)   [Kremote: Compressing objects:  12% (12/95)   [Kremote: Compressing objects:  13% (13/95)   [Kremote: Compressing objects:  14% (14/95)   [Kremote: Compressing objects:  15% (15/95)   [Kremote: Compressing objects:  16% (16/95)   [Kremote: Compressing objects:  17% (17/95)   [Kremote: Compressing objects:  18% (18/95)   [Kremote: Compressing objects:  20% (19/95)   [Kremote: Compressing objects:  21% (20/95)   [Kremote: Compressing objects:  22% (21/95)   [Kremote: Compressing objects:  23% (22/95)   [Kremote: Compressing objects:  24% (23/95)   [Kremote: Compressing objects:  25% (24/95)   [Kremote: Compressing objects:  26% (25/95)   [Kremote: Compressing objects:  27% (26/95)   [Kremote: Compressing objects:  28% (27/95)   [Kremote: Compressing objects:  29% (28/95)   [Kremote: Compressing objects:  30% (29/95)   [Kremote: Compressing objects:  31% (30/95)   [Kremote: Compressing objects:  32% (31/95)   [Kremote: Compressing objects:  33% (32/95)   [Kremote: Compressing objects:  34% (33/95)   [Kremote: Compressing objects:  35% (34/95)   [Kremote: Compressing objects:  36% (35/95)   [Kremote: Compressing objects:  37% (36/95)   [Kremote: Compressing objects:  38% (37/95)   [Kremote: Compressing objects:  40% (38/95)   [Kremote: Compressing objects:  41% (39/95)   [Kremote: Compressing objects:  42% (40/95)   [Kremote: Compressing objects:  43% (41/95)   [Kremote: Compressing objects:  44% (42/95)   [Kremote: Compressing objects:  45% (43/95)   [Kremote: Compressing objects:  46% (44/95)   [Kremote: Compressing objects:  47% (45/95)   [Kremote: Compressing objects:  48% (46/95)   [Kremote: Compressing objects:  49% (47/95)   [Kremote: Compressing objects:  50% (48/95)   [Kremote: Compressing objects:  51% (49/95)   [Kremote: Compressing objects:  52% (50/95)   [Kremote: Compressing objects:  53% (51/95)   [Kremote: Compressing objects:  54% (52/95)   [Kremote: Compressing objects:  55% (53/95)   [Kremote: Compressing objects:  56% (54/95)   [Kremote: Compressing objects:  57% (55/95)   [Kremote: Compressing objects:  58% (56/95)   [Kremote: Compressing objects:  60% (57/95)   [Kremote: Compressing objects:  61% (58/95)   [Kremote: Compressing objects:  62% (59/95)   [Kremote: Compressing objects:  63% (60/95)   [Kremote: Compressing objects:  64% (61/95)   [Kremote: Compressing objects:  65% (62/95)   [Kremote: Compressing objects:  66% (63/95)   [Kremote: Compressing objects:  67% (64/95)   [Kremote: Compressing objects:  68% (65/95)   [Kremote: Compressing objects:  69% (66/95)   [Kremote: Compressing objects:  70% (67/95)   [Kremote: Compressing objects:  71% (68/95)   [Kremote: Compressing objects:  72% (69/95)   [Kremote: Compressing objects:  73% (70/95)   [Kremote: Compressing objects:  74% (71/95)   [Kremote: Compressing objects:  75% (72/95)   [Kremote: Compressing objects:  76% (73/95)   [Kremote: Compressing objects:  77% (74/95)   [Kremote: Compressing objects:  78% (75/95)   [Kremote: Compressing objects:  80% (76/95)   [Kremote: Compressing objects:  81% (77/95)   [Kremote: Compressing objects:  82% (78/95)   [Kremote: Compressing objects:  83% (79/95)   [Kremote: Compressing objects:  84% (80/95)   [Kremote: Compressing objects:  85% (81/95)   [Kremote: Compressing objects:  86% (82/95)   [Kremote: Compressing objects:  87% (83/95)   [Kremote: Compressing objects:  88% (84/95)   [Kremote: Compressing objects:  89% (85/95)   [Kremote: Compressing objects:  90% (86/95)   [Kremote: Compressing objects:  91% (87/95)   [Kremote: Compressing objects:  92% (88/95)   [Kremote: Compressing objects:  93% (89/95)   [Kremote: Compressing objects:  94% (90/95)   [Kremote: Compressing objects:  95% (91/95)   [Kremote: Compressing objects:  96% (92/95)   [Kremote: Compressing objects:  97% (93/95)   [Kremote: Compressing objects:  98% (94/95)   [Kremote: Compressing objects: 100% (95/95)   [Kremote: Compressing objects: 100% (95/95), done.[K
-Receiving objects:   0% (1/123)   Receiving objects:   1% (2/123)   Receiving objects:   2% (3/123)   Receiving objects:   3% (4/123)   Receiving objects:   4% (5/123)   Receiving objects:   5% (7/123)   Receiving objects:   6% (8/123)   Receiving objects:   7% (9/123)   Receiving objects:   8% (10/123)   remote: Total 123 (delta 12), reused 82 (delta 6), pack-reused 0[K
-Receiving objects:   9% (12/123)   Receiving objects:  10% (13/123)   Receiving objects:  11% (14/123)   Receiving objects:  12% (15/123)   Receiving objects:  13% (16/123)   Receiving objects:  14% (18/123)   Receiving objects:  15% (19/123)   Receiving objects:  16% (20/123)   Receiving objects:  17% (21/123)   Receiving objects:  18% (23/123)   Receiving objects:  19% (24/123)   Receiving objects:  20% (25/123)   Receiving objects:  21% (26/123)   Receiving objects:  22% (28/123)   Receiving objects:  23% (29/123)   Receiving objects:  24% (30/123)   Receiving objects:  25% (31/123)   Receiving objects:  26% (32/123)   Receiving objects:  27% (34/123)   Receiving objects:  28% (35/123)   Receiving objects:  29% (36/123)   Receiving objects:  30% (37/123)   Receiving objects:  31% (39/123)   Receiving objects:  32% (40/123)   Receiving objects:  33% (41/123)   Receiving objects:  34% (42/123)   Receiving objects:  35% (44/123)   Receiving objects:  36% (45/123)   Receiving objects:  37% (46/123)   Receiving objects:  38% (47/123)   Receiving objects:  39% (48/123)   Receiving objects:  40% (50/123)   Receiving objects:  41% (51/123)   Receiving objects:  42% (52/123)   Receiving objects:  43% (53/123)   Receiving objects:  44% (55/123)   Receiving objects:  45% (56/123)   Receiving objects:  46% (57/123)   Receiving objects:  47% (58/123)   Receiving objects:  48% (60/123)   Receiving objects:  49% (61/123)   Receiving objects:  50% (62/123)   Receiving objects:  51% (63/123)   Receiving objects:  52% (64/123)   Receiving objects:  53% (66/123)   Receiving objects:  54% (67/123)   Receiving objects:  55% (68/123)   Receiving objects:  56% (69/123)   Receiving objects:  57% (71/123)   Receiving objects:  58% (72/123)   Receiving objects:  59% (73/123)   Receiving objects:  60% (74/123)   Receiving objects:  61% (76/123)   Receiving objects:  62% (77/123)   Receiving objects:  63% (78/123)   Receiving objects:  64% (79/123)   Receiving objects:  65% (80/123)   Receiving objects:  66% (82/123)   Receiving objects:  67% (83/123)   Receiving objects:  68% (84/123)   Receiving objects:  69% (85/123)   Receiving objects:  70% (87/123)   Receiving objects:  71% (88/123)   Receiving objects:  72% (89/123)   Receiving objects:  73% (90/123)   Receiving objects:  74% (92/123)   Receiving objects:  75% (93/123)   Receiving objects:  76% (94/123)   Receiving objects:  77% (95/123)   Receiving objects:  78% (96/123)   Receiving objects:  79% (98/123)   Receiving objects:  80% (99/123)   Receiving objects:  81% (100/123)   Receiving objects:  82% (101/123)   Receiving objects:  83% (103/123)   Receiving objects:  84% (104/123)   Receiving objects:  85% (105/123)   Receiving objects:  86% (106/123)   Receiving objects:  87% (108/123)   Receiving objects:  88% (109/123)   Receiving objects:  89% (110/123)   Receiving objects:  90% (111/123)   Receiving objects:  91% (112/123)   Receiving objects:  92% (114/123)   Receiving objects:  93% (115/123)   Receiving objects:  94% (116/123)   Receiving objects:  95% (117/123)   Receiving objects:  96% (119/123)   Receiving objects:  97% (120/123)   Receiving objects:  98% (121/123)   Receiving objects:  99% (122/123)   Receiving objects: 100% (123/123)   Receiving objects: 100% (123/123), 63.49 KiB | 0 bytes/s, done.
-Resolving deltas:   0% (0/12)   Resolving deltas:  25% (3/12)   Resolving deltas:  41% (5/12)   Resolving deltas:  50% (6/12)   Resolving deltas:  58% (7/12)   Resolving deltas:  66% (8/12)   Resolving deltas:  75% (9/12)   Resolving deltas: 100% (12/12)   Resolving deltas: 100% (12/12), done.
-Checking connectivity... done.
-
-travis_time:end:0d08b7d8:start=1487869629416214779,finish=1487869629816791998,duration=400577219[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:05c3034c[0K$ export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
-
-travis_time:end:05c3034c:start=1487869629822944407,finish=1487869629827274824,duration=4330417[0Ktravis_fold:end:install.2[0Ktravis_fold:start:install.3[0Ktravis_time:start:0473136c[0K$ travis_install_nightly
-[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mengine[0m less@2.7.2: wanted: {"node":">=0.12"} (current: {"node":"0.10.36","npm":"1.4.28"})
-[0m-[0G\[0G[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mengine[0m request@2.79.0: wanted: {"node":">= 4"} (current: {"node":"0.10.36","npm":"1.4.28"})
-[0m-[0G\[0G|[0G[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mengine[0m form-data@2.1.2: wanted: {"node":">= 0.12"} (current: {"node":"0.10.36","npm":"1.4.28"})
-[0m-[0G\[0G-[0G-[0G\[0G-[0G-[0G\[0G|[0G/[0G-[0G[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mengine[0m cryptiles@2.0.5: wanted: {"node":">=0.10.40"} (current: {"node":"0.10.36","npm":"1.4.28"})
-[0m[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mengine[0m boom@2.10.1: wanted: {"node":">=0.10.40"} (current: {"node":"0.10.36","npm":"1.4.28"})
-[0m[37m[40mnpm[0m [0m[30m[43mWARN[0m [0m[35mengine[0m hoek@2.16.3: wanted: {"node":">=0.10.40"} (current: {"node":"0.10.36","npm":"1.4.28"})
-[0m/home/travis/.nvm/v0.10.36/bin/lessc -> /home/travis/.nvm/v0.10.36/lib/node_modules/less/bin/lessc
-less-plugin-clean-css@1.5.1 /home/travis/.nvm/v0.10.36/lib/node_modules/less-plugin-clean-css
-└── clean-css@3.4.25 (commander@2.8.1, source-map@0.4.4)
-
-less@2.7.2 /home/travis/.nvm/v0.10.36/lib/node_modules/less
-├── graceful-fs@4.1.11
-├── mime@1.3.4
-├── image-size@0.5.1
-├── errno@0.1.4 (prr@0.0.0)
-├── mkdirp@0.5.1 (minimist@0.0.8)
-├── promise@7.1.1 (asap@2.0.5)
-├── source-map@0.5.6
-└── request@2.79.0 (is-typedarray@1.0.0, oauth-sign@0.8.2, aws-sign2@0.6.0, forever-agent@0.6.1, tunnel-agent@0.4.3, caseless@0.11.0, stringstream@0.0.5, isstream@0.1.2, json-stringify-safe@5.0.1, extend@3.0.0, aws4@1.6.0, uuid@3.0.1, combined-stream@1.0.5, qs@6.3.1, form-data@2.1.2, mime-types@2.1.14, tough-cookie@2.3.2, har-validator@2.0.6, hawk@3.1.3, http-signature@1.1.1)
-Installing Odoo https://github.com/odoo/odoo/archive/9.0.tar.gz
-2017-02-23 17:07:17 URL:https://codeload.github.com/odoo/odoo/tar.gz/9.0 [123004516/123004516] -> "odoo.tar.gz" [1]
-Collecting pip from https://pypi.python.org/packages/b6/ac/7015eb97dc749283ffdec1c3a88ddb8ae03b8fad0f0e611408f196358da3/pip-9.0.1-py2.py3-none-any.whl#md5=297dbd16ef53bcef0447d245815f5144
-  Using cached pip-9.0.1-py2.py3-none-any.whl
-Installing collected packages: pip
-  Found existing installation: pip 6.0.7
-    Uninstalling pip-6.0.7:
-      Successfully uninstalled pip-6.0.7
-
-Successfully installed pip-9.0.1
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-Getting addons dependencies
-Collecting python-ldap (from -r /home/travis/dependencies/server-tools/requirements.txt (line 1))
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-Collecting unidecode (from -r /home/travis/dependencies/server-tools/requirements.txt (line 2))
-  Using cached Unidecode-0.04.20-py2.py3-none-any.whl
-Collecting acme_tiny (from -r /home/travis/dependencies/server-tools/requirements.txt (line 3))
-Collecting IPy (from -r /home/travis/dependencies/server-tools/requirements.txt (line 4))
-Collecting validate_email (from -r /home/travis/dependencies/server-tools/requirements.txt (line 5))
-Collecting pysftp (from -r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: setuptools in /home/travis/virtualenv/python2.7_with_system_site_packages/lib/python2.7/site-packages (from python-ldap->-r /home/travis/dependencies/server-tools/requirements.txt (line 1))
-Collecting paramiko>=1.17 (from pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-  Using cached paramiko-2.1.2-py2.py3-none-any.whl
-Requirement already satisfied: cryptography>=1.1 in /home/travis/.local/lib/python2.7/site-packages (from paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: pyasn1>=0.1.7 in /home/travis/.local/lib/python2.7/site-packages (from paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: cffi>=1.4.1 in /home/travis/.local/lib/python2.7/site-packages (from cryptography>=1.1->paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: idna>=2.0 in /home/travis/.local/lib/python2.7/site-packages (from cryptography>=1.1->paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: enum34 in /home/travis/.local/lib/python2.7/site-packages (from cryptography>=1.1->paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: six>=1.4.1 in /home/travis/.local/lib/python2.7/site-packages (from cryptography>=1.1->paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: ipaddress in /home/travis/.local/lib/python2.7/site-packages (from cryptography>=1.1->paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Requirement already satisfied: pycparser in /home/travis/.local/lib/python2.7/site-packages (from cffi>=1.4.1->cryptography>=1.1->paramiko>=1.17->pysftp->-r /home/travis/dependencies/server-tools/requirements.txt (line 6))
-Installing collected packages: python-ldap, unidecode, acme-tiny, IPy, validate-email, paramiko, pysftp
-  Found existing installation: paramiko 1.7.7.1
-    Not uninstalling paramiko at /usr/lib/python2.7/dist-packages, outside environment /home/travis/virtualenv/python2.7_with_system_site_packages
-Successfully installed IPy-0.83 acme-tiny-2.0.0 paramiko-2.1.2 pysftp-0.2.9 python-ldap-2.4.32 unidecode-0.4.20 validate-email-1.3
-Collecting viivakoodi (from -r /home/travis/dependencies/stock-logistics-barcode/requirements.txt (line 2))
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-Installing collected packages: viivakoodi
-Successfully installed viivakoodi-0.8.0
-Install webkit (wkhtmltopdf) patched
-Content of /home/travis:
-total 52
--rw-r--r--  1 travis travis 10978 Feb 23 17:06 apt-get-update.log
-drwxr-xr-x  3 travis travis    21 Feb 23 17:06 build
-drwxr-xr-x  2 travis travis     6 Feb  5  2015 builds
--rwxr-xr-x  1 root   root   21581 Jan  1  1970 build.sh
-drwxr-xr-x 12 travis travis  4096 Feb 23 17:07 dependencies
-drwxr-xr-x  8 travis travis  4096 Feb 23 17:07 maintainer-quality-tools
-drwxr-xr-x  9 travis travis  4096 Feb 23 15:52 odoo-9.0
-drwxr-xr-x 11 travis travis  4096 Feb  5  2015 virtualenv
-Content of /home/travis/dependencies:
-total 36
-drwxr-xr-x 13 travis travis 4096 Feb 23 17:07 connector-telephony
-drwxr-xr-x  7 travis travis 4096 Feb 23 17:07 intrastat
-drwxr-xr-x 45 travis travis 4096 Feb 23 17:07 partner-contact
-drwxr-xr-x 37 travis travis 4096 Feb 23 17:07 product-attribute
-drwxr-xr-x 68 travis travis 4096 Feb 23 17:07 server-tools
-drwxr-xr-x 22 travis travis 4096 Feb 23 17:07 stock-logistics-barcode
-drwxr-xr-x 21 travis travis 4096 Feb 23 17:07 stock-logistics-tracking
-drwxr-xr-x 33 travis travis 4096 Feb 23 17:07 stock-logistics-warehouse
-drwxr-xr-x 34 travis travis 4096 Feb 23 17:07 stock-logistics-workflow
-drwxr-xr-x  6 travis travis  155 Feb 23 17:07 webkit-tools
-
-travis_time:end:0473136c:start=1487869629834167476,finish=1487869680845654341,duration=51011486865[0Ktravis_fold:end:install.3[0Ktravis_fold:start:install.4[0Ktravis_time:start:1906749f[0K$ pip install PyPDF2==1.18
-Collecting PyPDF2==1.18
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-Installing collected packages: PyPDF2
-Successfully installed PyPDF2-1.18
-
-travis_time:end:1906749f:start=1487869680850603673,finish=1487869681515962412,duration=665358739[0Ktravis_fold:end:install.4[0Ktravis_fold:start:install.5[0Ktravis_time:start:1b871db0[0K$ pip install unidecode
-Requirement already satisfied: unidecode in /home/travis/virtualenv/python2.7_with_system_site_packages/lib/python2.7/site-packages
-
-travis_time:end:1b871db0:start=1487869681520725848,finish=1487869681928759564,duration=408033716[0Ktravis_fold:end:install.5[0Ktravis_fold:start:install.6[0Ktravis_time:start:05f2df40[0K$ pip install pycountry
-Collecting pycountry
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-Installing collected packages: pycountry
-Successfully installed pycountry-17.1.8
-
-travis_time:end:05f2df40:start=1487869681934212959,finish=1487869683004478653,duration=1070265694[0Ktravis_fold:end:install.6[0Ktravis_fold:start:install.7[0Ktravis_time:start:08aea355[0K$ pip install suds-jurko==0.6
-Collecting suds-jurko==0.6
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-Installing collected packages: suds-jurko
-Successfully installed suds-jurko-0.6
-
-travis_time:end:08aea355:start=1487869683009326032,finish=1487869683789771036,duration=780445004[0Ktravis_fold:end:install.7[0Ktravis_fold:start:install.8[0Ktravis_time:start:1d9cbf86[0K$ pip install phonenumbers
-Collecting phonenumbers
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-  Using cached phonenumbers-8.3.1-py2.py3-none-any.whl
-Installing collected packages: phonenumbers
-Successfully installed phonenumbers-8.3.1
-
-travis_time:end:1d9cbf86:start=1487869683794649070,finish=1487869688198880848,duration=4404231778[0Ktravis_fold:end:install.8[0Ktravis_fold:start:install.9[0Ktravis_time:start:0186b23e[0K$ pip install roulier==0.0.2-rc3
-Collecting roulier==0.0.2-rc3
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:318: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#snimissingwarning.
-  SNIMissingWarning
-/home/travis/virtualenv/python2.7_with_system_site_packages/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:122: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/security.html#insecureplatformwarning.
-  InsecurePlatformWarning
-Collecting cerberus (from roulier==0.0.2-rc3)
-Collecting zplgrf (from roulier==0.0.2-rc3)
-Requirement already satisfied: requests in /home/travis/.local/lib/python2.7/site-packages (from roulier==0.0.2-rc3)
-Requirement already satisfied: lxml in /usr/lib/python2.7/dist-packages (from roulier==0.0.2-rc3)
-Requirement already satisfied: Jinja2 in /home/travis/.local/lib/python2.7/site-packages (from roulier==0.0.2-rc3)
-Requirement already satisfied: pillow in /home/travis/.local/lib/python2.7/site-packages (from zplgrf->roulier==0.0.2-rc3)
-Requirement already satisfied: setuptools in /home/travis/virtualenv/python2.7_with_system_site_packages/lib/python2.7/site-packages (from zplgrf->roulier==0.0.2-rc3)
-Requirement already satisfied: MarkupSafe>=0.23 in /home/travis/.local/lib/python2.7/site-packages (from Jinja2->roulier==0.0.2-rc3)
-Installing collected packages: cerberus, zplgrf, roulier
-Successfully installed cerberus-1.1 roulier-0.0.2rc3 zplgrf-1.1
-
-travis_time:end:0186b23e:start=1487869688203519306,finish=1487869689204192060,duration=1000672754[0Ktravis_fold:end:install.9[0Ktravis_time:start:27cf6ae8[0K$ travis_run_tests
-======== Testing test_server.py ========
-Working in /home/travis/build/akretion/delivery-carrier
-Using repo odoo/odoo and addons path /home/travis/build/akretion/delivery-carrier,/home/travis/dependencies/connector-telephony,/home/travis/dependencies/intrastat,/home/travis/dependencies/partner-contact,/home/travis/dependencies/product-attribute,/home/travis/dependencies/server-tools,/home/travis/dependencies/stock-logistics-barcode,/home/travis/dependencies/stock-logistics-warehouse,/home/travis/dependencies/stock-logistics-workflow,/home/travis/odoo-9.0/addons
-Modules to test: base_delivery_carrier_label,delivery_carrier_b2c,delivery_carrier_deposit,delivery_carrier_label_postlogistics,delivery_roulier,delivery_roulier_laposte,delivery_roulier_accounts_on_methods,delivery_roulier_dpd,delivery_roulier_geodis,delivery_roulier_trs
-Modules to preinstall: ['base_phone', 'keychain', 'partner_helper', 'intrastat_base', 'product_harmonized_system', 'base_suspend_security', 'delivery', 'base', 'document']
-
-Creating instance:
-unbuffer /home/travis/odoo-9.0/openerp-server -d openerp_template --log-level=info --stop-after-init --init base_phone,keychain,partner_helper,intrastat_base,product_harmonized_system,base_suspend_security,delivery,base,document
-2017-02-23 17:08:10,598 5524 [1;32m[1;49mINFO[0m ? openerp: OpenERP version 9.0c
-2017-02-23 17:08:10,598 5524 [1;32m[1;49mINFO[0m ? openerp: addons paths: ['/home/travis/data_dir/addons/9.0', u'/home/travis/build/akretion/delivery-carrier', u'/home/travis/dependencies/connector-telephony', u'/home/travis/dependencies/intrastat', u'/home/travis/dependencies/partner-contact', u'/home/travis/dependencies/product-attribute', u'/home/travis/dependencies/server-tools', u'/home/travis/dependencies/stock-logistics-barcode', u'/home/travis/dependencies/stock-logistics-warehouse', u'/home/travis/dependencies/stock-logistics-workflow', u'/home/travis/odoo-9.0/addons', '/home/travis/odoo-9.0/openerp/addons']
-2017-02-23 17:08:10,598 5524 [1;32m[1;49mINFO[0m ? openerp: database: default@default:default
-2017-02-23 17:08:10,921 5524 [1;32m[1;49mINFO[0m ? openerp.modules.loading: init db
-2017-02-23 17:08:12,668 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading 1 modules...
-2017-02-23 17:08:12,831 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module base: creating or updating database tables
-2017-02-23 17:08:13,255 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table ir_ui_menu...
-2017-02-23 17:08:14,578 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table res_partner_category...
-2017-02-23 17:08:15,517 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'model_data_id'
-2017-02-23 17:08:15,517 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'report_file'
-2017-02-23 17:08:15,518 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'crud_model_name'
-2017-02-23 17:08:15,518 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'wkf_model_name'
-2017-02-23 17:08:15,518 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'res_name'
-2017-02-23 17:08:15,519 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'global'
-2017-02-23 17:08:15,519 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'menus_by_module'
-2017-02-23 17:08:15,856 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'reports_by_module'
-2017-02-23 17:08:16,033 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'views_by_module'
-2017-02-23 17:08:16,186 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'display_name'
-2017-02-23 17:08:16,189 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'commercial_partner_id'
-2017-02-23 17:08:16,190 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'logo_web'
-2017-02-23 17:08:16,193 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'email'
-2017-02-23 17:08:16,193 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'phone'
-2017-02-23 17:08:16,193 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'share'
-2017-02-23 17:08:16,195 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of res.partner.bank fields sanitized_acc_number
-2017-02-23 17:08:16,196 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/base_data.xml
-2017-02-23 17:08:16,523 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_currency_data.xml
-2017-02-23 17:08:17,039 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_country_data.xml
-2017-02-23 17:08:20,005 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/security/base_security.xml
-2017-02-23 17:08:20,226 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/base_menu.xml
-2017-02-23 17:08:20,419 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_config.xml
-2017-02-23 17:08:20,454 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res.country.state.csv
-2017-02-23 17:08:20,642 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_actions.xml
-2017-02-23 17:08:21,058 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_config_parameter_view.xml
-2017-02-23 17:08:21,136 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_cron_view.xml
-2017-02-23 17:08:21,229 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_filters.xml
-2017-02-23 17:08:21,330 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_mail_server_view.xml
-2017-02-23 17:08:21,414 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_model_view.xml
-2017-02-23 17:08:21,934 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_attachment_view.xml
-2017-02-23 17:08:22,039 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_rule_view.xml
-2017-02-23 17:08:22,143 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_sequence_view.xml
-2017-02-23 17:08:22,250 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_translation_view.xml
-2017-02-23 17:08:22,355 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_ui_menu_view.xml
-2017-02-23 17:08:22,449 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_ui_view_view.xml
-2017-02-23 17:08:22,635 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_values_view.xml
-2017-02-23 17:08:22,809 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_autovacuum.xml
-2017-02-23 17:08:22,824 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_model_report.xml
-2017-02-23 17:08:22,857 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/report_ir_model.xml
-2017-02-23 17:08:22,890 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_logging_view.xml
-2017-02-23 17:08:23,000 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/ir/ir_qweb.xml
-2017-02-23 17:08:23,036 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/workflow/workflow_view.xml
-2017-02-23 17:08:23,830 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/module_view.xml
-2017-02-23 17:08:24,268 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/module_data.xml
-2017-02-23 17:08:24,669 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/module_report.xml
-2017-02-23 17:08:24,686 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/report/report_ir_module_reference.xml
-2017-02-23 17:08:24,709 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_module_update_view.xml
-2017-02-23 17:08:24,742 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_language_install_view.xml
-2017-02-23 17:08:24,778 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_import_language_view.xml
-2017-02-23 17:08:24,812 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_module_upgrade_view.xml
-2017-02-23 17:08:24,869 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_module_configuration_view.xml
-2017-02-23 17:08:24,888 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_export_language_view.xml
-2017-02-23 17:08:24,924 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_update_translations_view.xml
-2017-02-23 17:08:24,960 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/module/wizard/base_module_immediate_install.xml
-2017-02-23 17:08:24,978 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_company_view.xml
-2017-02-23 17:08:25,065 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_request_view.xml
-2017-02-23 17:08:25,143 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_lang_view.xml
-2017-02-23 17:08:25,232 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_partner_view.xml
-2017-02-23 17:08:25,681 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_bank_view.xml
-2017-02-23 17:08:25,896 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_country_view.xml
-2017-02-23 17:08:26,167 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_currency_view.xml
-2017-02-23 17:08:26,367 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_users_view.xml
-2017-02-23 17:08:26,943 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_partner_data.xml
-2017-02-23 17:08:26,977 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/ir_property_view.xml
-2017-02-23 17:08:27,074 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_security.xml
-2017-02-23 17:08:27,107 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/security/ir.model.access.csv
-2017-02-23 17:08:28,277 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/base_demo.xml
-2017-02-23 17:08:28,459 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_currency_demo.xml
-2017-02-23 17:08:29,730 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_bank_demo.xml
-2017-02-23 17:08:29,786 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_partner_demo.xml
-2017-02-23 17:08:31,074 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_partner_demo.yml
-2017-02-23 17:08:33,904 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base/res/res_partner_image_demo.xml
-2017-02-23 17:08:36,446 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.base.ir.ir_translation: module base: loading base translation file en for language en_US
-2017-02-23 17:08:36,447 5524 [1;32m[1;49mINFO[0m openerp_template openerp.tools.translate: loading /home/travis/odoo-9.0/openerp/addons/base/i18n/en.po
-2017-02-23 17:08:38,048 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: 1 modules loaded in 25.38s, 0 queries
-2017-02-23 17:08:38,096 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: updating modules list
-2017-02-23 17:08:42,402 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading 48 modules...
-2017-02-23 17:08:42,456 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module auth_crypt: creating or updating database tables
-2017-02-23 17:08:42,487 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.auth_crypt.auth_crypt: Hashing passwords, may be slow for databases with many users...
-2017-02-23 17:08:42,798 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module base_suspend_security: creating or updating database tables
-2017-02-23 17:08:42,864 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.auth_crypt.auth_crypt: Hashing passwords, may be slow for databases with many users...
-2017-02-23 17:08:42,919 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module decimal_precision: creating or updating database tables
-2017-02-23 17:08:42,973 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading decimal_precision/decimal_precision_view.xml
-2017-02-23 17:08:43,034 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading decimal_precision/security/ir.model.access.csv
-2017-02-23 17:08:43,122 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web: creating or updating database tables
-2017-02-23 17:08:43,125 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web/views/webclient_templates.xml
-2017-02-23 17:08:43,402 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module barcodes: creating or updating database tables
-2017-02-23 17:08:43,469 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading barcodes/data/barcodes_data.xml
-2017-02-23 17:08:43,494 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading barcodes/barcodes_view.xml
-2017-02-23 17:08:43,550 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading barcodes/security/ir.model.access.csv
-2017-02-23 17:08:43,589 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading barcodes/views/templates.xml
-2017-02-23 17:08:43,708 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module base_import: creating or updating database tables
-2017-02-23 17:08:43,984 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_import/security/ir.model.access.csv
-2017-02-23 17:08:44,124 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_import/views/base_import.xml
-2017-02-23 17:08:44,233 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module base_phone: creating or updating database tables
-2017-02-23 17:08:44,383 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/security/phone_security.xml
-2017-02-23 17:08:44,494 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/security/ir.model.access.csv
-2017-02-23 17:08:44,507 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/views/res_partner_view.xml
-2017-02-23 17:08:44,581 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/views/res_company_view.xml
-2017-02-23 17:08:44,614 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/views/res_users_view.xml
-2017-02-23 17:08:44,714 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/wizard/reformat_all_phonenumbers_view.xml
-2017-02-23 17:08:44,771 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/wizard/number_not_found_view.xml
-2017-02-23 17:08:44,791 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_phone/web_phone.xml
-2017-02-23 17:08:44,968 5524 [1;32m[1;49mINFO[0m ? openerp.addons.bus.models.bus: Bus.loop listen imbus on db postgres
-2017-02-23 17:08:45,042 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module bus: creating or updating database tables
-2017-02-23 17:08:45,102 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.auth_crypt.auth_crypt: Hashing passwords, may be slow for databases with many users...
-2017-02-23 17:08:45,150 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading bus/views/bus.xml
-2017-02-23 17:08:45,181 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading bus/security/ir.model.access.csv
-2017-02-23 17:08:45,298 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module document: creating or updating database tables
-2017-02-23 17:08:45,317 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading document/views/document.xml
-2017-02-23 17:08:45,548 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/travis/maintainer-quality-tools/travis/wkhtmltopdf
-2017-02-23 17:08:45,626 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module report: creating or updating database tables
-2017-02-23 17:08:45,758 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading report/views/layouts.xml
-2017-02-23 17:08:45,933 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading report/views/views.xml
-2017-02-23 17:08:46,165 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading report/data/report_paperformat.xml
-2017-02-23 17:08:46,183 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading report/security/ir.model.access.csv
-2017-02-23 17:08:46,221 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading report/views/report.xml
-2017-02-23 17:08:46,439 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_calendar: creating or updating database tables
-2017-02-23 17:08:46,442 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_calendar/views/web_calendar.xml
-2017-02-23 17:08:46,568 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_diagram: creating or updating database tables
-2017-02-23 17:08:46,570 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_diagram/views/web_diagram.xml
-2017-02-23 17:08:46,738 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_editor: creating or updating database tables
-2017-02-23 17:08:46,875 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_editor/security/ir.model.access.csv
-2017-02-23 17:08:46,898 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_editor/views/editor.xml
-2017-02-23 17:08:47,023 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_editor/views/iframe.xml
-2017-02-23 17:08:47,058 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_editor/views/snippets.xml
-2017-02-23 17:08:47,202 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_kanban: creating or updating database tables
-2017-02-23 17:08:47,204 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_kanban/views/web_kanban.xml
-2017-02-23 17:08:47,339 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_planner: creating or updating database tables
-2017-02-23 17:08:47,380 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_planner/security/ir.model.access.csv
-2017-02-23 17:08:47,421 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_planner/security/web_planner_security.xml
-2017-02-23 17:08:47,450 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_planner/views/web_planner_templates.xml
-2017-02-23 17:08:47,558 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_planner/views/web_planner_views.xml
-2017-02-23 17:08:47,620 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.base.ir.ir_translation: module web_planner: loading translation file (en_US) for language en_US
-2017-02-23 17:08:47,620 5524 [1;32m[1;49mINFO[0m openerp_template openerp.tools.translate: loading /home/travis/odoo-9.0/addons/web_planner/i18n/en_US.po
-2017-02-23 17:08:47,757 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_tip: creating or updating database tables
-2017-02-23 17:08:47,819 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_tip/security/ir.model.access.csv
-2017-02-23 17:08:47,835 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_tip/views/tip.xml
-2017-02-23 17:08:47,934 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_tip/web_tip_view.xml
-2017-02-23 17:08:48,004 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_tip/web_tip_data.xml
-2017-02-23 17:08:48,112 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_view_editor: creating or updating database tables
-2017-02-23 17:08:48,114 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_view_editor/views/web_view_editor.xml
-2017-02-23 17:08:48,247 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module base_setup: creating or updating database tables
-2017-02-23 17:08:48,326 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_setup/security/ir.model.access.csv
-2017-02-23 17:08:48,327 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_setup/base_setup_views.xml
-2017-02-23 17:08:48,363 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_setup/res_config_view.xml
-2017-02-23 17:08:48,430 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_setup/res_partner_view.xml
-2017-02-23 17:08:48,558 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_kanban_gauge: creating or updating database tables
-2017-02-23 17:08:48,560 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_kanban_gauge/views/web_kanban_gauge.xml
-2017-02-23 17:08:48,705 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module web_settings_dashboard: creating or updating database tables
-2017-02-23 17:08:48,724 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.auth_crypt.auth_crypt: Hashing passwords, may be slow for databases with many users...
-2017-02-23 17:08:48,725 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_settings_dashboard/views/dashboard_views.xml
-2017-02-23 17:08:48,747 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading web_settings_dashboard/views/dashboard_templates.xml
-2017-02-23 17:08:48,903 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module keychain: creating or updating database tables
-2017-02-23 17:08:48,943 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading keychain/security/ir.model.access.csv
-2017-02-23 17:08:48,959 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading keychain/views/keychain_view.xml
-2017-02-23 17:08:49,230 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module mail: creating or updating database tables
-2017-02-23 17:08:49,877 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.mail.models.mail_alias: Mail alias created for res.users admin (id 1)
-2017-02-23 17:08:49,885 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.mail.models.mail_alias: Mail alias created for res.users demo (id 4)
-2017-02-23 17:08:49,892 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.mail.models.mail_alias: Mail alias created for res.users public (id 3)
-2017-02-23 17:08:49,893 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.auth_crypt.auth_crypt: Hashing passwords, may be slow for databases with many users...
-2017-02-23 17:08:50,357 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of mail.template fields model
-2017-02-23 17:08:50,357 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of email_template.preview fields model
-2017-02-23 17:08:50,360 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/wizard/invite_view.xml
-2017-02-23 17:08:50,382 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/wizard/mail_compose_message_view.xml
-2017-02-23 17:08:50,425 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_message_subtype_views.xml
-2017-02-23 17:08:50,487 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_tracking_views.xml
-2017-02-23 17:08:50,553 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_message_views.xml
-2017-02-23 17:08:50,673 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_mail_views.xml
-2017-02-23 17:08:50,772 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_followers_views.xml
-2017-02-23 17:08:50,849 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_channel_views.xml
-2017-02-23 17:08:51,073 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_shortcode_views.xml
-2017-02-23 17:08:51,124 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/res_config_views.xml
-2017-02-23 17:08:51,160 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/data/mail_data.xml
-2017-02-23 17:08:51,218 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/data/mail_channel_data.xml
-2017-02-23 17:08:51,327 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/data/mail_shortcode_data.xml
-2017-02-23 17:08:51,414 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/security/mail_security.xml
-2017-02-23 17:08:51,452 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/security/ir.model.access.csv
-2017-02-23 17:08:51,867 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_alias_views.xml
-2017-02-23 17:08:51,947 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/res_users_views.xml
-2017-02-23 17:08:52,134 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_templates.xml
-2017-02-23 17:08:52,206 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/wizard/email_template_preview_view.xml
-2017-02-23 17:08:52,243 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/mail_template_views.xml
-2017-02-23 17:08:52,328 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/ir_actions_views.xml
-2017-02-23 17:08:52,392 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/res_partner_views.xml
-2017-02-23 17:08:52,492 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models.unlink: User #1 deleted ir.values records with IDs: [9]
-2017-02-23 17:08:52,497 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/views/contact_views.xml
-2017-02-23 17:08:52,548 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/data/mail_demo.xml
-2017-02-23 17:08:53,311 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail/data/mail_channel_demo.xml
-2017-02-23 17:08:53,729 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.base.ir.ir_translation: module mail: loading translation file (en_US) for language en_US
-2017-02-23 17:08:53,729 5524 [1;32m[1;49mINFO[0m openerp_template openerp.tools.translate: loading /home/travis/odoo-9.0/addons/mail/i18n/en_US.po
-2017-02-23 17:08:54,344 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module analytic: creating or updating database tables
-2017-02-23 17:08:54,514 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.analytic.line fields company_id
-2017-02-23 17:08:54,516 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading analytic/security/analytic_security.xml
-2017-02-23 17:08:54,625 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading analytic/security/ir.model.access.csv
-2017-02-23 17:08:54,667 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading analytic/views/analytic_view.xml
-2017-02-23 17:08:54,853 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading analytic/wizard/account_analytic_chart_view.xml
-2017-02-23 17:08:54,882 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading analytic/data/analytic_demo.xml
-2017-02-23 17:08:54,890 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading analytic/data/analytic_account_demo.xml
-2017-02-23 17:08:55,151 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module auth_signup: creating or updating database tables
-2017-02-23 17:08:55,241 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.auth_crypt.auth_crypt: Hashing passwords, may be slow for databases with many users...
-2017-02-23 17:08:55,262 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading auth_signup/auth_signup_data.xml
-2017-02-23 17:08:55,383 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading auth_signup/res_config.xml
-2017-02-23 17:08:55,415 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading auth_signup/res_users_view.xml
-2017-02-23 17:08:55,466 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading auth_signup/views/auth_signup_login.xml
-2017-02-23 17:08:55,721 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module fetchmail: creating or updating database tables
-2017-02-23 17:08:55,818 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading fetchmail/fetchmail_data.xml
-2017-02-23 17:08:55,829 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading fetchmail/fetchmail_view.xml
-2017-02-23 17:08:56,018 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading fetchmail/security/ir.model.access.csv
-2017-02-23 17:08:56,034 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading fetchmail/fetchmail_installer_view.xml
-2017-02-23 17:08:56,041 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.base.ir.ir_translation: module fetchmail: loading translation file (en_US) for language en_US
-2017-02-23 17:08:56,042 5524 [1;32m[1;49mINFO[0m openerp_template openerp.tools.translate: loading /home/travis/odoo-9.0/addons/fetchmail/i18n/en_US.po
-2017-02-23 17:08:56,175 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module im_odoo_support: creating or updating database tables
-2017-02-23 17:08:56,177 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading im_odoo_support/views/im_odoo_support.xml
-2017-02-23 17:08:56,337 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module mail_tip: creating or updating database tables
-2017-02-23 17:08:56,339 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading mail_tip/views/mail_tip.xml
-2017-02-23 17:08:56,644 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module product: creating or updating database tables
-2017-02-23 17:08:56,752 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table product_category...
-2017-02-23 17:08:57,444 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'weight'
-2017-02-23 17:08:57,444 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'volume'
-2017-02-23 17:08:57,445 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'name_template'
-2017-02-23 17:08:57,445 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'qty'
-2017-02-23 17:08:57,445 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'currency_id'
-2017-02-23 17:08:57,446 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'company_id'
-2017-02-23 17:08:57,448 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/security/product_security.xml
-2017-02-23 17:08:58,046 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/security/ir.model.access.csv
-2017-02-23 17:08:58,337 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/wizard/product_price_view.xml
-2017-02-23 17:08:58,371 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/res_config_view.xml
-2017-02-23 17:08:58,409 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/product_data.xml
-2017-02-23 17:08:58,564 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/product_report.xml
-2017-02-23 17:08:58,619 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/product_view.xml
-2017-02-23 17:08:59,462 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/pricelist_view.xml
-2017-02-23 17:08:59,618 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/partner_view.xml
-2017-02-23 17:08:59,668 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/views/report_pricelist.xml
-2017-02-23 17:08:59,690 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/views/report_productlabel.xml
-2017-02-23 17:08:59,711 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/product_demo.xml
-2017-02-23 17:09:03,436 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product/product_image_demo.xml
-2017-02-23 17:09:08,780 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module sales_team: creating or updating database tables
-2017-02-23 17:09:08,942 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.auth_crypt.auth_crypt: Hashing passwords, may be slow for databases with many users...
-2017-02-23 17:09:08,955 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sales_team/security/sales_team_security.xml
-2017-02-23 17:09:08,969 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sales_team/security/ir.model.access.csv
-2017-02-23 17:09:09,015 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sales_team/sales_team_data.xml
-2017-02-23 17:09:09,034 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sales_team/sales_team.xml
-2017-02-23 17:09:09,295 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sales_team/sales_team_dashboard.xml
-2017-02-23 17:09:09,323 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sales_team/sales_team_demo.xml
-2017-02-23 17:09:09,796 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module account: creating or updating database tables
-2017-02-23 17:09:13,053 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.account fields internal_type
-2017-02-23 17:09:13,055 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.journal fields at_least_one_inbound, at_least_one_outbound
-2017-02-23 17:09:13,055 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.payment fields company_id
-2017-02-23 17:09:13,056 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.invoice fields amount_tax, amount_total, amount_total_company_signed, amount_total_signed, amount_untaxed, amount_untaxed_signed, commercial_partner_id, number, payment_move_line_ids, reconciled, residual, residual_company_signed, residual_signed
-2017-02-23 17:09:13,057 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.invoice.line fields company_id, currency_id, partner_id, price_subtotal, price_subtotal_signed
-2017-02-23 17:09:13,057 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.invoice.tax fields company_id, currency_id
-2017-02-23 17:09:13,058 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.bank.statement fields balance_end, company_id, difference, total_entry_encoding
-2017-02-23 17:09:13,058 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.bank.statement.line fields company_id, journal_id
-2017-02-23 17:09:13,059 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.move fields amount, company_id, currency_id, matched_percentage, partner_id
-2017-02-23 17:09:13,060 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.move.line fields amount_residual, amount_residual_currency, balance, balance_cash_basis, company_currency_id, company_id, credit_cash_basis, date, debit_cash_basis, journal_id, reconciled, ref, user_type_id
-2017-02-23 17:09:13,060 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.partial.reconcile fields company_id
-2017-02-23 17:09:13,061 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.analytic.line fields amount_currency, currency_id, general_account_id
-2017-02-23 17:09:13,061 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of account.financial.report fields level
-2017-02-23 17:09:13,064 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/security/account_security.xml
-2017-02-23 17:09:13,587 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/security/ir.model.access.csv
-2017-02-23 17:09:14,487 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/data/data_account_type.xml
-2017-02-23 17:09:14,568 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/data/account_data.xml
-2017-02-23 17:09:14,662 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_menuitem.xml
-2017-02-23 17:09:14,808 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_payment_view.xml
-2017-02-23 17:09:14,992 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_reconcile_view.xml
-2017-02-23 17:09:15,045 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_unreconcile_view.xml
-2017-02-23 17:09:15,076 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_move_reversal_view.xml
-2017-02-23 17:09:15,108 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_view.xml
-2017-02-23 17:09:17,232 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_report.xml
-2017-02-23 17:09:17,407 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_invoice_refund_view.xml
-2017-02-23 17:09:17,449 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_validate_move_view.xml
-2017-02-23 17:09:17,497 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_invoice_state_view.xml
-2017-02-23 17:09:17,580 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/pos_box.xml
-2017-02-23 17:09:17,668 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_end_fy.xml
-2017-02-23 17:09:17,670 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_invoice_view.xml
-2017-02-23 17:09:18,301 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/data/invoice_action_data.xml
-2017-02-23 17:09:18,326 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_invoice_workflow.xml
-2017-02-23 17:09:18,507 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/partner_view.xml
-2017-02-23 17:09:18,843 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/product_view.xml
-2017-02-23 17:09:18,951 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_analytic_view.xml
-2017-02-23 17:09:19,208 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/company_view.xml
-2017-02-23 17:09:19,267 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/res_config_view.xml
-2017-02-23 17:09:19,383 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_tip_data.xml
-2017-02-23 17:09:19,386 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account.xml
-2017-02-23 17:09:19,485 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/report_invoice.xml
-2017-02-23 17:09:19,636 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/report/account_invoice_report_view.xml
-2017-02-23 17:09:19,892 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/report/inherited_layouts.xml
-2017-02-23 17:09:19,937 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_journal_dashboard_view.xml
-2017-02-23 17:09:20,074 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/report_overdue.xml
-2017-02-23 17:09:20,162 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/web_planner_data.xml
-2017-02-23 17:09:20,260 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/report_overdue.xml
-2017-02-23 17:09:20,349 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_report_common_view.xml
-2017-02-23 17:09:20,426 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_report_general_ledger_view.xml
-2017-02-23 17:09:20,549 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/report_generalledger.xml
-2017-02-23 17:09:20,598 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_report_trial_balance_view.xml
-2017-02-23 17:09:20,710 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/report_trialbalance.xml
-2017-02-23 17:09:20,760 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/account_financial_report_data.xml
-2017-02-23 17:09:20,985 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_financial_report_view.xml
-2017-02-23 17:09:21,202 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/report_financial.xml
-2017-02-23 17:09:21,251 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/wizard/account_report_aged_partner_balance_view.xml
-2017-02-23 17:09:21,342 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/views/report_agedpartnerbalance.xml
-2017-02-23 17:09:21,391 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account/demo/account_demo.xml
-2017-02-23 17:09:22,313 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.base.ir.ir_translation: module account: loading base translation file en for language en_US
-2017-02-23 17:09:22,313 5524 [1;32m[1;49mINFO[0m openerp_template openerp.tools.translate: loading /home/travis/odoo-9.0/addons/account/i18n/en.po
-2017-02-23 17:09:23,589 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module portal: creating or updating database tables
-2017-02-23 17:09:23,697 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal/portal_data.xml
-2017-02-23 17:09:23,860 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal/portal_view.xml
-2017-02-23 17:09:23,960 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal/wizard/portal_wizard_view.xml
-2017-02-23 17:09:23,998 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal/security/ir.model.access.csv
-2017-02-23 17:09:24,023 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal/portal_demo.xml
-2017-02-23 17:09:24,521 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module procurement: creating or updating database tables
-2017-02-23 17:09:24,785 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading procurement/security/ir.model.access.csv
-2017-02-23 17:09:24,841 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading procurement/security/procurement_security.xml
-2017-02-23 17:09:24,868 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading procurement/procurement_data.xml
-2017-02-23 17:09:24,884 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading procurement/wizard/schedulers_all_view.xml
-2017-02-23 17:09:24,914 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading procurement/procurement_view.xml
-2017-02-23 17:09:25,182 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading procurement/company_view.xml
-2017-02-23 17:09:25,244 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading procurement/product_product_view.xml
-2017-02-23 17:09:25,400 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.base.ir.ir_translation: module procurement: loading translation file (en_US) for language en_US
-2017-02-23 17:09:25,400 5524 [1;32m[1;49mINFO[0m openerp_template openerp.tools.translate: loading /home/travis/odoo-9.0/addons/procurement/i18n/en_US.po
-2017-02-23 17:09:25,899 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module product_harmonized_system: creating or updating database tables
-2017-02-23 17:09:26,010 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of hs.code fields display_name
-2017-02-23 17:09:26,013 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product_harmonized_system/security/product_hs_security.xml
-2017-02-23 17:09:26,030 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product_harmonized_system/security/ir.model.access.csv
-2017-02-23 17:09:26,063 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product_harmonized_system/views/hs_code.xml
-2017-02-23 17:09:26,162 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product_harmonized_system/views/product_category.xml
-2017-02-23 17:09:26,198 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product_harmonized_system/views/product_template.xml
-2017-02-23 17:09:26,249 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading product_harmonized_system/demo/product_demo.xml
-2017-02-23 17:09:26,640 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module account_bank_statement_import: creating or updating database tables
-2017-02-23 17:09:26,808 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_bank_statement_import/account_bank_statement_import_view.xml
-2017-02-23 17:09:26,868 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_bank_statement_import/account_import_tip_data.xml
-2017-02-23 17:09:26,870 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_bank_statement_import/wizard/journal_creation.xml
-2017-02-23 17:09:26,894 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_bank_statement_import/demo/partner_bank.xml
-2017-02-23 17:09:27,116 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module account_full_reconcile: creating or updating database tables
-2017-02-23 17:09:27,226 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_full_reconcile/security/ir.model.access.csv
-2017-02-23 17:09:27,253 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_full_reconcile/views/account_full_reconcile_view.xml
-2017-02-23 17:09:27,648 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module base_vat: creating or updating database tables
-2017-02-23 17:09:27,788 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading base_vat/base_vat_view.xml
-2017-02-23 17:09:28,188 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module payment: creating or updating database tables
-2017-02-23 17:09:28,518 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading payment/views/payment_acquirer.xml
-2017-02-23 17:09:28,806 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading payment/views/res_config_view.xml
-2017-02-23 17:09:28,848 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading payment/views/res_partner_view.xml
-2017-02-23 17:09:28,922 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading payment/security/ir.model.access.csv
-2017-02-23 17:09:29,061 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading payment/security/payment_security.xml
-2017-02-23 17:09:29,548 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module sale: creating or updating database tables
-2017-02-23 17:09:30,498 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of sale.order fields amount_tax, amount_total, amount_untaxed, invoice_status
-2017-02-23 17:09:30,499 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of sale.order.line fields company_id, currency_id, invoice_status, order_partner_id, price_reduce, price_subtotal, price_tax, price_total, qty_invoiced, qty_to_invoice, salesman_id, state
-2017-02-23 17:09:30,501 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/wizard/sale_make_invoice_advance.xml
-2017-02-23 17:09:30,538 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/security/sale_security.xml
-2017-02-23 17:09:31,336 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/security/ir.model.access.csv
-2017-02-23 17:09:31,874 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sale_sequence.xml
-2017-02-23 17:09:31,881 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sale_report.xml
-2017-02-23 17:09:31,896 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sale_data.xml
-2017-02-23 17:09:31,975 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sale_view.xml
-2017-02-23 17:09:32,759 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sales_team_view.xml
-2017-02-23 17:09:32,856 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/res_partner_view.xml
-2017-02-23 17:09:32,975 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/report/sale_report_view.xml
-2017-02-23 17:09:33,079 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/data/mail_template_data.xml
-2017-02-23 17:09:33,093 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/res_config_view.xml
-2017-02-23 17:09:33,188 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/views/report_saleorder.xml
-2017-02-23 17:09:33,262 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/views/sale.xml
-2017-02-23 17:09:33,371 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sales_team_dashboard.xml
-2017-02-23 17:09:33,442 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sale_tip_data.xml
-2017-02-23 17:09:33,461 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sale_demo.xml
-2017-02-23 17:09:36,382 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale/sale_product_demo.xml
-2017-02-23 17:09:38,020 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module stock: creating or updating database tables
-2017-02-23 17:09:38,125 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table stock_location...
-2017-02-23 17:09:38,829 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table stock_quant_package...
-2017-02-23 17:09:40,277 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'complete_name'
-2017-02-23 17:09:40,277 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'packaging_type_id'
-2017-02-23 17:09:40,278 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'group_id'
-2017-02-23 17:09:40,278 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'product_qty'
-2017-02-23 17:09:40,278 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'company_id'
-2017-02-23 17:09:40,279 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'route_sequence'
-2017-02-23 17:09:40,279 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'company_id'
-2017-02-23 17:09:40,279 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'location_id'
-2017-02-23 17:09:40,279 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'owner_id'
-2017-02-23 17:09:40,280 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'route_sequence'
-2017-02-23 17:09:40,280 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'priority'
-2017-02-23 17:09:40,280 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'state'
-2017-02-23 17:09:40,280 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'min_date'
-2017-02-23 17:09:40,281 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'max_date'
-2017-02-23 17:09:40,281 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'prodlot_name'
-2017-02-23 17:09:40,281 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'product_name'
-2017-02-23 17:09:40,281 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'location_name'
-2017-02-23 17:09:40,281 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'theoretical_qty'
-2017-02-23 17:09:40,282 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: storing computed values of fields.function 'product_code'
-2017-02-23 17:09:40,284 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/data/default_barcode_patterns.xml
-2017-02-23 17:09:40,383 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/security/stock_security.xml
-2017-02-23 17:09:41,166 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/security/ir.model.access.csv
-2017-02-23 17:09:42,364 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_data.xml
-2017-02-23 17:09:42,727 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_data.yml
-2017-02-23 17:09:42,789 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/wizard/stock_move_view.xml
-2017-02-23 17:09:42,823 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/wizard/stock_change_product_qty_view.xml
-2017-02-23 17:09:42,853 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/wizard/stock_return_picking_view.xml
-2017-02-23 17:09:42,885 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/wizard/make_procurement_view.xml
-2017-02-23 17:09:42,918 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/wizard/orderpoint_procurement_view.xml
-2017-02-23 17:09:42,947 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/report/report_stock_forecast.xml
-2017-02-23 17:09:43,022 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_incoterms.xml
-2017-02-23 17:09:43,079 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_report.xml
-2017-02-23 17:09:43,197 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_view.xml
-2017-02-23 17:09:46,022 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_sequence.xml
-2017-02-23 17:09:46,056 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/product_view.xml
-2017-02-23 17:09:46,601 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/partner_view.xml
-2017-02-23 17:09:46,698 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/report/report_stock_view.xml
-2017-02-23 17:09:46,835 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/res_config_view.xml
-2017-02-23 17:09:46,946 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/views/report_package_barcode.xml
-2017-02-23 17:09:47,008 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/views/report_lot_barcode.xml
-2017-02-23 17:09:47,040 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/views/report_location_barcode.xml
-2017-02-23 17:09:47,101 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/views/report_stockpicking_operations.xml
-2017-02-23 17:09:47,201 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/views/report_deliveryslip.xml
-2017-02-23 17:09:47,262 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/views/report_stockinventory.xml
-2017-02-23 17:09:47,293 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_dashboard.xml
-2017-02-23 17:09:47,328 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/wizard/stock_immediate_transfer.xml
-2017-02-23 17:09:47,357 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/wizard/stock_backorder_confirmation.xml
-2017-02-23 17:09:47,387 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/data/web_planner_data.xml
-2017-02-23 17:09:47,449 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_demo_pre.yml
-2017-02-23 17:09:47,528 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_demo.xml
-2017-02-23 17:09:48,940 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/procurement_demo.xml
-2017-02-23 17:09:49,544 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_orderpoint.xml
-2017-02-23 17:09:49,622 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_orderpoint.yml
-2017-02-23 17:09:49,629 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_demo.yml
-2017-02-23 17:09:54,559 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models.unlink: User #1 deleted stock.pack.operation records with IDs: [2]
-2017-02-23 17:09:55,191 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [4]
-2017-02-23 17:09:55,210 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [10]
-2017-02-23 17:09:55,485 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_location_demo_cpu1.xml
-2017-02-23 17:09:55,502 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock/stock_location_demo_cpu3.yml
-2017-02-23 17:09:57,089 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module intrastat_base: creating or updating database tables
-2017-02-23 17:09:57,274 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/data/country_data.xml
-2017-02-23 17:09:57,343 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/views/product_template.xml
-2017-02-23 17:09:57,412 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/views/res_partner.xml
-2017-02-23 17:09:57,497 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/views/res_country.xml
-2017-02-23 17:09:57,569 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/views/account_tax.xml
-2017-02-23 17:09:57,601 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/views/res_company.xml
-2017-02-23 17:09:57,650 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/views/intrastat.xml
-2017-02-23 17:09:57,705 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading intrastat_base/demo/intrastat_demo.xml
-2017-02-23 17:09:58,512 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module payment_transfer: creating or updating database tables
-2017-02-23 17:09:58,559 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading payment_transfer/views/transfer.xml
-2017-02-23 17:09:58,580 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading payment_transfer/data/transfer.xml
-2017-02-23 17:09:58,910 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module portal_sale: creating or updating database tables
-2017-02-23 17:09:59,008 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal_sale/security/portal_security.xml
-2017-02-23 17:09:59,062 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal_sale/portal_sale_view.xml
-2017-02-23 17:09:59,281 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal_sale/portal_sale_data.xml
-2017-02-23 17:09:59,306 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal_sale/security/ir.model.access.csv
-2017-02-23 17:10:00,581 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module stock_account: creating or updating database tables
-2017-02-23 17:10:01,112 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/security/stock_account_security.xml
-2017-02-23 17:10:01,337 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/security/ir.model.access.csv
-2017-02-23 17:10:01,438 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/stock_account_data.xml
-2017-02-23 17:10:01,459 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/wizard/stock_change_standard_price_view.xml
-2017-02-23 17:10:01,488 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/wizard/stock_valuation_history_view.xml
-2017-02-23 17:10:01,631 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/product_data.xml
-2017-02-23 17:10:01,660 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/product_view.xml
-2017-02-23 17:10:01,835 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/stock_account_view.xml
-2017-02-23 17:10:01,947 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/res_config_view.xml
-2017-02-23 17:10:01,979 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/stock_account_post_install.yml
-2017-02-23 17:10:01,985 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading stock_account/stock_account_demo.yml
-2017-02-23 17:10:02,494 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module sale_stock: creating or updating database tables
-2017-02-23 17:10:02,928 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/security/sale_stock_security.xml
-2017-02-23 17:10:03,142 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/security/ir.model.access.csv
-2017-02-23 17:10:03,362 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/company_view.xml
-2017-02-23 17:10:03,414 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/sale_stock_view.xml
-2017-02-23 17:10:03,522 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/stock_view.xml
-2017-02-23 17:10:03,595 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/res_config_view.xml
-2017-02-23 17:10:03,631 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/account_invoice_view.xml
-2017-02-23 17:10:03,718 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading sale_stock/sale_stock_demo.xml
-2017-02-23 17:10:03,746 5524 [1;32m[1;49mINFO[0m openerp_template openerp.addons.base.ir.ir_translation: module sale_stock: loading base translation file en for language en_US
-2017-02-23 17:10:03,746 5524 [1;32m[1;49mINFO[0m openerp_template openerp.tools.translate: loading /home/travis/odoo-9.0/addons/sale_stock/i18n/en.po
-2017-02-23 17:10:04,134 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module delivery: creating or updating database tables
-2017-02-23 17:10:04,872 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of delivery.carrier fields fixed_price
-2017-02-23 17:10:04,873 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of sale.order fields delivery_price
-2017-02-23 17:10:04,874 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of stock.picking fields weight
-2017-02-23 17:10:04,875 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Storing computed values of stock.move fields weight
-2017-02-23 17:10:04,990 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading delivery/security/ir.model.access.csv
-2017-02-23 17:10:05,084 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading delivery/views/delivery_view.xml
-2017-02-23 17:10:05,501 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading delivery/views/partner_view.xml
-2017-02-23 17:10:05,578 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading delivery/data/delivery_data.xml
-2017-02-23 17:10:07,086 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading delivery/views/report_shipping.xml
-2017-02-23 17:10:07,116 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading delivery/views/report_deliveryslip.xml
-2017-02-23 17:10:07,148 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading delivery/data/delivery_demo.xml
-2017-02-23 17:10:07,466 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models.unlink: User #1 deleted delivery.price.rule records with IDs: [3]
-2017-02-23 17:10:07,948 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module portal_stock: creating or updating database tables
-2017-02-23 17:10:07,951 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal_stock/security/portal_security.xml
-2017-02-23 17:10:07,977 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading portal_stock/security/ir.model.access.csv
-2017-02-23 17:10:08,336 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module procurement_jit: creating or updating database tables
-2017-02-23 17:10:08,386 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: 48 modules loaded in 85.98s, 263 queries
-2017-02-23 17:10:08,394 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading 51 modules...
-2017-02-23 17:10:08,564 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module account_check_printing: creating or updating database tables
-2017-02-23 17:10:08,717 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_check_printing/data/check_printing.xml
-2017-02-23 17:10:08,746 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_check_printing/views/account_journal_dashboard_view.xml
-2017-02-23 17:10:08,793 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_check_printing/views/account_journal_view.xml
-2017-02-23 17:10:08,830 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_check_printing/views/account_payment_view.xml
-2017-02-23 17:10:08,959 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading account_check_printing/wizard/print_pre_numbered_checks.xml
-2017-02-23 17:10:09,252 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module l10n_generic_coa: creating or updating database tables
-2017-02-23 17:10:09,255 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading l10n_generic_coa/data/configurable_account_chart.xml
-2017-02-23 17:10:09,405 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading l10n_generic_coa/account_chart_template.yml
-2017-02-23 17:10:10,027 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading l10n_generic_coa/../account/demo/account_bank_statement.yml
-2017-02-23 17:10:10,186 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading l10n_generic_coa/../account/demo/account_invoice_demo.yml
-2017-02-23 17:10:15,194 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.module: module l10n_us: creating or updating database tables
-2017-02-23 17:10:15,196 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: loading l10n_us/data/res_company.xml
-2017-02-23 17:10:15,223 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: 51 modules loaded in 6.83s, 3 queries
-2017-02-23 17:10:15,745 5524 [1;32m[1;49mINFO[0m openerp_template openerp.modules.loading: Modules loaded.
-2017-02-23 17:10:15,746 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table ir_ui_menu...
-2017-02-23 17:10:15,844 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table res_partner_category...
-2017-02-23 17:10:15,853 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table stock_location...
-2017-02-23 17:10:15,876 5524 [1;32m[1;49mINFO[0m openerp_template openerp.models: Computing parent left and right for table product_category...
-2017-02-23 17:10:15,880 5524 [1;32m[1;49mINFO[0m openerp_template openerp.service.server: Initiating shutdown
-2017-02-23 17:10:15,880 5524 [1;32m[1;49mINFO[0m openerp_template openerp.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
-
-Testing base_delivery_carrier_label,delivery_carrier_b2c,delivery_carrier_deposit,delivery_carrier_label_postlogistics,delivery_roulier,delivery_roulier_laposte,delivery_roulier_accounts_on_methods,delivery_roulier_dpd,delivery_roulier_geodis,delivery_roulier_trs:
-copy /home/travis/data_dir/filestore/openerp_template /home/travis/data_dir/filestore/openerp_test
-unbuffer coverage run /home/travis/odoo-9.0/openerp-server -d openerp_test --stop-after-init --log-level info --log-handler openerp.tools.yaml_import:DEBUG --test-enable --init base_delivery_carrier_label,delivery_carrier_b2c,delivery_carrier_deposit,delivery_carrier_label_postlogistics,delivery_roulier,delivery_roulier_laposte,delivery_roulier_accounts_on_methods,delivery_roulier_dpd,delivery_roulier_geodis,delivery_roulier_trs
-2017-02-23 17:10:17,981 5583 [1;32m[1;49mINFO[0m ? openerp: OpenERP version 9.0c
-2017-02-23 17:10:17,981 5583 [1;32m[1;49mINFO[0m ? openerp: addons paths: ['/home/travis/data_dir/addons/9.0', u'/home/travis/build/akretion/delivery-carrier', u'/home/travis/dependencies/connector-telephony', u'/home/travis/dependencies/intrastat', u'/home/travis/dependencies/partner-contact', u'/home/travis/dependencies/product-attribute', u'/home/travis/dependencies/server-tools', u'/home/travis/dependencies/stock-logistics-barcode', u'/home/travis/dependencies/stock-logistics-warehouse', u'/home/travis/dependencies/stock-logistics-workflow', u'/home/travis/odoo-9.0/addons', '/home/travis/odoo-9.0/openerp/addons']
-2017-02-23 17:10:17,981 5583 [1;32m[1;49mINFO[0m ? openerp: database: default@default:default
-2017-02-23 17:10:18,181 5583 [1;32m[1;49mINFO[0m ? openerp.service.server: HTTP service (werkzeug) running on 0.0.0.0:8069
-2017-02-23 17:10:18,217 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading 1 modules...
-2017-02-23 17:10:18,238 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: 1 modules loaded in 0.02s, 0 queries
-2017-02-23 17:10:19,624 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading 51 modules...
-2017-02-23 17:10:19,665 5583 [1;32m[1;49mINFO[0m ? openerp.addons.bus.models.bus: Bus.loop listen imbus on db postgres
-2017-02-23 17:10:19,755 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/travis/maintainer-quality-tools/travis/wkhtmltopdf
-2017-02-23 17:10:20,165 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: 51 modules loaded in 0.54s, 0 queries
-2017-02-23 17:10:20,177 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_laposte: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:20,177 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_accounts_on_methods: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:20,177 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_trs: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:20,177 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier: Unmet dependencies: partner_helper, delivery_carrier_b2c
-2017-02-23 17:10:20,178 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_dpd: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:20,178 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_carrier_b2c: Unmet dependencies: partner_helper
-2017-02-23 17:10:20,178 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_geodis: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:20,178 5583 [1;33m[1;49mWARNING[0m openerp_test openerp.modules.graph: Some modules were not loaded.
-2017-02-23 17:10:20,178 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading 54 modules...
-2017-02-23 17:10:20,930 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.module: module base_delivery_carrier_label: creating or updating database tables
-2017-02-23 17:10:21,416 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading base_delivery_carrier_label/views/delivery.xml
-2017-02-23 17:10:21,682 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading base_delivery_carrier_label/views/stock.xml
-2017-02-23 17:10:21,952 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading base_delivery_carrier_label/views/res_config.xml
-2017-02-23 17:10:22,082 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading base_delivery_carrier_label/security/ir.model.access.csv
-2017-02-23 17:10:22,485 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.module: openerp.addons.base_delivery_carrier_label.tests.test_get_weight running tests.
-2017-02-23 17:10:22,486 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: test_get_weight (openerp.addons.base_delivery_carrier_label.tests.test_get_weight.TestGetWeight)
-2017-02-23 17:10:22,486 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: ` Test quant.package.weight computed field and pack.operation.get_weight.
-2017-02-23 17:10:24,397 5583 [1;32m[1;49mINFO[0m openerp_test openerp.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [12]
-2017-02-23 17:10:25,120 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: test_get_weight_with_qty (openerp.addons.base_delivery_carrier_label.tests.test_get_weight.TestGetWeight)
-2017-02-23 17:10:25,120 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: ` Ensure qty are taken in account.
-2017-02-23 17:10:26,692 5583 [1;32m[1;49mINFO[0m openerp_test openerp.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [14]
-2017-02-23 17:10:27,361 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: test_get_weight_with_uom (openerp.addons.base_delivery_carrier_label.tests.test_get_weight.TestGetWeight)
-2017-02-23 17:10:27,361 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: ` Check with differents uom.
-2017-02-23 17:10:28,876 5583 [1;32m[1;49mINFO[0m openerp_test openerp.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [16, 17, 18]
-2017-02-23 17:10:28,919 5583 [1;32m[1;49mINFO[0m openerp_test openerp.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [19, 20, 21]
-2017-02-23 17:10:29,334 5583 [1;33m[1;49mWARNING[0m openerp_test openerp.addons.base_delivery_carrier_label.models.stock_pack_operation: Type conversion not implemented for product 73
-2017-02-23 17:10:29,334 5583 [1;33m[1;49mWARNING[0m openerp_test openerp.addons.base_delivery_carrier_label.models.stock_pack_operation: Type conversion not implemented for product 75
-2017-02-23 17:10:29,339 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: test_total_weight (openerp.addons.base_delivery_carrier_label.tests.test_get_weight.TestGetWeight)
-2017-02-23 17:10:29,339 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: ` Test quant.package.weight computed field when a total weight is defined
-2017-02-23 17:10:30,988 5583 [1;32m[1;49mINFO[0m openerp_test openerp.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [25]
-2017-02-23 17:10:31,694 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: Ran 4 tests in 9.208s
-2017-02-23 17:10:31,694 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.base_delivery_carrier_label.tests.test_get_weight: OK
-2017-02-23 17:10:31,694 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.module: openerp.addons.base_delivery_carrier_label.tests.test_get_weight tested in 9.21s, 9218 queries
-2017-02-23 17:10:32,026 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.module: module delivery_carrier_deposit: creating or updating database tables
-2017-02-23 17:10:32,258 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_deposit/views/stock_view.xml
-2017-02-23 17:10:32,653 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_deposit/wizards/deposit.xml
-2017-02-23 17:10:32,765 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_deposit/data/ir_sequence_data.xml
-2017-02-23 17:10:32,812 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_deposit/report/report.xml
-2017-02-23 17:10:32,885 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_deposit/report/deposit_slip.xml
-2017-02-23 17:10:32,968 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_deposit/security/ir.model.access.csv
-2017-02-23 17:10:33,016 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_deposit/security/model_security.xml
-2017-02-23 17:10:33,574 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.module: module delivery_carrier_label_postlogistics: creating or updating database tables
-2017-02-23 17:10:34,140 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_label_postlogistics/data/res_partner.xml
-2017-02-23 17:10:34,348 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_label_postlogistics/data/delivery.xml
-2017-02-23 17:10:34,427 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_label_postlogistics/views/delivery.xml
-2017-02-23 17:10:34,709 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_label_postlogistics/views/postlogistics_license.xml
-2017-02-23 17:10:34,901 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_label_postlogistics/views/res_config.xml
-2017-02-23 17:10:34,970 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading delivery_carrier_label_postlogistics/security/ir.model.access.csv
-2017-02-23 17:10:35,309 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.module: openerp.addons.delivery_carrier_label_postlogistics.tests.test_postlogistics running tests.
-2017-02-23 17:10:35,309 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.delivery_carrier_label_postlogistics.tests.test_postlogistics: test_missing_language (openerp.addons.delivery_carrier_label_postlogistics.tests.test_postlogistics.TestPostlogistics)
-2017-02-23 17:10:35,773 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.delivery_carrier_label_postlogistics.tests.test_postlogistics: test_store_label (openerp.addons.delivery_carrier_label_postlogistics.tests.test_postlogistics.TestPostlogistics)
-2017-02-23 17:10:36,185 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.delivery_carrier_label_postlogistics.tests.test_postlogistics: Ran 2 tests in 0.876s
-2017-02-23 17:10:36,185 5583 [1;32m[1;49mINFO[0m openerp_test openerp.addons.delivery_carrier_label_postlogistics.tests.test_postlogistics: OK
-2017-02-23 17:10:36,204 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: 54 modules loaded in 16.03s, 10196 queries
-2017-02-23 17:10:36,213 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_laposte: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,213 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_accounts_on_methods: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,213 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_trs: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,213 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier: Unmet dependencies: partner_helper, delivery_carrier_b2c
-2017-02-23 17:10:36,213 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_dpd: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,213 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_carrier_b2c: Unmet dependencies: partner_helper
-2017-02-23 17:10:36,213 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_geodis: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,213 5583 [1;33m[1;49mWARNING[0m openerp_test openerp.modules.graph: Some modules were not loaded.
-2017-02-23 17:10:36,214 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading 54 modules...
-2017-02-23 17:10:36,214 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: 54 modules loaded in 0.00s, 0 queries
-2017-02-23 17:10:36,223 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_laposte: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,223 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_accounts_on_methods: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,223 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_trs: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,224 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier: Unmet dependencies: partner_helper, delivery_carrier_b2c
-2017-02-23 17:10:36,224 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_dpd: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,224 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_carrier_b2c: Unmet dependencies: partner_helper
-2017-02-23 17:10:36,224 5583 [1;31m[1;49mERROR[0m openerp_test openerp.modules.graph: module delivery_roulier_geodis: Unmet dependencies: delivery_roulier
-2017-02-23 17:10:36,224 5583 [1;33m[1;49mWARNING[0m openerp_test openerp.modules.graph: Some modules were not loaded.
-2017-02-23 17:10:36,225 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: loading 54 modules...
-2017-02-23 17:10:36,225 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: 54 modules loaded in 0.00s, 0 queries
-2017-02-23 17:10:36,962 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: Modules loaded.
-2017-02-23 17:10:36,968 5583 [1;32m[1;49mINFO[0m openerp_test openerp.modules.loading: All post-tested in 0.00s, 0 queries
-2017-02-23 17:10:36,969 5583 [1;32m[1;49mINFO[0m openerp_test openerp.models: Computing parent left and right for table ir_ui_menu...
-2017-02-23 17:10:37,057 5583 [1;32m[1;49mINFO[0m openerp_test openerp.models: Computing parent left and right for table stock_quant_package...
-2017-02-23 17:10:37,058 5583 [1;32m[1;49mINFO[0m openerp_test openerp.service.server: Initiating shutdown
-2017-02-23 17:10:37,058 5583 [1;32m[1;49mINFO[0m openerp_test openerp.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
-----------
-Module test summary
-[1;32mSuccess[0;m base_delivery_carrier_label,delivery_carrier_b2c,delivery_carrier_deposit,delivery_carrier_label_postlogistics,delivery_roulier,delivery_roulier_laposte,delivery_roulier_accounts_on_methods,delivery_roulier_dpd,delivery_roulier_geodis,delivery_roulier_trs
-
-+=======================================
-|  Tests summary:
-|---------------------------------------
-| test_server.py              [1;32mSuccess[0;m
-+=======================================
-
-travis_time:end:27cf6ae8:start=1487869689209281358,finish=1487869837683568989,duration=148474287631[0K
-[32;1mThe command "travis_run_tests" exited with 0.[0m
-travis_fold:start:cache.2[0Kstore build cache
-travis_time:start:0e9e4a78[0K
-travis_time:end:0e9e4a78:start=1487869837688826756,finish=1487869837692863681,duration=4036925[0Ktravis_time:start:0693d232[0K[32;1mchange detected (content changed, file is created, or file is deleted):
-/home/travis/.cache/pip/http/0/a/1/b/d/0a1bdaca89a089ad7b5b26c8ce538780112d30ccc238e4e14a2e826d
-/home/travis/.cache/pip/http/0/d/e/2/d/0de2def333d81c5bf5211ffa60584b36f6d465a6a3eff4c58e8a1bd5
-/home/travis/.cache/pip/http/0/e/7/b/9/0e7b99547a0247a24df2175f35e166cf96f0194417e99b4851dbf306
-/home/travis/.cache/pip/http/0/e/b/8/e/0eb8e3da6d73f4de2940eb7f94eb65bff81ab4540a1ff6e224e1b0f5
-/home/travis/.cache/pip/http/1/0/2/d/9/102d9c94cb89db710e6029edf47c1d7585244150d5aff52a977a6db4
-/home/travis/.cache/pip/http/1/3/b/b/e/13bbe3235c2b43d1debb8e312939afb0d36cdab76dfee360c822af58
-/home/travis/.cache/pip/http/1/5/4/e/2/154e2e24c715e31676ff8158fc18ac3d652204eddac8cbfc1baf2c93
-/home/travis/.cache/pip/http/1/6/6/b/1/166b1009731eb4aa4f196ee1e6012b0d1a320e0773fc5b8fbaa9ba22
-/home/travis/.cache/pip/http/1/9/1/e/2/191e2772496ab7c2761201e27896a90312f5405d5f1f2986dfe65a51
-/home/travis/.cache/pip/http/2/4/f/7/d/24f7dae1b5135fc91d7436c1924cedf9fc696472cb0f4b939ea04b67
-/home/travis/.cache/pip/http/2/7/b/0/1/27
-[0m
-[32;1m...
-[0m
-[32;1mchanges detected, packing new archive[0m
-.
-[32;1muploading archive[0m
-
-travis_time:end:0693d232:start=1487869837697527517,finish=1487869852450406257,duration=14752878740[0Ktravis_fold:end:cache.2[0Ktravis_fold:start:after_success[0Ktravis_time:start:12fcf0bd[0K$ travis_after_tests_success
-Name                                                                     Stmts   Miss  Cover   Missing
-------------------------------------------------------------------------------------------------------
-base_delivery_carrier_label/models/carrier_account.py                       13      2    85%   15, 20
-base_delivery_carrier_label/models/delivery_carrier.py                      15      2    87%   37-38
-base_delivery_carrier_label/models/delivery_carrier_option.py               10      0   100%
-base_delivery_carrier_label/models/delivery_carrier_template_option.py       8      0   100%
-base_delivery_carrier_label/models/shipping_label.py                        15      5    67%   18, 22-25
-base_delivery_carrier_label/models/stock_pack_operation.py                  23      0   100%
-base_delivery_carrier_label/models/stock_picking.py                         96     51    47%   14-15, 45, 70-78, 88-114, 123, 128-144, 148-158, 174, 193, 238-241, 246-251
-base_delivery_carrier_label/models/stock_quant_package.py                   27      9    67%   50, 52, 56-62
-delivery_carrier_deposit/models/deposit_slip.py                             46     16    65%   45-51, 89-94, 101, 105-107
-delivery_carrier_deposit/wizards/deposit.py                                 21     10    52%   46, 54-76
-delivery_carrier_label_postlogistics/models/company.py                      18      0   100%
-delivery_carrier_label_postlogistics/models/delivery.py                     87     45    48%   110-133, 154-166, 184-227
-delivery_carrier_label_postlogistics/models/res_config.py                  225    198    12%   18, 43-57, 61-85, 89-109, 113-137, 141-160, 173-236, 245-296, 307-332, 338-360, 365-385
-delivery_carrier_label_postlogistics/models/stock.py                        70     34    51%   25-44, 54, 61-62, 70, 91-100, 107-111, 128-137
-delivery_carrier_label_postlogistics/models/stock_quant_package.py          27     20    26%   19-24, 39-71
-delivery_carrier_label_postlogistics/postlogistics/web_service.py          211     76    64%   57-67, 83, 89-93, 98-102, 106-110, 115-119, 123-127, 148, 151-152, 159-163, 190-193, 210-214, 238-243, 269-274, 279-280, 300, 307, 392, 396-412, 415, 417
-------------------------------------------------------------------------------------------------------
-TOTAL                                                                      912    468    49%
-Submitting coverage to coveralls.io...
-Coverage submitted!
-Couldn't find a repository matching this job.
-'url'
-
-      _____          _
-     / ____|        | |
-    | |     ___   __| | ___  ___ _____   __
-    | |    / _ \ / _  |/ _ \/ __/ _ \ \ / /
-    | |___| (_) | (_| |  __/ (_| (_) \ V /
-     \_____\___/ \____|\___|\___\___/ \_/
-                                    v2.0.5
-
-[90m==>[0m Detecting CI provider
-    Travis Detected
-[90m==>[0m Preparing upload
-[90m==>[0m Processing gcov (disable by -X gcov)
-    Executing gcov (find /home/travis/build/akretion/delivery-carrier -type f -name '*.gcno'  -exec gcov -pb  {} +)
-[90m==>[0m Collecting reports
-    [32m+[0m /home/travis/build/akretion/delivery-carrier/delivery_carrier_deposit/report/report.xml bytes=407
-    Generating coverage xml reports for Python
-    [32m+[0m /home/travis/build/akretion/delivery-carrier/coverage.xml bytes=36899
-[90m==>[0m Appending environment variables
-    [32m+[0m TRAVIS_PYTHON_NAME
-    [32m+[0m TRAVIS_OS_NAME
-[90m==>[0m Uploading
-    .url https://codecov.io
-    .query pr=76&service=travis&package=py2.0.5&job=204660781&build=440.3&branch=9-roulier&commit=dc4b21b2921f8ff18068707bb7ff5e2f10beb138&slug=akretion%2Fdelivery-carrier
-    Pinging Codecov...
-    Uploading to S3...
-[92m    https://codecov.io/github/akretion/delivery-carrier/commit/dc4b21b2921f8ff18068707bb7ff5e2f10beb138[0m
-
-travis_time:end:12fcf0bd:start=1487869852455557733,finish=1487869854437385306,duration=1981827573[0Ktravis_fold:end:after_success[0K
-Done. Your build exited with 0.

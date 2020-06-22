@@ -1,279 +1,0 @@
-travis_fold:start:worker_info[0K[33;1mWorker information[0m
-hostname: i-0e4ebf4-production-2-worker-org-ec2.travisci.net:efe3944c-4912-4337-a803-cf3bc3a8c1de
-version: v2.5.0 https://github.com/travis-ci/worker/tree/da3a43228dffc0fcca5a46569ca786b22991979f
-instance: 5b4bb75:travis:go
-startup: 885.841927ms
-travis_fold:end:worker_info[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
-Build language: go
-Build group: stable
-Build dist: trusty
-Build id: 212162720
-Job id: 212162721
-travis-build version: 6b480e5a1
-[34m[1mBuild image provisioning date and time[0m
-Thu Nov 10 03:26:46 UTC 2016
-[34m[1mOperating System Details[0m
-Distributor ID:	Ubuntu
-Description:	Ubuntu 14.04.5 LTS
-Release:	14.04
-Codename:	trusty
-[34m[1mLinux Version[0m
-4.4.0-45-generic
-[34m[1mCookbooks Version[0m
-58fad1f https://github.com/travis-ci/travis-cookbooks/tree/58fad1f
-[34m[1mgit version[0m
-git version 1.9.1
-[34m[1mbash version[0m
-GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
-Copyright (C) 2013 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-
-This is free software; you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-[34m[1mgcc version[0m
-gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
-Copyright (C) 2013 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-[34m[1mdocker version[0m
-Client:
- Version:      1.12.3
- API version:  1.24
- Go version:   go1.6.3
- Git commit:   6b644ec
- Built:        Wed Oct 26 23:26:11 2016
- OS/Arch:      linux/amd64
-[34m[1mclang version[0m
-clang version 3.5.0 (tags/RELEASE_350/final)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-[34m[1mjq version[0m
-jq-1.5
-[34m[1mbats version[0m
-Bats 0.4.0
-[34m[1mgimme version[0m
-v1.0.0
-[34m[1mnvm version[0m
-0.32.0
-[34m[1mperlbrew version[0m
-/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.76
-[34m[1mpostgresql client version[0m
-psql (PostgreSQL) 9.6.1
-[34m[1mphpenv version[0m
-rbenv 1.0.0-33-gc7dcaf1
-[34m[1mrvm version[0m
-rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
-[34m[1mdefault ruby version[0m
-ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
-[34m[1mPre-installed Ruby versions[0m
-ruby-2.2.5
-ruby-2.3.1
-travis_fold:end:system_info[0K
-travis_fold:start:fix.CVE-2015-7547[0K$ export DEBIAN_FRONTEND=noninteractive
-Reading package lists...
-Building dependency tree...
-Reading state information...
-libc6 is already the newest version.
-0 upgraded, 0 newly installed, 0 to remove and 160 not upgraded.
-travis_fold:end:fix.CVE-2015-7547[0KRemoving symlink /usr/lib/jvm/java-8-oracle-amd64
-$ sudo rm -f /usr/lib/jvm/java-8-oracle-amd64
-Reload jdk_switcher
-$ source $HOME/.jdk_switcher_rc
-travis_fold:start:git.checkout[0Ktravis_time:start:0033cb67[0K$ git clone --depth=50 https://github.com/sandia-minimega/minimega.git sandia-minimega/minimega
-Cloning into 'sandia-minimega/minimega'...
-remote: Counting objects: 5507, done.[K
-remote: Compressing objects:   0% (1/2509)   [Kremote: Compressing objects:   1% (26/2509)   [Kremote: Compressing objects:   2% (51/2509)   [Kremote: Compressing objects:   3% (76/2509)   [Kremote: Compressing objects:   4% (101/2509)   [Kremote: Compressing objects:   5% (126/2509)   [Kremote: Compressing objects:   6% (151/2509)   [Kremote: Compressing objects:   7% (176/2509)   [Kremote: Compressing objects:   8% (201/2509)   [Kremote: Compressing objects:   9% (226/2509)   [Kremote: Compressing objects:  10% (251/2509)   [Kremote: Compressing objects:  11% (276/2509)   [Kremote: Compressing objects:  12% (302/2509)   [Kremote: Compressing objects:  13% (327/2509)   [Kremote: Compressing objects:  14% (352/2509)   [Kremote: Compressing objects:  15% (377/2509)   [Kremote: Compressing objects:  16% (402/2509)   [Kremote: Compressing objects:  17% (427/2509)   [Kremote: Compressing objects:  18% (452/2509)   [Kremote: Compressing objects:  19% (477/2509)   [Kremote: Compressing objects:  20% (502/2509)   [Kremote: Compressing objects:  21% (527/2509)   [Kremote: Compressing objects:  22% (552/2509)   [Kremote: Compressing objects:  23% (578/2509)   [Kremote: Compressing objects:  24% (603/2509)   [Kremote: Compressing objects:  25% (628/2509)   [Kremote: Compressing objects:  26% (653/2509)   [Kremote: Compressing objects:  27% (678/2509)   [Kremote: Compressing objects:  28% (703/2509)   [Kremote: Compressing objects:  29% (728/2509)   [Kremote: Compressing objects:  30% (753/2509)   [Kremote: Compressing objects:  31% (778/2509)   [Kremote: Compressing objects:  32% (803/2509)   [Kremote: Compressing objects:  33% (828/2509)   [Kremote: Compressing objects:  34% (854/2509)   [Kremote: Compressing objects:  35% (879/2509)   [Kremote: Compressing objects:  36% (904/2509)   [Kremote: Compressing objects:  37% (929/2509)   [Kremote: Compressing objects:  38% (954/2509)   [Kremote: Compressing objects:  39% (979/2509)   [Kremote: Compressing objects:  40% (1004/2509)   [Kremote: Compressing objects:  41% (1029/2509)   [Kremote: Compressing objects:  42% (1054/2509)   [Kremote: Compressing objects:  43% (1079/2509)   [Kremote: Compressing objects:  44% (1104/2509)   [Kremote: Compressing objects:  45% (1130/2509)   [Kremote: Compressing objects:  46% (1155/2509)   [Kremote: Compressing objects:  47% (1180/2509)   [Kremote: Compressing objects:  48% (1205/2509)   [Kremote: Compressing objects:  49% (1230/2509)   [Kremote: Compressing objects:  50% (1255/2509)   [Kremote: Compressing objects:  51% (1280/2509)   [Kremote: Compressing objects:  52% (1305/2509)   [Kremote: Compressing objects:  53% (1330/2509)   [Kremote: Compressing objects:  54% (1355/2509)   [Kremote: Compressing objects:  55% (1380/2509)   [Kremote: Compressing objects:  56% (1406/2509)   [Kremote: Compressing objects:  57% (1431/2509)   [Kremote: Compressing objects:  58% (1456/2509)   [Kremote: Compressing objects:  59% (1481/2509)   [Kremote: Compressing objects:  60% (1506/2509)   [Kremote: Compressing objects:  61% (1531/2509)   [Kremote: Compressing objects:  62% (1556/2509)   [Kremote: Compressing objects:  63% (1581/2509)   [Kremote: Compressing objects:  64% (1606/2509)   [Kremote: Compressing objects:  65% (1631/2509)   [Kremote: Compressing objects:  66% (1656/2509)   [Kremote: Compressing objects:  67% (1682/2509)   [Kremote: Compressing objects:  68% (1707/2509)   [Kremote: Compressing objects:  69% (1732/2509)   [Kremote: Compressing objects:  70% (1757/2509)   [Kremote: Compressing objects:  71% (1782/2509)   [Kremote: Compressing objects:  72% (1807/2509)   [Kremote: Compressing objects:  73% (1832/2509)   [Kremote: Compressing objects:  74% (1857/2509)   [Kremote: Compressing objects:  75% (1882/2509)   [Kremote: Compressing objects:  76% (1907/2509)   [Kremote: Compressing objects:  77% (1932/2509)   [Kremote: Compressing objects:  78% (1958/2509)   [Kremote: Compressing objects:  79% (1983/2509)   [Kremote: Compressing objects:  80% (2008/2509)   [Kremote: Compressing objects:  81% (2033/2509)   [Kremote: Compressing objects:  82% (2058/2509)   [Kremote: Compressing objects:  83% (2083/2509)   [Kremote: Compressing objects:  84% (2108/2509)   [Kremote: Compressing objects:  85% (2133/2509)   [Kremote: Compressing objects:  86% (2158/2509)   [Kremote: Compressing objects:  87% (2183/2509)   [Kremote: Compressing objects:  88% (2208/2509)   [Kremote: Compressing objects:  89% (2234/2509)   [Kremote: Compressing objects:  90% (2259/2509)   [Kremote: Compressing objects:  91% (2284/2509)   [Kremote: Compressing objects:  92% (2309/2509)   [Kremote: Compressing objects:  93% (2334/2509)   [Kremote: Compressing objects:  94% (2359/2509)   [Kremote: Compressing objects:  95% (2384/2509)   [Kremote: Compressing objects:  96% (2409/2509)   [Kremote: Compressing objects:  97% (2434/2509)   [Kremote: Compressing objects:  98% (2459/2509)   [Kremote: Compressing objects:  99% (2484/2509)   [Kremote: Compressing objects: 100% (2509/2509)   [Kremote: Compressing objects: 100% (2509/2509), done.[K
-Receiving objects:   0% (1/5507)   Receiving objects:   1% (56/5507)   Receiving objects:   2% (111/5507)   Receiving objects:   3% (166/5507)   Receiving objects:   4% (221/5507)   Receiving objects:   5% (276/5507)   Receiving objects:   6% (331/5507)   Receiving objects:   7% (386/5507)   Receiving objects:   8% (441/5507)   Receiving objects:   9% (496/5507)   Receiving objects:  10% (551/5507)   Receiving objects:  11% (606/5507)   Receiving objects:  12% (661/5507)   Receiving objects:  13% (716/5507)   Receiving objects:  14% (771/5507)   Receiving objects:  15% (827/5507)   Receiving objects:  16% (882/5507)   Receiving objects:  16% (915/5507), 2.11 MiB | 3.09 MiB/s   Receiving objects:  17% (937/5507), 2.11 MiB | 3.09 MiB/s   Receiving objects:  18% (992/5507), 2.11 MiB | 3.09 MiB/s   Receiving objects:  19% (1047/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  20% (1102/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  21% (1157/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  22% (1212/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  23% (1267/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  24% (1322/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  25% (1377/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  26% (1432/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  27% (1487/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  28% (1542/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  29% (1598/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  30% (1653/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  31% (1708/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  32% (1763/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  33% (1818/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  34% (1873/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  35% (1928/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  36% (1983/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  37% (2038/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  38% (2093/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  39% (2148/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  40% (2203/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  41% (2258/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  42% (2313/5507), 6.69 MiB | 5.65 MiB/s   Receiving objects:  43% (2369/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  44% (2424/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  45% (2479/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  46% (2534/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  47% (2589/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  48% (2644/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  49% (2699/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  50% (2754/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  51% (2809/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  52% (2864/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  53% (2919/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  54% (2974/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  55% (3029/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  56% (3084/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  57% (3139/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  58% (3195/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  59% (3250/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  60% (3305/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  61% (3360/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  62% (3415/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  63% (3470/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  64% (3525/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  65% (3580/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  66% (3635/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  67% (3690/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  68% (3745/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  69% (3800/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  70% (3855/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  71% (3910/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  72% (3966/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  73% (4021/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  74% (4076/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  75% (4131/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  76% (4186/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  77% (4241/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  78% (4296/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  79% (4351/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  80% (4406/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  81% (4461/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  82% (4516/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  83% (4571/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  84% (4626/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  85% (4681/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  86% (4737/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  87% (4792/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  88% (4847/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  89% (4902/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  90% (4957/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  91% (5012/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  92% (5067/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  93% (5122/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  94% (5177/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  95% (5232/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  96% (5287/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  97% (5342/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  98% (5397/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects:  99% (5452/5507), 10.88 MiB | 6.46 MiB/s   remote: Total 5507 (delta 3153), reused 4914 (delta 2819), pack-reused 0[K
-Receiving objects: 100% (5507/5507), 10.88 MiB | 6.46 MiB/s   Receiving objects: 100% (5507/5507), 12.34 MiB | 6.46 MiB/s, done.
-Resolving deltas:   0% (0/3153)   Resolving deltas:   2% (65/3153)   Resolving deltas:   3% (115/3153)   Resolving deltas:   4% (127/3153)   Resolving deltas:   5% (158/3153)   Resolving deltas:   6% (201/3153)   Resolving deltas:   7% (224/3153)   Resolving deltas:   8% (255/3153)   Resolving deltas:   9% (284/3153)   Resolving deltas:  10% (321/3153)   Resolving deltas:  11% (349/3153)   Resolving deltas:  12% (393/3153)   Resolving deltas:  13% (415/3153)   Resolving deltas:  14% (442/3153)   Resolving deltas:  15% (474/3153)   Resolving deltas:  16% (514/3153)   Resolving deltas:  17% (538/3153)   Resolving deltas:  18% (568/3153)   Resolving deltas:  19% (630/3153)   Resolving deltas:  20% (637/3153)   Resolving deltas:  21% (672/3153)   Resolving deltas:  22% (701/3153)   Resolving deltas:  24% (757/3153)   Resolving deltas:  25% (789/3153)   Resolving deltas:  27% (861/3153)   Resolving deltas:  28% (889/3153)   Resolving deltas:  29% (918/3153)   Resolving deltas:  30% (948/3153)   Resolving deltas:  31% (982/3153)   Resolving deltas:  32% (1009/3153)   Resolving deltas:  33% (1057/3153)   Resolving deltas:  34% (1081/3153)   Resolving deltas:  35% (1128/3153)   Resolving deltas:  36% (1138/3153)   Resolving deltas:  37% (1168/3153)   Resolving deltas:  38% (1201/3153)   Resolving deltas:  39% (1236/3153)   Resolving deltas:  40% (1262/3153)   Resolving deltas:  41% (1293/3153)   Resolving deltas:  42% (1325/3153)   Resolving deltas:  43% (1356/3153)   Resolving deltas:  44% (1388/3153)   Resolving deltas:  45% (1419/3153)   Resolving deltas:  46% (1457/3153)   Resolving deltas:  47% (1483/3153)   Resolving deltas:  48% (1515/3153)   Resolving deltas:  49% (1560/3153)   Resolving deltas:  50% (1577/3153)   Resolving deltas:  53% (1678/3153)   Resolving deltas:  54% (1705/3153)   Resolving deltas:  56% (1789/3153)   Resolving deltas:  58% (1836/3153)   Resolving deltas:  59% (1862/3153)   Resolving deltas:  62% (1979/3153)   Resolving deltas:  64% (2021/3153)   Resolving deltas:  66% (2099/3153)   Resolving deltas:  72% (2284/3153)   Resolving deltas:  81% (2583/3153)   Resolving deltas:  82% (2595/3153)   Resolving deltas:  83% (2624/3153)   Resolving deltas:  84% (2651/3153)   Resolving deltas:  85% (2685/3153)   Resolving deltas:  86% (2716/3153)   Resolving deltas:  88% (2800/3153)   Resolving deltas:  91% (2873/3153)   Resolving deltas:  95% (3003/3153)   Resolving deltas:  96% (3050/3153)   Resolving deltas:  97% (3060/3153)   Resolving deltas:  98% (3099/3153)   Resolving deltas:  99% (3130/3153)   Resolving deltas: 100% (3153/3153)   Resolving deltas: 100% (3153/3153), done.
-Checking connectivity... done.
-
-travis_time:end:0033cb67:start=1489765044664675598,finish=1489765048194356601,duration=3529681003[0K$ cd sandia-minimega/minimega
-travis_time:start:07554c28[0K$ git fetch origin +refs/pull/849/merge:
-remote: Counting objects: 42, done.[K
-remote: Compressing objects:  11% (1/9)   [Kremote: Compressing objects:  22% (2/9)   [Kremote: Compressing objects:  33% (3/9)   [Kremote: Compressing objects:  44% (4/9)   [Kremote: Compressing objects:  55% (5/9)   [Kremote: Compressing objects:  66% (6/9)   [Kremote: Compressing objects:  77% (7/9)   [Kremote: Compressing objects:  88% (8/9)   [Kremote: Compressing objects: 100% (9/9)   [Kremote: Compressing objects: 100% (9/9), done.[K
-remote: Total 42 (delta 33), reused 41 (delta 33), pack-reused 0[K
-Unpacking objects:   2% (1/42)   Unpacking objects:   4% (2/42)   Unpacking objects:   7% (3/42)   Unpacking objects:   9% (4/42)   Unpacking objects:  11% (5/42)   Unpacking objects:  14% (6/42)   Unpacking objects:  16% (7/42)   Unpacking objects:  19% (8/42)   Unpacking objects:  21% (9/42)   Unpacking objects:  23% (10/42)   Unpacking objects:  26% (11/42)   Unpacking objects:  28% (12/42)   Unpacking objects:  30% (13/42)   Unpacking objects:  33% (14/42)   Unpacking objects:  35% (15/42)   Unpacking objects:  38% (16/42)   Unpacking objects:  40% (17/42)   Unpacking objects:  42% (18/42)   Unpacking objects:  45% (19/42)   Unpacking objects:  47% (20/42)   Unpacking objects:  50% (21/42)   Unpacking objects:  52% (22/42)   Unpacking objects:  54% (23/42)   Unpacking objects:  57% (24/42)   Unpacking objects:  59% (25/42)   Unpacking objects:  61% (26/42)   Unpacking objects:  64% (27/42)   Unpacking objects:  66% (28/42)   Unpacking objects:  69% (29/42)   Unpacking objects:  71% (30/42)   Unpacking objects:  73% (31/42)   Unpacking objects:  76% (32/42)   Unpacking objects:  78% (33/42)   Unpacking objects:  80% (34/42)   Unpacking objects:  83% (35/42)   Unpacking objects:  85% (36/42)   Unpacking objects:  88% (37/42)   Unpacking objects:  90% (38/42)   Unpacking objects:  92% (39/42)   Unpacking objects:  95% (40/42)   Unpacking objects:  97% (41/42)   Unpacking objects: 100% (42/42)   Unpacking objects: 100% (42/42), done.
-From https://github.com/sandia-minimega/minimega
- * branch            refs/pull/849/merge -> FETCH_HEAD
-
-travis_time:end:07554c28:start=1489765048205742075,finish=1489765048967634844,duration=761892769[0K$ git checkout -qf FETCH_HEAD
-travis_fold:end:git.checkout[0Ktravis_fold:start:apt[0K[33;1mInstalling APT Packages (BETA)[0m
-$ export DEBIAN_FRONTEND=noninteractive
-travis_time:start:026a585c[0K$ sudo -E apt-get -yq update &>> ~/apt-get-update.log
-
-travis_time:end:026a585c:start=1489765049274630200,finish=1489765055634132361,duration=6359502161[0Ktravis_time:start:1d457e1c[0K$ sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install libpcap-dev libreadline-dev
-Reading package lists...
-Building dependency tree...
-Reading state information...
-libreadline-dev is already the newest version.
-The following extra packages will be installed:
-  libpcap0.8 libpcap0.8-dev
-The following NEW packages will be installed:
-  libpcap-dev libpcap0.8 libpcap0.8-dev
-0 upgraded, 3 newly installed, 0 to remove and 160 not upgraded.
-Need to get 318 kB of archives.
-After this operation, 1,039 kB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libpcap0.8 amd64 1.5.3-2 [110 kB]
-Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main libpcap0.8-dev amd64 1.5.3-2 [205 kB]
-Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main libpcap-dev all 1.5.3-2 [3,390 B]
-Fetched 318 kB in 0s (513 kB/s)
-Selecting previously unselected package libpcap0.8:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 69904 files and directories currently installed.)
-Preparing to unpack .../libpcap0.8_1.5.3-2_amd64.deb ...
-Unpacking libpcap0.8:amd64 (1.5.3-2) ...
-Selecting previously unselected package libpcap0.8-dev.
-Preparing to unpack .../libpcap0.8-dev_1.5.3-2_amd64.deb ...
-Unpacking libpcap0.8-dev (1.5.3-2) ...
-Selecting previously unselected package libpcap-dev.
-Preparing to unpack .../libpcap-dev_1.5.3-2_all.deb ...
-Unpacking libpcap-dev (1.5.3-2) ...
-Setting up libpcap0.8:amd64 (1.5.3-2) ...
-Setting up libpcap0.8-dev (1.5.3-2) ...
-Setting up libpcap-dev (1.5.3-2) ...
-Processing triggers for libc-bin (2.19-0ubuntu6.9) ...
-
-travis_time:end:1d457e1c:start=1489765055652729446,finish=1489765064056919926,duration=8404190480[0Ktravis_fold:end:apt[0K
-[33;1mThis job is running on container-based infrastructure, which does not allow use of 'sudo', setuid and setguid executables.[0m
-[33;1mIf you require sudo, add 'sudo: required' to your .travis.yml[0m
-[33;1mSee https://docs.travis-ci.com/user/workers/container-based-infrastructure/ for details.[0m
-travis_time:start:1490991e[0K$ GIMME_OUTPUT=$(gimme 1.7.3) && eval "$GIMME_OUTPUT"
-go version go1.7.3 linux/amd64
-
-travis_time:end:1490991e:start=1489765070460831939,finish=1489765076780858208,duration=6320026269[0K$ export GOPATH=$HOME/gopath
-$ export PATH=$HOME/gopath/bin:$PATH
-$ mkdir -p $HOME/gopath/src/github.com/sandia-minimega/minimega
-$ rsync -az ${TRAVIS_BUILD_DIR}/ $HOME/gopath/src/github.com/sandia-minimega/minimega/
-$ export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/sandia-minimega/minimega
-$ cd $HOME/gopath/src/github.com/sandia-minimega/minimega
-travis_time:start:1dfd4e18[0K
-travis_time:end:1dfd4e18:start=1489765083758483096,finish=1489765083784674359,duration=26191263[0K$ gimme version
-v1.0.0
-$ go version
-go version go1.7.3 linux/amd64
-travis_fold:start:go.env[0K$ go env
-GOARCH="amd64"
-GOBIN=""
-GOEXE=""
-GOHOSTARCH="amd64"
-GOHOSTOS="linux"
-GOOS="linux"
-GOPATH="/home/travis/gopath"
-GORACE=""
-GOROOT="/home/travis/.gimme/versions/go1.7.3.linux.amd64"
-GOTOOLDIR="/home/travis/.gimme/versions/go1.7.3.linux.amd64/pkg/tool/linux_amd64"
-CC="gcc"
-GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build773574544=/tmp/go-build -gno-record-gcc-switches"
-CXX="g++"
-CGO_ENABLED="1"
-travis_fold:end:go.env[0Ktravis_fold:start:install[0Ktravis_time:start:1f74634d[0K$ true
-
-travis_time:end:1f74634d:start=1489765084233103377,finish=1489765084243552394,duration=10449017[0Ktravis_fold:end:install[0Ktravis_time:start:1738d571[0K$ ./check.bash
-CHECKING SOURCE CODE
-gofmt - OK
-go vet - OK
-
-
-travis_time:end:1738d571:start=1489765084260676549,finish=1489765142760776822,duration=58500100273[0K
-[32;1mThe command "./check.bash" exited with 0.[0m
-travis_time:start:026dee68[0K$ ./build.bash
-BUILD PACKAGES (linux)
-apigen
-bridge
-gonetflow
-gopcap
-goreadline
-igor
-iomeshage
-meshage
-miniccc
-minicli
-miniclient
-minidoc
-minifuzzer
-minilog
-minimega
-minipager
-minirouter
-minitest
-minitunnel
-miniweb
-nbd
-nfcat
-passwordify
-powerbot
-present
-protonuke
-qmp
-ranger
-ranges
-rfbplay
-ron
-version
-vlans
-vmbetter
-vmconfig
-vmconfiger
-vnc
-vncdrone
-
-BUILD PACKAGES (windows)
-protonuke
-miniccc
-
-
-travis_time:end:026dee68:start=1489765142769507572,finish=1489765238751165019,duration=95981657447[0K
-[32;1mThe command "./build.bash" exited with 0.[0m
-travis_time:start:0d903b36[0K$ ./test.bash
-TESTING
-?   	apigen	[no test files]
-?   	bridge	[no test files]
-?   	gonetflow	[no test files]
-?   	gopcap	[no test files]
-?   	goreadline	[no test files]
-?   	igor	[no test files]
-?   	iomeshage	[no test files]
-?   	meshage	[no test files]
-?   	miniccc	[no test files]
-ok  	minicli	0.008s
-?   	miniclient	[no test files]
-?   	minidoc	[no test files]
-?   	minifuzzer	[no test files]
-ok  	minilog	1.006s
-ok  	minimega	0.454s
-?   	minipager	[no test files]
-?   	minirouter	[no test files]
-?   	minitest	[no test files]
-ok  	minitunnel	0.011s
-?   	miniweb	[no test files]
-?   	nbd	[no test files]
-?   	nfcat	[no test files]
-?   	passwordify	[no test files]
-?   	powerbot	[no test files]
-ok  	present	0.007s
-?   	protonuke	[no test files]
-?   	qmp	[no test files]
-?   	ranger	[no test files]
-ok  	ranges	0.006s
-ok  	rfbplay	0.015s
-?   	ron	[no test files]
-?   	version	[no test files]
-ok  	vlans	0.064s
-?   	vmbetter	[no test files]
-ok  	vmconfig	0.005s
-?   	vmconfiger	[no test files]
-ok  	vnc	0.005s
-?   	vncdrone	[no test files]
-
-
-travis_time:end:0d903b36:start=1489765238764828955,finish=1489765273784845610,duration=35020016655[0K
-[32;1mThe command "./test.bash" exited with 0.[0m
-travis_time:start:11d954ae[0K$ ./doc.bash
-BUILD DOCUMENTATION
-apigen
-
-travis_time:end:11d954ae:start=1489765273792278806,finish=1489765274078322196,duration=286043390[0K
-[32;1mThe command "./doc.bash" exited with 0.[0m
-
-Done. Your build exited with 0.
