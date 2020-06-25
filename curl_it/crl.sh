@@ -10,6 +10,11 @@ echo -ne "curl  $1"\\r
 filename=$(echo "$1" | sha256sum |awk '{print $1}')
 curl -sL  $1 -o ./output/$filename &>/dev/null
 echo "$1     $filename" >> ./output/index
+if gron ./output/$filename 2&> /dev/null;then
+        gron ./output/$filename.txt > ./builds.txt
+        rm ./output/$filename
+fi
+
 }
 
 
