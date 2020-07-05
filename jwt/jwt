@@ -1,0 +1,51 @@
+#!/bin/bash
+ 
+function help(){
+echo "usage:"
+echo "this script need a urls and regex for specify the scope"
+echo -e "\t d \t decode  "
+echo -e "\t e \t encode "
+}
+
+
+function decode(){
+	header=$(echo $1 |cut -d"." -f1|base64 -d )
+	payload=$(echo $1 |cut -d"." -f2|base64 -d )
+	signature=$(echo $1 |cut -d"." -f3|base64 -d )
+
+	echo -e "\e[32m$header"
+	echo -e "\e[33m$payload"
+	echo -e "\e[34m$signature"
+}
+
+function encode(){
+	header=$(echo    $1|base64 |sed 's/=//g'|sed  's/\//_/g'|sed 's/+/-/g' )
+        payload=$(echo   $2|base64 |sed 's/=//g'|sed  's/\//_/g'|sed 's/+/-/g' )
+        signature=$(echo $3|base64 |sed 's/=//g'|sed  's/\//_/g'|sed 's/+/-/g' )
+
+	echo -e "\e[32m$header"
+        echo -e "\e[33m$payload"
+        echo -e "\e[34m$signature"
+
+	jwt="$header.$payload.$signature"
+	
+	#echo -e "\e[35m$jwt"	
+}
+
+
+function main(){
+if [ $# -eq 3 ];then
+	encode $1 $2 $3 
+elif [ $# -eq 1 ];then
+	decode $1
+else
+	echo "you should provide 1 arg to decode it or 3 args to encode them"
+fi
+}
+
+
+
+main $@ 
+
+
+

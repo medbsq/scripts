@@ -57,7 +57,7 @@ function collect(){
 
 function collect_all(){
 	cat $1|xargs -n1 -I{} cat "{}_domain"/domain >> ./d
-	cat d |sort -u > ./domains && rm ./d
+	cat d |sort -u >> ../domains && rm ./d
 }
 
 
