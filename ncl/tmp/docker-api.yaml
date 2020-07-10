@@ -1,0 +1,17 @@
+id: exposed-docker-api
+
+info:
+  name: Exposed Docker API
+  author: furkansenan
+  severity: informative
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}:2376/version'
+    matchers:
+      - type: word
+        words:
+          - "Version"
+          - "Docker"
+        part: body

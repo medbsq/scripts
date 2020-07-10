@@ -1,0 +1,57 @@
+Script started on 2020-05-19 23:27:38+0100
+bash: /src/github.com/tomnomnom/gf/gf-completion.bash: No such file or directory
+]0;mohamed@mohamed-virtual-machine: ~/mytools/domainEnumTools/nuclei-templates/subdomain-takeover[01;32mmohamed@mohamed-virtual-machine[00m:[01;34m~/mytools/domainEnumTools/nuclei-templates/suubdomain-takeover[00m$ reboots
+
+Command 'reboots' not found, did you mean:
+
+  command 'reboot' from deb systemd-sysv (245.4-4ubuntu3)
+  command 'reboot' from deb molly-guard (0.7.2)
+
+Try: sudo apt install <deb name>
+
+]0;mohamed@mohamed-virtual-machine: ~/mytools/domainEnumTools/nuclei-templates/subdomain-takeover[01;32mmohamed@mohamed-virtual-machine[00m:[01;34m~/mytools/domainEnumTools/nuclei-templates/suubdomain-takeover[00m$ reboots[Ks[Kscripts
+]0;mohamed@mohamed-virtual-machine: ~/scripts[01;32mmohamed@mohamed-virtual-machine[00m:[01;34m~/scripts[00m$ [H[2J]0;mohamed@mohamed-virtual-machine: ~/scripts[01;32mmohamed@mohamed-virtual-machine[00m:[01;34m~/scripts[00m$ cd at[K[KtakeOver/
+]0;mohamed@mohamed-virtual-machine: ~/scripts/takeOver[01;32mmohamed@mohamed-virtual-machine[00m:[01;34m~/scripts/takeOver[00m$ ls
+@  [0m[01;32mcname.sh[0m  [01;32mcurl_it_edge[0m  patern.txt    pat.txt      [01;32murls.sh[0m
+a  [01;32mcurl_it[0m   p             patherns.txt  [01;32mtakeover.sh[0m  [01;32mverify.sh[0m
+]0;mohamed@mohamed-virtual-machine: ~/scripts/takeOver[01;32mmohamed@mohamed-virtual-machine[00m:[01;34m~/scripts/takeOver[00m$ vi[K[Kcat a"[K|grep 0iE[1PiE-iE[C[C "*[K^\""
+[01;31m[K"[m[KIf you are an Acquia Cloud customer and expect to see your site at this address"
+[01;31m[K"[m[KThe site you are looking for could not be found."
+[01;31m[K"[m[KSorry, this page is no longer available."
+[01;31m[K"[m[KThere is no portal here ... sending you back to Aha!"
+[01;31m[K"[m[KОшибка 402. Сервис Айри.рф не оплачен"
+[01;31m[K"[m[KIf this is your website and you've just created it, try refreshing in a minute"
+[01;31m[K"[m[KThe specified bucket does not exist"
+[01;31m[K"[m[K<h1>Oops! We couldn&#8217;t find that page.</h1>"
+[01;31m[K"[m[KRepository not found"
+[01;31m[K"[m[KThe page you have requested does not exist"
+[01;31m[K"[m[KTrying to access your account?"
+[01;31m[K"[m[K404 Not Found<br>"
+[01;31m[K"[m[KIf you're moving your domain away from Cargo you must make this configuration"
+[01;31m[K"[m[Kthrough your registrar's DNS control panel."
+[01;31m[K"[m[KFastly error: unknown domain:"
+[01;31m[K"[m[KThe feed has not been found."
+[01;31m[K"[m[KWith GetResponse Landing Pages, lead generation has never been easier"
+[01;31m[K"[m[KThe thing you were looking for is no longer here"
+[01;31m[K"[m[KThe thing you were looking for is no longer here, or never was"
+[01;31m[K"[m[KThe thing you were looking for is no longer here, or never was"
+[01;31m[K"[m[KFor root URLs (like http://example.com/) you must provide an index.html file"
+[01;31m[K"[m[KThere isn't a GitHub Pages site here.:
+[01;31m[K"[m[K404 Blog is not found"
+[01;31m[K"[m[KSorry, we can't find the page you're looking for."
+[01;31m[K"[m[KWe could not find what you're looking for."
+[01;31m[K"[m[KNo settings were found for this company:"
+[01;31m[K"[m[KAdmin of this Helprace account needs to set up domain alias"
+[01;31m[K"[m[KAlias not configured!"
+[01;31m[K"[m[K(see Step 2 here: Using your own domain with Helprace)."
+[01;31m[K"[m[Kherokucdn.com/error-pages/no-such-app.html"
+[01;31m[K"[m[KThere's nothing here, yet."
+[01;31m[K"[m[K<title>No such app</title>"
+[01;31m[K"[m[Kdoes not exist in our system"
+[01;31m[K"[m[KDomain not found"
+[01;31m[K"[m[KThis page is reserved for artistic dogs."
+[01;31m[K"[m[KThis account no longer active"
+[01;31m[K"[m[Kis not a registered InCloud YouTrack."
+[01;31m[K"[m[KNo Site For Domain"
+[01;31m[K"[m[KIt looks like you're lost"
+[01;31m[K

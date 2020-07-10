@@ -1,0 +1,20 @@
+id: jolokia instance
+
+info:
+  name: Jolokia Version Disclosure
+  author: mavericknerd
+  severity: low
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/jolokia/version'
+      - '{{BaseURL}}:8080/jolokia/version'
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '"agent":'
+      - type: status
+        status:
+          - 200
