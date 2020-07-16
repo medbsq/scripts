@@ -13,7 +13,7 @@ function ncl(){
 		template="/home/mohamed/git_workspace/scripts/ncl/tmp/$i"
 		output="./nuclei_$1/$i.txt"
 		echo  -ne "\e[33mtemplate :  $i"\\r
-		nuclei -t  $template   -silent  -l $1 -o $output
+		nuclei  -c  50   -t  $template   -silent  -l $1 -o $output
 	done
 }
 

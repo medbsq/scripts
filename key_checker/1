@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat google_urls|while read a ;do
+	curl -s  $a$1  -o /dev/null  -w  "  %{}% %{}%" 
