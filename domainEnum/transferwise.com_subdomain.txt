@@ -1,0 +1,4 @@
+./amass_transferwise.com.txt
+./assetfinder_transferwise.com.txt
+./findomain_transferwise.com.txt
+./sublister_transferwise.com.txt

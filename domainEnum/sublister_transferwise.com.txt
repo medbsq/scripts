@@ -1,0 +1,3 @@
+card-form.transferwise.com
+help.transferwise.com
+tech.transferwise.com

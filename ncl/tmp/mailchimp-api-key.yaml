@@ -8,7 +8,7 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}"
+      - "{{BaseURL}}/"
 
     matchers-condition: and
     matchers:
@@ -16,6 +16,7 @@ requests:
         part: body
         regex:
           - "[0-9a-f]{32}-us[0-9]{1,2}"
+
     extractors:
       - type: regex
         part: body
