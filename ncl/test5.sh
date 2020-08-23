@@ -55,7 +55,7 @@ function ncl_f(){
 		fi
 	done
 	echo "------------------------------------------------------------------------------------------------------------" >> ./nuclei_$1/.logs
-	find ./$output -empty -delete
+	find ./$output -empty -delete &> /dev/null
 }
 
 function ncl_special(){
@@ -70,7 +70,7 @@ function ncl_special(){
                 fi
         done
         echo "------------------------------------------------------------------------------------------------------------" >> ./nuclei_$1/.logs
-        find ./$output -empty -delete
+        find ./$output -empty -delete &> /dev/null
 }
 
 
@@ -81,12 +81,10 @@ function ncl_all(){
 
 	         path=$(echo $i|awk -F'nuclei_' '{print $1F}')
        		 urls=$(echo $i|awk -F'nuclei_' '{print $NF}')
-   		t="$(ls /home/mohamed/git_workspace/scripts/ncl/tmp)"
-		template=$(template_base_logs $urls "$t")
-		echo -e "\e[32m$path\e[0m"
-       		 cd $path
-       		 ncl_f  $urls 30  "$template"
-       		 cd -
+		 t="$(ls /home/mohamed/git_workspace/scripts/ncl/tmp)"
+	         template=$(template_base_logs $urls "$t")
+       		 ncl_f  $urls 70  "$template"
+       		 cd - &> /dev/null
 		 
     	done	
 
@@ -101,11 +99,11 @@ function ncl_all_with_tmps(){
                  urls=$(echo $i|awk -F'nuclei_' '{print $NF}')
                 t="$(ls /home/mohamed/git_workspace/scripts/ncl/tmp)"
                 template="$(template_specific $1)"
-
+echo $template
 		echo -e "\e[32m$path\e[0m"
                  cd $path
                  ncl_f  $urls 30  "$template"
-                 cd -
+                 cd - &> /dev/null
         done
 
 }
