@@ -21,7 +21,8 @@ go get -u github.com/tomnomnom/assetfinder
 #GO111MODULE=auto go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
 git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/
 
-
+#install httprobe
+go get -u github.com/tomnomnom/httprobe
 #install ffuf
 git clone https://github.com/ffuf/ffuf.git ; cd ffuf ; go get ; go build
 #go get -u github.com/ffuf/ffuf
