@@ -113,7 +113,23 @@ function update_tmp(){
 	cd - 
 
 	for i in basic-detections cves security-misconfiguration files security-misconfiguration panels vulnerabilities tokens subdomain-takeover workflows ;do
+		for j in $(ls $i);do
+			if [ -f $i ];then
+				a= $(wc -l  /home/mohamed/git_workspace/scripts/ncl/tmp/$j  |cut -d " " -f)
+				b= $(wc -l  /home/mohamed/mytools/domainEnumTools/nuclei-templates/$i//$j  |cut -d " " -f)
+			 	if [ $a -nq $b ];then
+					echo "$j" >> update_tmp.txt
+				fi
+			fi
+		
+		done
+		rm  -rf update_tmp.txt &> /dev/null
+
 		cp /home/mohamed/mytools/domainEnumTools/nuclei-templates/$i/* /home/mohamed/git_workspace/scripts/ncl/tmp/
+		
+	done
+	for log in $(find $1 -iname "nuclei_*" -type f) ;do 
+			cat $log |grep  -v -f update_tmp.txt |sort -o $logs
 	done
 	for i in  typescript  swagger-panel.yaml basic-cors-flash.yaml ;do
 		rm /home/mohamed/git_workspace/scripts/ncl/tmp/$i

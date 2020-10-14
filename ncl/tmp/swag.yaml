@@ -1,0 +1,37 @@
+id: swagger-panel
+
+info:
+  name: Swagger API Panel
+  author: Ice3man
+  severity: informative
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api-docs"
+      - "{{BaseURL}}/api-docs/swagger.json"
+      - "{{BaseURL}}/apidocs/swagger.json"
+      - "{{BaseURL}}/api/swagger-ui.html"
+      - "{{BaseURL}}/api/swagger-ui.html "
+      - "{{BaseURL}}/api/swagger.yml"
+      - "{{BaseURL}}/api/v2/swagger.json"
+      - "{{BaseURL}}/swagger"
+      - "{{BaseURL}}/swagger/index.html"
+      - "{{BaseURL}}/swagger.json"
+      - "{{BaseURL}}/swagger-resources"
+      - "{{BaseURL}}/swagger-resources/restservices/v2/api-docs"
+      - "{{BaseURL}}/swagger/swagger-ui.html"
+      - "{{BaseURL}}/swagger-ui"
+      - "{{BaseURL}}/swagger-ui.html"
+      - "{{BaseURL}}swagger-ui.html"
+      - "{{BaseURL}}/swagger-ui/swagger.json"
+      - "{{BaseURL}}/swagger/v1/swagger.json"
+      - "{{BaseURL}}swagger/v1/swagger.json"
+      - "{{BaseURL}}/v1/swagger.json"
+      - "{{BaseURL}}/v1.x/swagger-ui.html"
+    matchers:
+      - type: word
+        words:
+          - "\"swagger\":"
+          - "Swagger UI"
+        condition: or
