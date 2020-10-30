@@ -14,9 +14,13 @@ mkdir -p   ~/templates
 
 ncl  -u 
 
+mkdir -p ~/tools
+
 #install assetfinder	
 go get -u github.com/tomnomnom/assetfinder
-
+go get github.com/tomnomnom/waybackurls
+go get -u -v github.com/lc/gau
+git clone https://github.com/tomnomnom/hacks.git
 #install httpx
 #GO111MODULE=auto go get -u -v github.com/projectdiscovery/httpx/cmd/httpx
 git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/
