@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+new $1
+cd $1_prgram
+recon 
+ncl2 -l Hosts -c 500

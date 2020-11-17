@@ -6,6 +6,20 @@ echo "this script take list of template and test it on list of url  "
 echo -e "\t u \t update  templates"
 echo -e "\t l \t provide list of url (require) "
 echo -e "\t c \t occurance number (10 default)"
+echo -e "\t p\t report"
+}
+function report(){
+	cat $(find ./ -name "cve.txt") |cut -d " " -f 1 |tee -a report
+	echo "-----------------------------------------------------"
+
+	cat $(find ./ -name "security-misconfiguration.txt") |cut -d " " -f 1 |sort -u |tee -a report
+	echo "-----------------------------------------------------"
+
+	cat $(find ./ -name "vulnerabilities.txt") |cut -d " " -f 1 |sort -u |tee -a report
+	echo "-----------------------------------------------------"
+
+	cat $(find ./ -name "subdomain-takeover.txt") |cut -d " " -f 1 |sort -u |tee -a report
+	echo "-----------------------------------------------------"
 }
 
 function templates(){
@@ -53,6 +67,26 @@ do
                 l)
                         url="$OPTARG"
                         ;;
+		p)
+                        report
+			exit
+			;;
+		u)
+                        #update_tmp
+			update_tmp
+			exit
+		u)
+                        #update_tmp
+			update_tmp
+			exit
+		u)
+                        #update_tmp
+			update_tmp
+			exit
+		u)
+                        #update_tmp
+			update_tmp
+			exit
 		u)
                         #update_tmp
 			update_tmp

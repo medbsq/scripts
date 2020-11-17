@@ -80,7 +80,6 @@ function bypass(){
 }
 
 function bps(){
-	
 	cat url | httpx -status-code -threads 500 -retries 2 -o ./status.txt
 	cat ../status >> ./status.txt
 	cat  ./status.txt | grep -E  "403|401" |cut  -d " " -f 1 |sort -u -o 40x_urls.txt
