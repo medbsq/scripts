@@ -114,5 +114,5 @@ bps
 create_wl $1
 ffuf -u FUZZ -w ./url.ssti      -t 300  -mr "ssti49"    -o  ssti.result
 ffuf -u FUZZ -w ./url.redirect  -t 300  -mr "evil.com"  -o  open_redirect.result
-ffuf -u FUZZ -w ./url -H "Host: $1"  -t 300  -o  host.result
+#ffuf -u FUZZ -w ./url -H "Host: $1"  -t 300  -o  host.result
 

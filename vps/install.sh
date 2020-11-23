@@ -31,4 +31,4 @@ go get -u github.com/tomnomnom/httprobe
 git clone https://github.com/ffuf/ffuf.git ; cd ffuf ; go get ; go build
 #go get -u github.com/ffuf/ffuf
 
-
+pip3 install dnsgen

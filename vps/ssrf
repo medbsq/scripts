@@ -48,10 +48,13 @@ function req(){
 }
 
 
-function deg(){
-echo "$1"
+function param(){
+cat $1 |qsreplace "http://$2" >>  ssrf.url
+cat $1 |qsreplace "$2" >>  ssrf.url
+ffuf -w ssrf.url -u FUZZ -t 400
 }
 
+param $1 $2 
 pre $1 $2
 export -f req
 cat ref_$1| xargs -n 1 -P 100  -I {} bash -c 'req "$@"' _ {}

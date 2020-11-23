@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+for i in $( find ./ -maxdepth 1 -type d  |grep -vE "/$" );do
+	cd $i 
+	xargs -a  Hosts  -I@ sh -c 'echo @' | dnsgen - | httpx -silent -threads 10000 |tee  -a Hosts2
+	comm Hosts Hosts2 -13 |sort -uo Hosts2
+	cd - &> /dev/null
+done

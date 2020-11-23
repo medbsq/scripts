@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+mkdir -p ./smug
+cd ./smug
+function smugg(){
+	python3 ~/tools/smuggler/smuggler.py -u $1 -q | tee -a ./smug/$(echo  "$1" |cut -d "/" -f 3).txt 
+}
+
+export -f smugg 
+cat $1 |xargs -n 1 -P 200  -I {} bash -c 'smugg "$@"' _ {}
+
